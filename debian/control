@@ -1,8 +1,7 @@
 Source: udisks2
 Section: admin
 Priority: optional
-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
-Uploaders: Michael Biebl <biebl@debian.org>, Martin Pitt <mpitt@debian.org>
+Maintainer: Dimitri Puzin <max@psycasst.de>
 Build-Depends: debhelper (>= 9),
  pkg-config,
  xsltproc,
@@ -17,18 +16,15 @@ Build-Depends: debhelper (>= 9),
  libgirepository1.0-dev (>= 1.30),
  gobject-introspection (>= 1.30),
  libatasmart-dev (>= 0.17),
- libsystemd-dev (>= 209),
  dh-autoreconf
 Standards-Version: 3.9.5
-Vcs-Git: git://anonscm.debian.org/pkg-utopia/udisks2.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-utopia/udisks2.git;a=summary
 Homepage: http://www.freedesktop.org/wiki/Software/udisks
 XS-Testsuite: autopkgtest
 
 Package: udisks2
 Architecture: linux-any
 Multi-Arch: foreign
-Depends: ${shlibs:Depends}, ${misc:Depends}, udev, dbus, parted, libpam-systemd
+Depends: ${shlibs:Depends}, ${misc:Depends}, udev, dbus, parted
 Pre-Depends: ${misc:Pre-Depends}
 Recommends: policykit-1, dosfstools, ntfs-3g, eject, gdisk
 Suggests: xfsprogs, reiserfsprogs, exfat-utils, btrfs-tools, mdadm, cryptsetup-bin

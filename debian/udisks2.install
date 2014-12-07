@@ -1,6 +1,5 @@
 etc/
 lib/udev/
-lib/systemd/
 usr/bin/
 usr/sbin/* /sbin/
 usr/lib/udisks2/
