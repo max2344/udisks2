@@ -816,10 +816,12 @@ add_acl (const gchar  *path,
       acl_calc_mask (&acl) == -1 ||
       acl_set_file (path, ACL_TYPE_ACCESS, acl) == -1)
     {
-      udisks_warning(
+      g_set_error (error,
+                   G_IO_ERROR,
+                   g_io_error_from_errno (errno),
                    "Adding read ACL for uid %d to `%s' failed: %m",
                    (gint) uid, path);
-      chown(path, uid, -1);
+      goto out;
     }
 
   ret = TRUE;
@@ -889,26 +891,26 @@ calculate_mount_point (UDisksDaemon              *daemon,
     }
 
   /* If we know the user-name and it doesn't have any '/' character in
-   * it, mount in /media/$USER
+   * it, mount in /run/media/$USER
    */
   if (!fs_shared && (user_name != NULL && strstr (user_name, "/") == NULL))
     {
-      mount_dir = g_strdup_printf ("/media/%s", user_name);
+      mount_dir = g_strdup_printf ("/run/media/%s", user_name);
       if (!g_file_test (mount_dir, G_FILE_TEST_EXISTS))
         {
-          /* First ensure that /media exists */
-          if (!g_file_test ("/media", G_FILE_TEST_EXISTS))
+          /* First ensure that /run/media exists */
+          if (!g_file_test ("/run/media", G_FILE_TEST_EXISTS))
             {
-              if (g_mkdir ("/media", 0755) != 0)
+              if (g_mkdir ("/run/media", 0755) != 0)
                 {
                   g_set_error (error,
                                UDISKS_ERROR,
                                UDISKS_ERROR_FAILED,
-                               "Error creating directory /media: %m");
+                               "Error creating directory /run/media: %m");
                   goto out;
                 }
             }
-          /* Then create the per-user /media/$USER */
+          /* Then create the per-user /run/media/$USER */
           if (g_mkdir (mount_dir, 0700) != 0)
             {
               g_set_error (error,
