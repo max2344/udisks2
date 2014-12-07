@@ -1,0 +1,130 @@
+<!-- ##### SECTION Title ##### -->
+UDisksLinuxDriveObject
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxDriveObject ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG UDisksLinuxDriveObject:daemon ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksLinuxDriveObject:device ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION udisks_linux_drive_object_new ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@device: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_drive_object_uevent ##### -->
+<para>
+
+</para>
+
+@object: 
+@action: 
+@device: 
+
+
+<!-- ##### FUNCTION udisks_linux_drive_object_get_daemon ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_drive_object_get_block ##### -->
+<para>
+
+</para>
+
+@object: 
+@get_hw: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_drive_object_get_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@get_hw: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_drive_object_get_devices ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_drive_object_get_siblings ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_drive_object_housekeeping ##### -->
+<para>
+
+</para>
+
+@object: 
+@secs_since_last: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_drive_object_is_not_in_use ##### -->
+<para>
+
+</para>
+
+@object: 
+@cancellable: 
+@error: 
+@Returns: 
+
+

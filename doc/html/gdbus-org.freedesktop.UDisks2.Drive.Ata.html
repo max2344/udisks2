@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: org.freedesktop.UDisks2.Drive.Ata</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ch02.html" title="D-Bus Interfaces">
+<link rel="prev" href="gdbus-org.freedesktop.UDisks2.Drive.html" title="org.freedesktop.UDisks2.Drive">
+<link rel="next" href="gdbus-org.freedesktop.UDisks2.MDRaid.html" title="org.freedesktop.UDisks2.MDRaid">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#gdbus-org.freedesktop.UDisks2.Drive.Ata.description" class="shortcut">Description</a></span><span id="nav_properties"> <span class="dim">|</span> 
+                  <a href="#gdbus-org.freedesktop.UDisks2.Drive.Ata.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gdbus-org.freedesktop.UDisks2.Drive.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gdbus-org.freedesktop.UDisks2.MDRaid.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gdbus-org.freedesktop.UDisks2.Drive.Ata"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gdbus-interface-org-freedesktop-UDisks2-Drive-Ata.top_of_page"></a>org.freedesktop.UDisks2.Drive.Ata</span></h2>
+<p>org.freedesktop.UDisks2.Drive.Ata — Disk drives using the ATA command-set</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Methods</h2>
+<pre class="synopsis">
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartUpdate" title="The SmartUpdate() method">SmartUpdate</a>        (IN  a{sv}            options);
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartGetAttributes" title="The SmartGetAttributes() method">SmartGetAttributes</a> (IN  a{sv}            options,
+                    OUT a(ysqiiixia{sv}) attributes);
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartSelftestStart" title="The SmartSelftestStart() method">SmartSelftestStart</a> (IN  s                type,
+                    IN  a{sv}            options);
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartSelftestAbort" title="The SmartSelftestAbort() method">SmartSelftestAbort</a> (IN  a{sv}            options);
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartSetEnabled" title="The SmartSetEnabled() method">SmartSetEnabled</a>    (IN  b                value,
+                    IN  a{sv}            options);
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.PmGetState" title="The PmGetState() method">PmGetState</a>         (IN  a{sv}            options,
+                    OUT y                state);
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.PmStandby" title="The PmStandby() method">PmStandby</a>          (IN  a{sv}            options);
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.PmWakeup" title="The PmWakeup() method">PmWakeup</a>           (IN  a{sv}            options);
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SecurityEraseUnit" title="The SecurityEraseUnit() method">SecurityEraseUnit</a>  (IN  a{sv}            options);
+</pre>
+</div>
+<div class="refsect1">
+<a name="id-1.3.3.4.4"></a><h2>Properties</h2>
+<pre class="synopsis">
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartSupported" title='The "SmartSupported" property'>SmartSupported</a>                     readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartEnabled" title='The "SmartEnabled" property'>SmartEnabled</a>                       readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartUpdated" title='The "SmartUpdated" property'>SmartUpdated</a>                       readable   t
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartFailing" title='The "SmartFailing" property'>SmartFailing</a>                       readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartPowerOnSeconds" title='The "SmartPowerOnSeconds" property'>SmartPowerOnSeconds</a>                readable   t
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartTemperature" title='The "SmartTemperature" property'>SmartTemperature</a>                   readable   d
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartNumAttributesFailing" title='The "SmartNumAttributesFailing" property'>SmartNumAttributesFailing</a>          readable   i
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartNumAttributesFailedInThePast" title='The "SmartNumAttributesFailedInThePast" property'>SmartNumAttributesFailedInThePast</a>  readable   i
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartNumBadSectors" title='The "SmartNumBadSectors" property'>SmartNumBadSectors</a>                 readable   x
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartSelftestStatus" title='The "SmartSelftestStatus" property'>SmartSelftestStatus</a>                readable   s
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartSelftestPercentRemaining" title='The "SmartSelftestPercentRemaining" property'>SmartSelftestPercentRemaining</a>      readable   i
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.PmSupported" title='The "PmSupported" property'>PmSupported</a>                        readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.PmEnabled" title='The "PmEnabled" property'>PmEnabled</a>                          readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.ApmSupported" title='The "ApmSupported" property'>ApmSupported</a>                       readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.ApmEnabled" title='The "ApmEnabled" property'>ApmEnabled</a>                         readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.AamSupported" title='The "AamSupported" property'>AamSupported</a>                       readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.AamEnabled" title='The "AamEnabled" property'>AamEnabled</a>                         readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.AamVendorRecommendedValue" title='The "AamVendorRecommendedValue" property'>AamVendorRecommendedValue</a>          readable   i
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.WriteCacheSupported" title='The "WriteCacheSupported" property'>WriteCacheSupported</a>                readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.WriteCacheEnabled" title='The "WriteCacheEnabled" property'>WriteCacheEnabled</a>                  readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SecurityEraseUnitMinutes" title='The "SecurityEraseUnitMinutes" property'>SecurityEraseUnitMinutes</a>           readable   i
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SecurityEnhancedEraseUnitMinutes" title='The "SecurityEnhancedEraseUnitMinutes" property'>SecurityEnhancedEraseUnitMinutes</a>   readable   i
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SecurityFrozen" title='The "SecurityFrozen" property'>SecurityFrozen</a>                     readable   b
+</pre>
+</div>
+<div class="refsect1">
+<a name="gdbus-interface-org-freedesktop-UDisks2-Drive-Ata"></a><h2>Description</h2>
+<p>    Objects implementing this interface also implement the
+    <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-interface-org-freedesktop-UDisks2-Drive.top_of_page">org.freedesktop.UDisks2.Drive</a> interface.
+</p>
+</div>
+<div class="refsect1">
+<a name="gdbus-methods-org.freedesktop.UDisks2.Drive.Ata"></a><h2>Method Details</h2>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartUpdate"></a><h3>The SmartUpdate() method</h3>
+<pre class="programlisting">
+SmartUpdate (IN  a{sv} options);
+</pre>
+<p>        Reads SMART data from the drive and update relevant properties.
+</p>
+<p>        If the option <em class="parameter"><code>nowakeup</code></em> is given and the disk is in a sleeping
+        state, the error
+        <code class="literal">org.freedesktop.UDisks2.Error.WouldWakeup</code> is
+        returned.
+</p>
+<p>        The option <em class="parameter"><code>atasmart_blob</code></em> can be used to inject libatasmart
+        compatible blobs for testing how clients react to different
+        kinds of SMART data. This option may be removed in the future
+        with it being considered an ABI break.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options - known options (in addition to <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>) includes <em class="parameter"><code>nowakeup</code></em> (of type 'b').</p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartGetAttributes"></a><h3>The SmartGetAttributes() method</h3>
+<pre class="programlisting">
+SmartGetAttributes (IN  a{sv}            options,
+                    OUT a(ysqiiixia{sv}) attributes);
+</pre>
+<p>        Get the SMART attributes.
+        Each attribute is a struct with the following members:
+        </p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">id (type 'y')</span></p></td>
+<td><p>Attribute Identifier</p></td>
+</tr>
+<tr>
+<td><p><span class="term">name (type 's')</span></p></td>
+<td><p>The identifier as a string.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">flags (type 'q')</span></p></td>
+<td><p>16-bit attribute flags (bit 0 is prefail/oldage, bit 1 is online/offline).</p></td>
+</tr>
+<tr>
+<td><p><span class="term">value (type 'i')</span></p></td>
+<td><p>The current value or -1 if unknown.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">worst (type 'i')</span></p></td>
+<td><p>The worst value of -1 if unknown.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">threshold (type 'i')</span></p></td>
+<td><p>The threshold or -1 if unknown.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">pretty (type 'x')</span></p></td>
+<td><p>An interpretation of the value - must be ignored if <em class="parameter"><code>pretty_unit</code></em> is 0.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">pretty_unit (type 'i')</span></p></td>
+<td><p>The unit of the <em class="parameter"><code>pretty</code></em> value - the following units are known: 0 (unknown), 1 (dimensionless), 2 (milliseconds), 3 (sectors), 4 (millikelvin).</p></td>
+</tr>
+<tr>
+<td><p><span class="term">expansion (type 'a{sv}')</span></p></td>
+<td><p>Currently unused. Intended for future expansion.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+        The <em class="parameter"><code>name</code></em> parameter should be used as the authoritative identifier for the attribute since it is derived from the numerical <em class="parameter"><code>id</code></em> and the disk's <code class="literal">IDENTIFY</code> data and thus handles ID collisions between drives of different make and model.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options - known options (in addition to <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>) includes <em class="parameter"><code>nowakeup</code></em> (of type 'b').</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT a(ysqiiixia{sv}) <em class="parameter"><code>attributes</code></em></code>:</span></p></td>
+<td><p>The SMART attributes.</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartSelftestStart"></a><h3>The SmartSelftestStart() method</h3>
+<pre class="programlisting">
+SmartSelftestStart (IN  s     type,
+                    IN  a{sv} options);
+</pre>
+<p>        Starts a SMART selftest. The <em class="parameter"><code>type</code></em> parameter is for the type
+        of test to start - valid values are <code class="literal">short</code>,
+        <code class="literal">extended</code> and <code class="literal">conveyance</code>.
+</p>
+<p>        Note that the method returns immediately after the test has
+        been started successfully.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN s <em class="parameter"><code>type</code></em></code>:</span></p></td>
+<td><p>The type test to run.</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options (currently unused except for <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>).</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartSelftestAbort"></a><h3>The SmartSelftestAbort() method</h3>
+<pre class="programlisting">
+SmartSelftestAbort (IN  a{sv} options);
+</pre>
+<p>        Aborts a running SMART selftest.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options (currently unused except for <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>).</p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SmartSetEnabled"></a><h3>The SmartSetEnabled() method</h3>
+<pre class="programlisting">
+SmartSetEnabled (IN  b     value,
+                 IN  a{sv} options);
+</pre>
+<p>        Sets whether SMART is enabled for the drive. This setting is
+        stored in the non-volatile memory in the drive itself and does
+        not need to be refreshed every time the drive is powered on or
+        connected.
+</p>
+<p>        Since this may require authentication and thus may fail, it is
+        implemented this way instead of the
+        <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartEnabled" title='The "SmartEnabled" property'>"SmartEnabled"</a> property being
+        writable.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN b <em class="parameter"><code>value</code></em></code>:</span></p></td>
+<td><p><code class="constant">TRUE</code> to enable SMART, <code class="constant">FALSE</code> to disable SMART.</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options (currently unused except for <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>).</p></td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.PmGetState"></a><h3>The PmGetState() method</h3>
+<pre class="programlisting">
+PmGetState (IN  a{sv} options,
+            OUT y     state);
+</pre>
+<p>        Get the current power mode status. This is implemented as a
+        method call as it involves sending a command from the host to
+        the drive and no change notification is available.
+</p>
+<p>        The format of <em class="parameter"><code>state</code></em> is the result obtained from sending the
+        ATA command <span class="quote">“<span class="quote">CHECK POWER MODE</span>”</span> to the drive.
+        Known values include
+        </p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">0x00</span></p></td>
+<td><p>Standby</p></td>
+</tr>
+<tr>
+<td><p><span class="term">0x80</span></p></td>
+<td><p>Idle</p></td>
+</tr>
+<tr>
+<td><p><span class="term">0xff</span></p></td>
+<td><p>Active/Idle</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+        Typically user interfaces will report "Drive is spun down" if <em class="parameter"><code>state</code></em> is
+        0x00 and "Drive is spun up" otherwise.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options (currently unused except for <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>).</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT y <em class="parameter"><code>state</code></em></code>:</span></p></td>
+<td><p>The current power state.</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.PmStandby"></a><h3>The PmStandby() method</h3>
+<pre class="programlisting">
+PmStandby (IN  a{sv} options);
+</pre>
+<p>        Force the drive to immediately enter the low power consumption
+        <span class="emphasis"><em>standby</em></span> mode, usually causing it to spin
+        down. This is done by sending the ATA command
+        <span class="quote">“<span class="quote">STANDBY IMMEDIATE</span>”</span> to the drive.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options (currently unused except for <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>).</p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.PmWakeup"></a><h3>The PmWakeup() method</h3>
+<pre class="programlisting">
+PmWakeup (IN  a{sv} options);
+</pre>
+<p>        Force the drive to immediately wake up (exiting the low power
+        consumption <span class="emphasis"><em>standby</em></span> mode), usually
+        causing it to spin up. This is done by reading data from the
+        disk.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options (currently unused except for <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>).</p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Drive-Ata.SecurityEraseUnit"></a><h3>The SecurityEraseUnit() method</h3>
+<pre class="programlisting">
+SecurityEraseUnit (IN  a{sv} options);
+</pre>
+<p>        Does all the necessary checks and preparations and then sends
+        the <span class="quote">“<span class="quote">SECURITY ERASE UNIT</span>”</span> command to the
+        drive. If the option <em class="parameter"><code>enhanced</code></em> is set to <code class="constant">TRUE</code> an
+        <span class="emphasis"><em>enhanced secure erase</em></span> is requested.
+</p>
+<p>        All data on the drive will be irrevocably erased.
+</p>
+<p>        This operation takes either
+        <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SecurityEraseUnitMinutes" title='The "SecurityEraseUnitMinutes" property'>"SecurityEraseUnitMinutes"</a> or
+        <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.Ata.html#gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SecurityEnhancedEraseUnitMinutes" title='The "SecurityEnhancedEraseUnitMinutes" property'>"SecurityEnhancedEraseUnitMinutes"</a>
+        minutes to complete depending on whether the <em class="parameter"><code>enhanced</code></em> option
+        is <code class="constant">TRUE</code>.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options - known options (in addition to <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>) includes <em class="parameter"><code>enhanced</code></em> (of type 'b').</p></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gdbus-properties-org.freedesktop.UDisks2.Drive.Ata"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartSupported"></a><h3>The "SmartSupported" property</h3>
+<pre class="programlisting">
+SmartSupported  readable   b
+</pre>
+<p>Whether the drive supports SMART.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartEnabled"></a><h3>The "SmartEnabled" property</h3>
+<pre class="programlisting">
+SmartEnabled  readable   b
+</pre>
+<p>Whether SMART is enabled.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartUpdated"></a><h3>The "SmartUpdated" property</h3>
+<pre class="programlisting">
+SmartUpdated  readable   t
+</pre>
+<p>         The point in time (seconds since the
+         <a class="ulink" href="http://en.wikipedia.org/wiki/Unix_epoch" target="_top">Unix Epoch</a>)
+         that the SMART status was updated or 0 if never updated.
+</p>
+<p>         The value of the other properties related to SMART are not
+         meaningful if this proeprty is 0.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartFailing"></a><h3>The "SmartFailing" property</h3>
+<pre class="programlisting">
+SmartFailing  readable   b
+</pre>
+<p>         Set to <code class="constant">TRUE</code> if disk is about to fail.
+</p>
+<p>         This value is read from the disk itself and does not include
+         any interpretation.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartPowerOnSeconds"></a><h3>The "SmartPowerOnSeconds" property</h3>
+<pre class="programlisting">
+SmartPowerOnSeconds  readable   t
+</pre>
+<p>         The amount of time the disk has been powered on (according to SMART data) or 0 if unknown.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartTemperature"></a><h3>The "SmartTemperature" property</h3>
+<pre class="programlisting">
+SmartTemperature  readable   d
+</pre>
+<p>         The temperature (in Kelvin) of the disk according to SMART data or 0 if unknown.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartNumAttributesFailing"></a><h3>The "SmartNumAttributesFailing" property</h3>
+<pre class="programlisting">
+SmartNumAttributesFailing  readable   i
+</pre>
+<p>        The number of attributes failing right now or -1 if unknown.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartNumAttributesFailedInThePast"></a><h3>The "SmartNumAttributesFailedInThePast" property</h3>
+<pre class="programlisting">
+SmartNumAttributesFailedInThePast  readable   i
+</pre>
+<p>        The number of attributes that have failed in the past or -1 if unknown.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartNumBadSectors"></a><h3>The "SmartNumBadSectors" property</h3>
+<pre class="programlisting">
+SmartNumBadSectors  readable   x
+</pre>
+<p>        The number of bad sectors (ie. pending and reallocated) or -1 if unknown.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartSelftestStatus"></a><h3>The "SmartSelftestStatus" property</h3>
+<pre class="programlisting">
+SmartSelftestStatus  readable   s
+</pre>
+<p>         The status of the last self-test. Known values include
+        </p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">success</span></p></td>
+<td><p>Last self-test was a success (or never ran).</p></td>
+</tr>
+<tr>
+<td><p><span class="term">aborted</span></p></td>
+<td><p>Last self-test was aborted.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">interrupted</span></p></td>
+<td><p>Last self-test was interrupted.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">fatal</span></p></td>
+<td><p>Last self-test did not complete.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">error_unknown</span></p></td>
+<td><p>Last self-test failed (Unknown).</p></td>
+</tr>
+<tr>
+<td><p><span class="term">error_electrical</span></p></td>
+<td><p>Last self-test failed (Electrical).</p></td>
+</tr>
+<tr>
+<td><p><span class="term">error_servo</span></p></td>
+<td><p>Last self-test failed (Servo).</p></td>
+</tr>
+<tr>
+<td><p><span class="term">error_read</span></p></td>
+<td><p>Last self-test failed (Read).</p></td>
+</tr>
+<tr>
+<td><p><span class="term">error_handling</span></p></td>
+<td><p>Last self-test failed (Damage).</p></td>
+</tr>
+<tr>
+<td><p><span class="term">inprogress</span></p></td>
+<td><p>Self-test is currently in progress.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SmartSelftestPercentRemaining"></a><h3>The "SmartSelftestPercentRemaining" property</h3>
+<pre class="programlisting">
+SmartSelftestPercentRemaining  readable   i
+</pre>
+<p>        The percent remaining or -1 if unknown.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.PmSupported"></a><h3>The "PmSupported" property</h3>
+<pre class="programlisting">
+PmSupported  readable   b
+</pre>
+<p>Whether the drive supports power management.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.PmEnabled"></a><h3>The "PmEnabled" property</h3>
+<pre class="programlisting">
+PmEnabled  readable   b
+</pre>
+<p>Whether power management is enabled.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.ApmSupported"></a><h3>The "ApmSupported" property</h3>
+<pre class="programlisting">
+ApmSupported  readable   b
+</pre>
+<p>Whether the drive supports Advanced Power Management (APM).</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.ApmEnabled"></a><h3>The "ApmEnabled" property</h3>
+<pre class="programlisting">
+ApmEnabled  readable   b
+</pre>
+<p>Whether Advanced Power Management (APM) is enabled.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.AamSupported"></a><h3>The "AamSupported" property</h3>
+<pre class="programlisting">
+AamSupported  readable   b
+</pre>
+<p>Whether the drive supports Automatic Acoustic Management (AAM).</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.AamEnabled"></a><h3>The "AamEnabled" property</h3>
+<pre class="programlisting">
+AamEnabled  readable   b
+</pre>
+<p>Whether Automatic Acoustic Management (AAM) is enabled.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.AamVendorRecommendedValue"></a><h3>The "AamVendorRecommendedValue" property</h3>
+<pre class="programlisting">
+AamVendorRecommendedValue  readable   i
+</pre>
+<p>The vendor-recommended AAM value (or 0 if AAM is not supported).</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.WriteCacheSupported"></a><h3>The "WriteCacheSupported" property</h3>
+<pre class="programlisting">
+WriteCacheSupported  readable   b
+</pre>
+<p>         Whether the drive supports configuring the write cache.
+</p>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.WriteCacheEnabled"></a><h3>The "WriteCacheEnabled" property</h3>
+<pre class="programlisting">
+WriteCacheEnabled  readable   b
+</pre>
+<p>         Whether the write-cache is enabled (or <code class="constant">FALSE</code> if not supported).
+</p>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SecurityEraseUnitMinutes"></a><h3>The "SecurityEraseUnitMinutes" property</h3>
+<pre class="programlisting">
+SecurityEraseUnitMinutes  readable   i
+</pre>
+<p>         The estimated amount of minutes it takes to complete the
+         <span class="quote">“<span class="quote">SECURITY ERASE UNIT</span>”</span> command or 0 if this
+         command is not available.
+</p>
+<p>         If set to 510 it means that it takes at least 508 minutes to
+         complete the operation.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SecurityEnhancedEraseUnitMinutes"></a><h3>The "SecurityEnhancedEraseUnitMinutes" property</h3>
+<pre class="programlisting">
+SecurityEnhancedEraseUnitMinutes  readable   i
+</pre>
+<p>         The estimated amount of minutes it takes to complete the
+         <span class="quote">“<span class="quote">SECURITY ERASE UNIT</span>”</span> command with enhanced mode
+         specified or 0 if enhanced erase is not available.
+</p>
+<p>         If set to 510 it means that it takes at least 508 minutes to
+         complete the operation.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Drive-Ata.SecurityFrozen"></a><h3>The "SecurityFrozen" property</h3>
+<pre class="programlisting">
+SecurityFrozen  readable   b
+</pre>
+<p>         If set to <code class="constant">TRUE</code> the unit is frozen.
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

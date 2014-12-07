@@ -1,0 +1,723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: Authorization Checks</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-dbus-overview.html" title="Overview">
+<link rel="prev" href="ref-dbus-jobs.html" title="The /org/freedesktop/UDisks2/jobs/* objects">
+<link rel="next" href="udisks-std-options.html" title="The options parameter">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-dbus-overview.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ref-dbus-jobs.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="udisks-std-options.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="sect1">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="udisks-polkit-actions"></a>Authorization Checks</h2></div></div></div>
+<p>
+          Many methods and operations offered by udisks requires the
+          calling user to be sufficiently authorized. Whether the user
+          is authorized is checked using <a class="ulink" href="http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html" target="_top">polkit</a>
+          allowing the administrator to configure fine-grained permissions via
+          polkit authorization rules.
+        </p>
+<p>
+          There is not necessarily a one-to-one relationship between
+          D-Bus methods and polkit actions - typically the
+          relationship is more complicated and depends on both the
+          context of the process invoking the method, the object the
+          method is acting on and possibly more factors. For example,
+          the <a class="link" href="gdbus-org.freedesktop.UDisks2.Filesystem.html#gdbus-method-org-freedesktop-UDisks2-Filesystem.Mount" title="The Mount() method">Filesystem.Mount()</a>
+          method call may check that the caller is authorized for one
+          of the four actions
+          <span class="emphasis"><em>org.freedesktop.udisks2.filesystem-mount</em></span>,
+          <span class="emphasis"><em>org.freedesktop.udisks2.filesystem-mount-system</em></span>,
+          <span class="emphasis"><em>org.freedesktop.udisks2.filesystem-mount-other-seat</em></span>
+          or
+          <span class="emphasis"><em>org.freedesktop.udisks2.filesystem-mount-fstab</em></span>
+          depending on circumstances.
+        </p>
+<p>
+          Often there will be two polkit actions for one operation -
+          one for so-called <span class="quote">“<span class="quote">system devices</span>”</span> and one for
+          non-system devices. In this context <span class="quote">“<span class="quote">system
+          device</span>”</span> refers to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.HintSystem" title='The "HintSystem" property'>Block:HintSystem</a>
+          D-Bus property and is normally only
+          <code class="constant">TRUE</code> for devices not considered
+          <span class="quote">“<span class="quote">removable</span>”</span> (devices considered removable
+          include USB attached storage, Flash media and optical
+          drives). See <a class="xref" href="udisks.8.html" title="udisks"><span class="refentrytitle">udisks</span>(8)</a> for how to control
+          if a device is considered a system device.
+        </p>
+<p>
+          The polkit actions are not considered stable and may change
+          from release to release so administrators should take notice
+          when upgrading from one version of udisks to another. For
+          example, polkit authorization rules may need to be updated
+          to match an updated policy.
+        </p>
+<p>
+          See <a class="xref" href="udisks-polkit-actions.html#udisks-polkit-details" title="Table 1. Known polkit variables">Table 1, “Known polkit variables”</a> for the
+          variables that can be used to assist in determining if the
+          caller is authorized (note that each variable may not be set
+          for request). For example, a polkit authorization rule for
+          any of the
+          <span class="emphasis"><em>org.freedesktop.udisks2.filesystem-mount*</em></span>
+          actions can use the <em class="parameter"><code>device</code></em> variable
+          to determine if the caller is authorized to mount a specific
+          block device.
+        </p>
+<div class="table">
+<a name="udisks-polkit-details"></a><p class="title"><b>Table 1. Known polkit variables</b></p>
+<div class="table-contents"><table summary="Known polkit variables" border="1">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="left">key</th>
+<th align="left">value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left"><em class="parameter"><code>device</code></em></td>
+<td align="left">If the object is a block device, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.PreferredDevice" title='The "PreferredDevice" property'>Block:PreferredDevice</a> property. If set, this is guaranteed to be a device file, for example <span class="quote">“<span class="quote">/dev/vg_lucifer/lv_root</span>”</span> or <span class="quote">“<span class="quote">/dev/sda1</span>”</span>. If the object is not a block device, this is not set.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive</code></em></td>
+<td align="left">Like the <em class="parameter"><code>device</code></em> variable, but if the object is also a drive, this variable includes Vital Product Data about the drive such as the vendor and model identifiers (if available), for example <span class="quote">“<span class="quote">INTEL SSDSA2MH080G1GC (/dev/sda1)</span>”</span>. Otherwise is just set to the same value as <em class="parameter"><code>device</code></em>. If the object is not a block device, this is not set (it is however set if the object is a block device but not a drive).</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive.wwn</code></em></td>
+<td align="left">If the object is a drive (or a block device that is part of a drive), this is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.WWN" title='The "WWN" property'>Drive:WWN</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive.serial</code></em></td>
+<td align="left">If the object is a drive (or a block device that is part of a drive), this is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.Serial" title='The "Serial" property'>Drive:Serial</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive.vendor</code></em></td>
+<td align="left">If the object is a drive (or a block device that is part of a drive), this is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.Vendor" title='The "Vendor" property'>Drive:Vendor</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive.model</code></em></td>
+<td align="left">If the object is a drive (or a block device that is part of a drive), this is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.Model" title='The "Model" property'>Drive:Model</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive.revision</code></em></td>
+<td align="left">If the object is a drive (or a block device that is part of a drive), this is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.Revision" title='The "Revision" property'>Drive:Revision</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive.removable</code></em></td>
+<td align="left">If the object is a drive (or a block device that is part of a drive), this is set to the string <span class="quote">“<span class="quote">true</span>”</span> only if the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.Removable" title='The "Removable" property'>Drive:Removable</a> property is <code class="constant">TRUE</code>.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive.removable.bus</code></em></td>
+<td align="left">If the object is a drive (or a block device that is part of a drive), this is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.ConnectionBus" title='The "ConnectionBus" property'>Drive:ConnectionBus</a> property. This variable is set only if the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.Removable" title='The "Removable" property'>Drive:Removable</a> property is <code class="constant">TRUE</code>.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>drive.removable.media</code></em></td>
+<td align="left">If the object is a drive (or a block device that is part of a drive), this is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.MediaCompatibility" title='The "MediaCompatibility" property'>Drive:MediaCompatibility</a> property. This variable is set only if the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.Removable" title='The "Removable" property'>Drive:Removable</a> property is <code class="constant">TRUE</code>.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>id.type</code></em></td>
+<td align="left">If the object is a block device, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.IdType" title='The "IdType" property'>Block:IdType</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>id.usage</code></em></td>
+<td align="left">If the object is a block device, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.IdUsage" title='The "IdUsage" property'>Block:IdUsage</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>id.version</code></em></td>
+<td align="left">If the object is a block device, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.IdVersion" title='The "IdVersion" property'>Block:IdVersion</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>id.label</code></em></td>
+<td align="left">If the object is a block device, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.IdLabel" title='The "IdLabel" property'>Block:IdLabel</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>id.uuid</code></em></td>
+<td align="left">If the object is a block device, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.IdUUID" title='The "IdUUID" property'>Block:IdUUID</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>partition.number</code></em></td>
+<td align="left">If the object is a partition, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Partition.html#gdbus-property-org-freedesktop-UDisks2-Partition.Number" title='The "Number" property'>Partition:Number</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>partition.type</code></em></td>
+<td align="left">If the object is a partition, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Partition.html#gdbus-property-org-freedesktop-UDisks2-Partition.Type" title='The "Type" property'>Partition:Type</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>partition.flags</code></em></td>
+<td align="left">If the object is a partition, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Partition.html#gdbus-property-org-freedesktop-UDisks2-Partition.Flags" title='The "Flags" property'>Partition:Flags</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>partition.name</code></em></td>
+<td align="left">If the object is a partition, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Partition.html#gdbus-property-org-freedesktop-UDisks2-Partition.Name" title='The "Name" property'>Partition:Name</a> property.</td>
+</tr>
+<tr>
+<td align="left"><em class="parameter"><code>partition.uuid</code></em></td>
+<td align="left">If the object is a partition, this property is set to the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Partition.html#gdbus-property-org-freedesktop-UDisks2-Partition.UUID" title='The "UUID" property'>Partition:UUID</a> property.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break"><p>
+          For reference, the polkit actions defined by udisks 2.1.3
+
+          are included here:
+          </p>
+<div class="informalexample">
+<a name="udisks-polkit-actions-file"></a><pre class="programlisting">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd"&gt;
+
+&lt;policyconfig&gt;
+  &lt;vendor&gt;The udisks Project&lt;/vendor&gt;
+  &lt;vendor_url&gt;http://udisks.freedesktop.org/&lt;/vendor_url&gt;
+  &lt;icon_name&gt;drive-removable-media&lt;/icon_name&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Mounting filesystems --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.filesystem-mount"&gt;
+    &lt;_description&gt;Mount a filesystem&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to mount the filesystem&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- mount a device considered a "system device" --&gt;
+  &lt;action id="org.freedesktop.udisks2.filesystem-mount-system"&gt;
+    &lt;_description&gt;Mount a filesystem on a system device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to mount the filesystem&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- mount a device attached to another seat --&gt;
+  &lt;action id="org.freedesktop.udisks2.filesystem-mount-other-seat"&gt;
+    &lt;_description&gt;Mount a filesystem from a device plugged into another seat&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to mount the filesystem&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- mount a device referenced in the /etc/fstab file with the x-udisks-auth option --&gt;
+  &lt;action id="org.freedesktop.udisks2.filesystem-fstab"&gt;
+    &lt;_description&gt;Mount/unmount filesystems defined in the fstab file with the x-udisks-auth option&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to mount/unmount the filesystem&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Unmounting filesystems --&gt;
+
+  &lt;!-- unmount a filesystem mounted by another user --&gt;
+  &lt;action id="org.freedesktop.udisks2.filesystem-unmount-others"&gt;
+    &lt;_description&gt;Unmount a device mounted by another user&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to unmount a filesystem mounted by another user&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Unlocking encrypted devices --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.encrypted-unlock"&gt;
+    &lt;_description&gt;Unlock an encrypted device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to unlock an encrypted device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- unlock a device considered a "system device" --&gt;
+  &lt;action id="org.freedesktop.udisks2.encrypted-unlock-system"&gt;
+    &lt;_description&gt;Unlock an encrypted system device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to unlock an encrypted device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- mount a device attached to another seat --&gt;
+  &lt;action id="org.freedesktop.udisks2.encrypted-unlock-other-seat"&gt;
+    &lt;_description&gt;Unlock an encrypted device plugged into another seat&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to unlock an encrypted device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- unlock a device referenced in the /etc/crypttab file with the x-udisks-auth option --&gt;
+  &lt;action id="org.freedesktop.udisks2.encrypted-unlock-crypttab"&gt;
+    &lt;_description&gt;Unlock an encrypted device specified in the crypttab file with the x-udisks-auth option&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to unlock an encrypted device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Locking encrypted devices --&gt;
+
+  &lt;!-- lock a device unlocked by another user --&gt;
+  &lt;action id="org.freedesktop.udisks2.encrypted-lock-others"&gt;
+    &lt;_description&gt;Lock an encrypted device unlocked by another user&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to lock an encrypted device unlocked by another user&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Changing passphrases on encrypted devices --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.encrypted-change-passphrase"&gt;
+    &lt;_description&gt;Change passphrase for an encrypted device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to change the passphrase for an encrypted device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- change passphrase on a device considered a "system device" --&gt;
+  &lt;action id="org.freedesktop.udisks2.encrypted-change-passphrase-system"&gt;
+    &lt;_description&gt;Change passphrase for an encrypted device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to change the passphrase for an encrypted device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Setting up loop devices --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.loop-setup"&gt;
+    &lt;_description&gt;Manage loop devices&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to set up a loop device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;!-- NOTE: this is not a DoS because we are using /dev/loop-control --&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Deleting and modifying loop devices --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.loop-delete-others"&gt;
+    &lt;_description&gt;Delete loop devices&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to delete a loop device set up by another user&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;action id="org.freedesktop.udisks2.loop-modify-others"&gt;
+    &lt;_description&gt;Modify loop devices&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to modify a loop device set up by another user&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Manage (start/stop) swapspace --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.manage-swapspace"&gt;
+    &lt;_description&gt;Manage swapspace&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to manage swapspace&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Manage MD-RAID --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.manage-md-raid"&gt;
+    &lt;_description&gt;Manage RAID arrays&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to manage RAID arrays&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Power off drives --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.power-off-drive"&gt;
+    &lt;_description&gt;Power off drive&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to power off a drive&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Power off a drive considered a "system device" --&gt;
+  &lt;action id="org.freedesktop.udisks2.power-off-drive-system"&gt;
+    &lt;_description&gt;Power off a system drive&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to power off a drive&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Power off a drive attached to another seat --&gt;
+  &lt;action id="org.freedesktop.udisks2.power-off-drive-other-seat"&gt;
+    &lt;_description&gt;Power off a drive attached to another seat&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to power off a drive plugged into another seat&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Eject media from a drive --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.eject-media"&gt;
+    &lt;_description&gt;Eject media&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to eject media&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- eject media from a drive considered a "system device" --&gt;
+  &lt;action id="org.freedesktop.udisks2.eject-media-system"&gt;
+    &lt;_description&gt;Eject media from a system drive&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to eject media&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- eject media from a drive attached to another seat --&gt;
+  &lt;action id="org.freedesktop.udisks2.eject-media-other-seat"&gt;
+    &lt;_description&gt;Eject media from a drive attached to another seat&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to eject media from a drive plugged into another seat&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Modify a device (create new filesystem, partitioning, change FS label etc.) --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.modify-device"&gt;
+    &lt;_description&gt;Modify a device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to modify a device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- modify a device considered a "system device" --&gt;
+  &lt;action id="org.freedesktop.udisks2.modify-device-system"&gt;
+    &lt;_description&gt;Modify a system device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to modify a device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- modify a device attached to another seat --&gt;
+  &lt;action id="org.freedesktop.udisks2.modify-device-other-seat"&gt;
+    &lt;_description&gt;Modify a device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to modify a device plugged into another seat&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- rescan a device --&gt;
+  &lt;action id="org.freedesktop.udisks2.rescan"&gt;
+    &lt;_description&gt;Rescan a device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is to rescan a device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Open a device for reading (for creating / restoring disk images) --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.open-device"&gt;
+    &lt;_description&gt;Open a device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to open a device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;action id="org.freedesktop.udisks2.open-device-system"&gt;
+    &lt;_description&gt;Open a system device&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to open a device&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Manage system-wide configuration files such as /etc/fstab or
+       /etc/crypttab ... including files referenced by these files.
+
+       IMPORTANT: It is not secure to automatically grant authority
+       for this action to groups of users. Neither is it secure to
+       to allow a process to retain the authorization (e.g. don't
+       use the _keep variants).
+  --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.modify-system-configuration"&gt;
+    &lt;_description&gt;Modify system-wide configuration&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to modify system-wide configuration&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Get secrets from system-wide configuration files --&gt;
+  &lt;action id="org.freedesktop.udisks2.read-system-configuration-secrets"&gt;
+    &lt;_description&gt;Modify system-wide configuration&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to retrieve secrets from system-wide configuration&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Drive configuration (Power Management, Acustics, etc.) --&gt;
+
+  &lt;action id="org.freedesktop.udisks2.modify-drive-settings"&gt;
+    &lt;_description&gt;Modify drive settings&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to modify drive settings&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- ATA SMART --&gt;
+
+  &lt;!-- Update/refresh SMART data --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-smart-update"&gt;
+    &lt;_description&gt;Update SMART data&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to update SMART data&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Set SMART data from blob --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-smart-simulate"&gt;
+    &lt;_description&gt;Set SMART data from blob&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to set SMART data from blob&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Start and abort SMART self-tests --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-smart-selftest"&gt;
+    &lt;_description&gt;Run SMART self-test&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to run a SMART self-test&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Enable/Disable SMART --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-smart-enable-disable"&gt;
+    &lt;_description&gt;Enable/Disable SMART&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to enable/disable SMART&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- ATA Power Management --&gt;
+
+  &lt;!-- Check power state --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-check-power"&gt;
+    &lt;_description&gt;Check power state&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to check the power state&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Send standby command / resume from standby --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-standby"&gt;
+    &lt;_description&gt;Send standby command&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to put a drive into standby mode&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Send standby command / resume from standby to a drive considered a "system device" --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-standby-system"&gt;
+    &lt;_description&gt;Send standby command to a system drive&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to put a drive into standby mode&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Send standby command  / resume from standby to a drive on another seat --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-standby-other-seat"&gt;
+    &lt;_description&gt;Send standby command to drive on other seat&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to put a drive into standby mode&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- ATA Secure Erase --&gt;
+
+  &lt;!-- Send SECURE ERASE UNIT command --&gt;
+  &lt;action id="org.freedesktop.udisks2.ata-secure-erase"&gt;
+    &lt;_description&gt;Securely erase a hard disk&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to securely erase a hard disk&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- ###################################################################### --&gt;
+  &lt;!-- Canceling jobs --&gt;
+
+  &lt;!-- Cancel own job --&gt;
+  &lt;action id="org.freedesktop.udisks2.cancel-job"&gt;
+    &lt;_description&gt;Cancel job&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to cancel a job&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;yes&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+  &lt;!-- Cancel job initiated by other user --&gt;
+  &lt;action id="org.freedesktop.udisks2.cancel-job-other-user"&gt;
+    &lt;_description&gt;Cancel job started by another user&lt;/_description&gt;
+    &lt;_message&gt;Authentication is required to cancel a job started by another user&lt;/_message&gt;
+    &lt;defaults&gt;
+      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;
+      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;
+      &lt;allow_active&gt;auth_admin_keep&lt;/allow_active&gt;
+    &lt;/defaults&gt;
+  &lt;/action&gt;
+
+&lt;/policyconfig&gt;
+</pre>
+</div>
+<p>
+        </p>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

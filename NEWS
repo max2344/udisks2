@@ -1,0 +1,800 @@
+udisks 2.1.3
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+This version fixes a security vulnerability (CVE-2014-0004), so please update
+as soon as possible!
+
+Changes since udisks 2.1.2:
+
+David Zeuthen (4):
+      Identify SD Card Reader in ChromeBook Pixel
+      Send SCSI START STOP UNIT when powering down a drive
+      udisksctl: add power-off verb to power off drives
+      udisksctl: fix grammar
+
+Marius Vollmer (1):
+      Prefer /dev/VG/LV for LVM2 volumes.
+
+Martin Pitt (2):
+      Fix buffer overflow in mount path parsing. If users have the possibility
+      to create very long mount points, such as with FUSE, they could cause
+      udisksd to crash, or even to run arbitrary code as root with specially
+      crafted mount paths.  [CVE-2014-0004]
+
+Peter Paluch (1):
+      Use SECTOR_COUNT=1 when issuing ATA IDENTIFY COMMAND
+
+Tomas Bzatek (3):
+      Use reentrant version of getpwuid() for thread safety
+      udisks_daemon_util_get_caller_uid_sync(): Add missing goto
+      Fix crash when loop-deleting non-loop device
+
+Thanks to all our contributors.
+
+Martin Pitt
+March 10, 2014
+
+------------
+udisks 2.1.2
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 2.1.1:
+
+Andrey Jr. Melnikov (1):
+      Add exfat mount options
+
+Bastien Nocera (1):
+      Hide more rescue partitions
+
+David Zeuthen (2):
+      Bug 67679 - build fails due to missing IT_PROG_INTLTOOL macro
+
+Martin Pitt (1):
+      Add exfat FS integration test
+      Drop "david" user name from publish make rules
+
+Michael Biebl (1):
+      Use dosfstools instead of mtools
+
+Pawel Wieczorkiewicz (1):
+      Add polkit authorization variables for removable media
+
+Tomas Bzatek (1):
+      Fix crash when waiting for loop device
+
+Thanks to all our contributors.
+
+Martin Pitt,
+January 14, 2014
+
+------------
+udisks 2.1.1
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 2.1.0:
+
+David Zeuthen (10):
+      Post-release version bump to 2.1.1
+      Properly identify firewire devices as non-system devices
+      Identify Lexar Dual Slot USB 3.0 Reader Professional as a card reader
+      Identify Transcend USB 3.0 Multi-Card reader as such
+      Promote ZFS partition type to generic
+      UDisksClient: Make it possible to get part desc based on the part table subtype
+      Add ChromeOS partition types
+      Use new SSD icon from g-i-t-e
+      Identify Patriot Memory USB sticks as thumb drives
+      Update NEWS for release
+
+Martin Pitt (4):
+      Fix test for logind availability
+      Fix hiding of "WD SmartWare" partitions
+      integration-test: Fix for nonexisting /run/udev/rules.d/
+      integration-test: For VFAT, ignore case for label comparison
+
+Thanks to all our contributors.
+
+David Zeuthen,
+August 20, 2013
+
+------------
+udisks 2.1.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 2.0.92:
+
+Alban Browaeys (1):
+      mdraid: Remove spurious argument for the format (which takes none).
+
+David Zeuthen (6):
+      Post-release version bump to 2.0.93
+      Support broken setups where ID_SERIAL is available but ID_SERIAL_SHORT is not
+      Call the right D-Bus completion routines
+      Update translations from Transifex
+      Bump version to 2.1.0 and update date in man pages
+      Update NEWS for release
+
+Martin Pitt (1):
+      integration-test: Update for mkntfs
+
+Matthias Clasen (1):
+      Initialize a local variable
+
+Thanks to all our contributors.
+
+David Zeuthen,
+March 17, 2013
+
+------------
+udisks 2.0.92
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+This is an unstable pre-release leading up to udisks 2.1.0 and newly
+introduced API and ABI may change in incompatible ways before release
+2.1.0. The udisks 2.1.0 release will be backwards compatible will
+earlier releases. See the udisks(8) man page for more information
+about API stability guarantees.
+
+Changes since udisks 2.0.91:
+
+Alban Browaeys (1):
+      build: fix out of source build - set xsltproc path
+
+David Zeuthen (8):
+      Post-release version bump to 2.0.92
+      Fold UDisksPersistentStore class into UDisksCleanup
+      Rename UDisksCleanup to UDisksState
+      Don't leak UDisksLinuxDevice when handling uevent
+      Check for NULL pointer when creating MD-RAID array
+      Use own udev namespace for MD-RAID properties
+      Introduce UDISKS_FILESYSTEM_SHARED=1 to use /media for mounting
+      Update NEWS for release
+
+Marius Vollmer (2):
+      Don't wipe extended partitions.
+      Make sure logical partitions stay within the extended partition.
+
+Thanks to all our contributors.
+
+David Zeuthen,
+February 17, 2013
+
+------------
+udisks 2.0.91
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+This is an unstable pre-release leading up to udisks 2.1.0 and newly
+introduced API and ABI may change in incompatible ways before release
+2.1.0. The udisks 2.1.0 release will be backwards compatible will
+earlier releases. See the udisks(8) man page for more information
+about API stability guarantees.
+
+Changes since udisks 2.0.90:
+
+David Zeuthen (9):
+      Post-release version bump to 2.0.91
+      Don't bail in MD-RAID file monitor event handler
+      Add MDRaid:RequestSyncAction() method
+      Add MDRaid:SyncRate and MDRaid:SyncRemainingTime properties
+      Get the MD-RAID sync rate from the right file
+      Pull new translations from Transifex
+      Use correct polkit action
+      Fix up comments in polkit policy file
+      Update NEWS for release
+
+Evan Nemerson (1):
+      build: fix passing arguments to configure from autogen.sh
+
+Thanks to all our contributors.
+
+David Zeuthen,
+January 7, 2013
+
+------------
+udisks 2.0.90
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+This is an unstable pre-release leading up to udisks 2.1.0 and newly
+introduced API and ABI may change in incompatible ways before release
+2.1.0. The udisks 2.1.0 release will be backwards compatible will
+earlier releases. See the udisks(8) man page for more information
+about API stability guarantees.
+
+Changes since udisks 2.0.0:
+
+David Zeuthen (121):
+      Initial MD-RAID support
+      Add Block:MDRaid and Block:MDRaidMember properties pointing to MDRaid objects
+      Add MDRaid:Size property and utility to get member, raid block devices
+      Add MDRaid:SyncAction and MDRaid:Degraded properties
+      Properly initialize variables
+      Add Start()/Stop() methods to MDRaid D-Bus interface
+      Don't error out with "error stopping" if failing to start a RAID array
+      Set Block:PreferredDevice to /dev/md/$MD_NAME, if available
+      Nuke debug spew
+      Watch for changes on the md/sync_action and md/degraded sysfs files
+      Avoid leaking memory when parsing sysfs attributes with integers
+      Strip trailing white-space from md/sync_action sysfs attr
+      Fix corner-cases for detecting RAID arrays
+      Add MDRaid:SyncCompleted property
+      Skip partitions of MD-RAID devices
+      Make udisks_daemon_util_resolve_link() work when @name contains slashes
+      Add MDRaid:ActiveDevices property
+      UDisksClient: ignore partitions when finding block device for RAID Array
+      Make Block:PreferredDevice work for partitions of RAID arrays
+      Slightly change how the MDRaid:ActiveDevice property works
+      Tweak MDRaid:ActiveDevices some more
+      Add MDRaid.RemoveDevice() method
+      Add @start-degraded option to MDRaid.Start()
+      Express RAID member state as an array of strings, instead of just a string
+      Simplify codepath when removing a RAID disk
+      Add MDRaid:BitmapLocation property
+      Export MDRaid:ChunkSize property
+      Revert "Simplify codepath when removing a RAID disk"
+      Deprecate udisks_client_get_drive_info() with udisks_client_get_object_info()
+      Initialize reference count to 1
+      Skip homehost when calcuating @name member in UDisksObjectInfo for MD-RAID
+      Slightly rework UDisksObjectInfo docs
+      UDisksClient: include RAID level in description of RAID Array
+      Mention that MDRaid:SyncAction is the empty string for arrays w/o redundancy
+      Handle nested arrays
+      Nuke debug spew
+      Set MDRaid:ChunkSize for raid0 but not for raid1
+      Consistently refer to MD-RAID as "Linux RAID" in user-visible strings
+      Post-release version bump to 2.0.1
+      Update my email address
+      Document the release process
+      Explain post-release actions in HACKING
+      Bump version to 2.0.90
+      Start writing NEWS for 2.0.90
+      Merge branch 'master' into wip/mdraid
+      Use @since annotations to mark new D-Bus API available 2.1
+      Use Deprecated and Since annotations to mark deprecated and new API for 2.1
+      Re-include udisks_client_get_drive_info() in API docs
+      Add indexes of deprecated and new-in-2.1 symbols
+      Update gtk-doc sections
+      Include docs for MD-RAID implementation details
+      Update gtk-doc types file
+      Add publish-docs-master target
+      Remove fa_IR translation
+      Update POTFILES.in with new source files
+      Add translations for eu, fa, hr and sq from Transifix
+      Add missing known jobs for ATA Secure erase to Job:Description docs
+      Add missing known jobs for MD-RAID to Job:Description docs
+      UDisksClient: Add reference to Job:Operation to get_job_description() docs
+      Add Manager.MDRaidCreate() method for RAID Array creation
+      Always pass MD devices of the form /dev/mdNNN when assembling RAID arrays
+      Serialize authorization checks
+      Revert "Serialize authorization checks"
+      Add support for option 'no-block' in the Block.Format() method
+      Only use #pragma GCC diagnostic on GCC >= 4.6
+      UDisksObjectInfo: add one_liner field
+      Nuke debug spew
+      Don't count /dev/md* devices with bogus UUIDs as MD-RAID arrays
+      Use the right device file UDisksObjectInfo.one_liner for a partition of a drive
+      Factor out ATA routines
+      Introduce UDisksLinuxDevice as a replacement for GUdevDevice
+      Forgot to add files
+      UDisksLinuxDevice: Don't include the parent_instance member in the docs
+      Add logging statements so it's possible to pin-point probing time
+      Add udisks_ata_identify_get_word() utility function
+      Stop relying on ata_id to set ID_ATA_FEATURE_SET_SMART{,_ENABLED}
+      Stop relying on ata_id to set ID_ATA_FEATURE_SET_{PM,APM,AAM}*
+      Don't set AamVendorRecommendedValue unless AAM is actually supported
+      Stop relying on ata_id to set ID_ATA_FEATURE_SET_SECURITY*
+      Stop relying on ata_id to set ID_ATA_ROTATION_RATE_RPM
+      Use gathered IDENTIFY DATA as primary way of identifying ATA devices
+      Block.Format: add @update-partition-type option
+      Add support for creating UDF filesystems using mkudffs(8)
+      Add a Drive.PowerOff() method
+      Add Drive.Ata.SmartSetEnabled() method
+      Fix up docs
+      UDisksLinuxDevice: add a reprobe_sync() method
+      Update SMART data after enabling SMART
+      Add missing since tag to newly added Drive.Ata.SmartSetEnabled() method
+      Fix grammar
+      UDisksObjectInfo: Change format of one_liner
+      Make UDisksObjectInfo a GObject and hide its struct
+      Update what symbolic icons to use
+      Ensure HintAuto is FALSE for PC floppy drives
+      Add Block:Id property
+      Always use .modify-device for devices set up by the calling user
+      Keep track of MD RAID arrays started/created via udisks
+      Fix thinko in routine to find a free MD RAID device
+      Allow MDRaid.RemoveDevice() without authz if the caller started the array
+      Use 'drive-multidisk' instead of 'gdu-enclosure' for RAID arrays
+      Mention RAID split-brain syndrome
+      Add new MDRaid.AddDevice() method
+      Add MDRaid.SetBitmapLocation() method
+      Use --scan and --uuid when starting a MD-RAID device
+      Use setup_by_user() in more places
+      UDisksObjectInfo: Add get_sort_key() method
+      UDisksObjectInfo: fix memory leak
+      Add support for setting the symbolic icon for a device
+      Add support for querying and configuring the Write Cache for ATA devices
+      docs: Fix up description of WriteCacheEnabled and document valid values
+      Mention the right ATA subcommand for the ata-write-cache-enabled key
+      Make sure drive properties are updated after applying configuration
+      Add UDisksClient.queue_changed()
+      Fix docs for UDisksClient.queue_changed()
+      Add support for UDISKS_CAN_POWER_OFF udev property
+      Introduce new Job:Bytes and Job:Rate properties
+      Use both WWN and serials for VPD, if available
+      Remove MDRaid:CanStart{,Degraded} properties
+      Pull latest translations from Transifex
+      Add new translations from Transifix
+      Update NEWS for release
+
+Thanks to all our contributors.
+
+David Zeuthen,
+December 18, 2012
+
+------------
+udisks 2.0.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 1.99.0:
+
+Claudio Saavedra (1):
+      configure.ac: raise gudev dependency
+
+Colin Walters (1):
+      Add --disable-man configure option
+
+David Zeuthen (36):
+      Post-release version bump to 1.100.0
+      Update list of recovery/system partitions
+      Add support for creating exFAT filesystems and changing exFAT labels
+      Add textual descriptions for IMSM Raid members
+      Use all-caps for RAID
+      Only do the isohybrid hack for the first partition
+      Don't complain about missing /etc/crypttab file
+      Don't complain about missing /etc/fstab file
+      Make it work without requiring the kernel to be CONFIG_SWAP=y
+      Mention the right file when complaing about /proc/swaps
+      Fix glaringly wrong documentation for Filesystem.Mount()
+      Move bash completion script into /usr/share/bash-completion/completions
+      Don't require that users define UDISKS_API_IS_SUBJECT_TO_CHANGE
+      Bump version number to 2.0.0
+      docs: only reference hdparm(8) at the end of the paragraph
+      docs: Remove "(available online here)" comment in udisks(8) man page
+      docs: Link to http://www.freedesktop.org/wiki/Software/dbus in udisks(8)
+      docs: update man page dates to "October 2012"
+      docs: Document udisksctl(1)'s info command
+      docs: Document udisksctl(1)'s status command
+      docs: add some more meta information to the man pages (version, source, manual)
+      docs: use CDATA for email addresses to avoid them being mangled
+      Fix docs for udisks_daemon_util_on_same_seat()
+      Fix up docs for udisks_daemon_util_file_set_contents()
+      Add docs for udisks_base_job_get_auto_estimate()
+      Add docs for udisks_base_job_set_auto_estimate()
+      Fix docs for udisks_daemon_launch_simple_job()
+      Fix docs for udisks_daemon_launch_spawned_job()
+      Fix docs for udisks_daemon_launch_spawned_job_sync()
+      Fix docs for udisks_daemon_launch_threaded_job()
+      Fix docs for udisks_daemon_util_file_set_contents()
+      Remove udisks_daemon_util_on_other_seat() from sections.txt
+      Add docs for udisks_linux_drive_ata_apply_configuration()
+      Add docs for udisks_linux_drive_ata_secure_erase_sync()
+      Update translations from Transifex
+      Update NEWS for release
+
+Martin Pitt (14):
+      integration-test: Consistent mount path validation
+      test_polkitd.py: Add --replace option
+      integration-test: Create a read-only fake CD-ROM device
+      integration-test: Add test case for mounting removable device
+      integration-test: Robustify test_luks_forced_removal()
+      Add workaround annotation for udisks_client_get_block_for_dev()
+      integration-test: Fix occasional failure of test_luks_forced_removal
+      Bug 51063 — Mount vfat with "flush" option
+      integration-test: Check mounting of read-only devices
+      integration-test: Split out and fix daemon startup
+      integration-tests: Check handling of existing mount points
+      integration-test: Fix start_daemon() for restarts
+      Enable large file support
+      integration-test: Skip r/o mount checks for XFS and reiserfs
+
+Vincent Untz (1):
+      Fix same seat detection if built with systemd, but not booted with it
+
+Thanks to all our contributors.
+
+David Zeuthen,
+October 2, 2012
+
+------------
+udisks 1.99.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 1.98.0:
+
+Ayan George (1):
+      Mark Realtek rts5229 based card readers as flash drives.
+
+David Zeuthen (39):
+      Post-release version bump to 1.99.0
+      Catch up with latest polkit guidance
+      Add Documentation key to systemd unit file
+      Add Block.OpenForBenchmark() method
+      Add drive configuration interfaces and configuration files
+      Don't require auth for Standby'ing non-system drives on own seat
+      Add DriveAta.PmWakeup() method
+      Default to mode 0600 for drive config files
+      Drop the 'drive-' prefix for drive configuration files
+      Move Drive:Configuration property up a bit
+      Add erase parameter to Block.Format() to zero out device before formatting
+      Bug 51439 – udisks should hide lvm PVs
+      Set Job:ExpectedEndTime when erasing a device
+      Issue BLKRRPART if wiping a device with an existing partition table
+      Init interface proxies on hotplug too
+      Add ATA Secure Erase functionality
+      Add support for VMWare filesystem types and GPT partition types
+      Don't use g_propagate_error() with a NULL GError
+      Don't report progress for ATA Secure Erase when expected time is >508 minu
+      When setting up LUKS, erase the cleartext device rather than the cryptotex
+      Inhibit system shutdown, sleep and idle when formatting and erasing device
+      Don't return uninitialized variable on inhibitor error path
+      Fix some uninitialized variable warnings
+      Add more compiler warnings
+      Disable -Wformat-nonliteral for a tiny block of code
+      Fix typo
+      Update compiler warning flags
+      Black-list seemingly invalid WWN for SAMSUNG SP1604N hard disks
+      client: Add Apple Core Storage GPT partition type
+      Ignore "Apple Boot" GPT partitions
+      Add a Block.Rescan() method
+      Add "Linux Filesystem" GPT partition type
+      Use ATA PASS-THROUGH (16) command instead ATA PASS-THROUGH (12) command
+      Create cleanup object before coldplugging
+      Ignore non-Linux software on SanDisk Cruzer
+      Update /run/udisks2/loop file before setting up the loop device
+      Update translations from Transifex
+      Update docs
+      Update NEWS for release
+
+Martin Pitt (9):
+      integration-test: Fix existance test of local state dirs
+      integration-test: Explicit polkit tests
+      integration-test: Check polkit denial
+      integration-test: Fix Polkit.test_internal_fs_nobody test case
+      Ship integration-test in the tarball
+      integration-test: Fix parsing of daemon path in system mode
+      integration-test: Use mock polkitd
+      integration-test: Use Gio.TestDBus() again
+      integration-test: More robust syncing
+
+Thanks to all our contributors.
+
+David Zeuthen,
+July 27, 2012
+
+------------
+udisks 1.98.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 1.97.0:
+
+David Zeuthen (15):
+      Post-release version bump to 1.98.0
+      udisksctl: add 'smart-simulate' verb
+      udisksctl: describe 'loop-setup' and 'loop-delete' verbs
+      Call it "Disk Manager" and reword some sections of udisks(8) man page
+      Bug 49842 – Unhandled rootfs on bind mount
+      Drive: Refuse to eject drives that appear to be in use
+      Add some documentation about polkit variables
+      Rename current polkit variables and also add some new ones
+      Move table with polkit variables to the "Authorization Checks" chapter
+      If a block device has ID_PATH set, consider it to be a drive
+      Use "device" instead of "block_device" in the polkit variables
+      Add id.* and partition.* polkit variables
+      Rework part of the polkit variable documentation
+      udisksd: work if polkitd is not available
+      Update NEWS for release
+
+Martin Pitt (8):
+      integration tests: Update expected mount points
+      integration tests: Suspend gvfs-udisks2-volume-monitor
+      integration-test: Update expected exception names
+      integration-test: Mitigate race after mounting
+      Wait for the correct device after formatting
+      integration-test: Update expected Luks mount points
+      integration-test: Quiesce wipefs output
+      integration-test: Run on temporary local DBus
+
+Thanks to all our contributors.
+
+David Zeuthen,
+June 7, 2012
+
+------------
+udisks 1.97.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 1.96.0:
+
+ David Zeuthen (22):
+       Post-release version bump to 1.97.0
+       Add loop.autoclear option to Filesystem.Mount() method
+       Also check for "target is busy" when checking umount(8) output
+       Loop: add :Autoclear property and SetAutoclear() method
+       Don't assign the Loop D-Bus interface to partitions of a loop device
+       Fix up how we check if use is authorized for Loop.SetAutoclear()
+       Manager: Add new 'no-part-scan' option in LoopSetup() method
+       Manager: Add locking around LoopSetup()
+       Warn if /run/udisks2/loop has an existing entry when setting up a new loop device
+       UDisksClient: add get_loop_for_block() convenience method
+       Loop: add SetupByUID property
+       Add work-around to show FS on CDs/USB sticks created using isohybrid
+       Daemon: Add new find_block_*() convenience methods
+       Manager: wait for partitions to appear before returning in LoopSetup()
+       UDisksDaemon: add get_objects() method
+       UDisksDaemon: rework wait_for_object_sync() method
+       Revert "Add loop.autoclear option to Filesystem.Mount() method"
+       Update path to mounted-fs file in documentation
+       UDisksCleanup: Remove stale entries when adding new ones
+       Simplify loop device checking
+       Loop: try writing to loop/autoclear sysfs file before LO_{GET,SET}_STATUS
+       Update NEWS for release
+
+Thanks to all our contributors.
+
+David Zeuthen,
+May 9, 2012
+
+------------
+udisks 1.96.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 1.95.0:
+
+ David Zeuthen (3):
+       Post-release version bump to 1.96.0
+       Actually link with libsystemd-login
+       Update NEWS for release
+
+Thanks to all our contributors.
+
+David Zeuthen,
+April 30, 2012
+
+------------
+udisks 1.95.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+Changes since udisks 1.94.0:
+
+ David Zeuthen (32):
+       Post-release version bump to 1.95.0
+       Mention udisks audience (and non-audience) in README
+       Update link to GVolumeMonitor docs
+       Use libacl library instead of setfacl(1)
+       Work around missing serial/wwn on VMware hard disks
+       Add multi-seat support
+       Add versioning macros
+       Make on_same_seat() also work for drive objects
+       Fix reference count mistake in previous commit
+       Interpret ID_SEAT=all to mean that a device is available on all seats
+       Add section about polkit actions to the docs
+       Fix 'make distcheck'
+       Rearrange docs so man pages come first
+       Move audience blurb from README to the udisks(8) man page
+       Move API STABILITY remarks to udisks(8) man page
+       udisksctl: Make man page point to API STABILITY section of udisks(8) man page
+       Use upper-case for all man page sections
+       Remove section about ID_DRIVE* properties
+       Add missing "on" in udisks(8) man page
+       Fix typos in policy file
+       Add separate polkit actions for ejecting media
+       Fix typo
+       Reword parts of the udisks(8) man page
+       Add a bunch of translation comments
+       Add some more translation context and strings
+       Make $(udisks2.device) in authentication messages include the vendor/model
+       Remove danish translation
+       Add Transifex config and pull latest translations
+       Remove support for ID_SEAT=all
+       Remove unused .filesystem-unmount-others-shared polkit action
+       Minor doc fixes
+       Update NEWS for release
+
+Thanks to all our contributors.
+
+David Zeuthen,
+April 30, 2012
+
+------------
+udisks 1.94.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices. This is the first release of
+the new 2.x series. This release is parallel-installable with udisks
+1.x.
+
+Changes since udisks 1.93.0:
+
+ David Zeuthen (10):
+       Post-release version bump to 1.94.0
+       Pass --readonly to cryptsetup(8) if device to unlock is read-only
+       Fix how we sign the tarballs
+       Update docs
+       Clarify docs for Filesystem.Mount() and Filesystem.Unmount()
+       Change some D-Bus types from bytestring ('ay') to UTF8 ('s')
+       Convert some g_warning() uses to udisks_warning()
+       Add udev rules for identifying devices which should not be shown
+       Make escaping work properly with non-ASCII UTF-8 strings
+       Update NEWS for release
+
+ Edward Sheldrake (1):
+       Fix unmounting large disks when not asked to
+
+Thanks to all our contributors.
+
+David Zeuthen,
+April 10, 2012
+
+------------
+udisks 1.93.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices. This is the first release of
+the new 2.x series. This release is parallel-installable with udisks
+1.x.
+
+Changes since udisks 1.92.0:
+
+ David Zeuthen (13):
+       Post-release version bump to 1.93.0
+       Don't include sys/acl.h - it's not needed
+       Add a section about /org/freedesktop/UDisks2/block_devices/* objects
+       Reword the section about block device objects a little bit
+       Add a section about /org/freedesktop/UDisks2/drives/* objects
+       Add a section about /org/freedesktop/UDisks2/jobs/* objects
+       Run gtkdoc-rebase to fix up links for GLib types
+       Force MediaRemovable to TRUE for e.g. SD cards using the mmc layer
+       Ensure that whatever we pass as -t to mount(8) is in a whitelist
+       Ensure that the loop file name we pass to the kernel is always NUL-termina
+       Properly escape all device files
+       Tweak the docs some
+       Update NEWS for release
+
+Thanks to all our contributors.
+
+David Zeuthen,
+Mar 5, 2012
+
+------------
+udisks 1.92.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices. This is the first release of
+the new 2.x series. This release is parallel-installable with udisks
+1.x.
+
+Changes since udisks 1.91.0:
+
+ Colin Walters (1):
+       client: Fix bit shifts of flags on 32 bit
+
+ David Zeuthen (6):
+       Post-release version bump to version 1.92.0
+       Avoid using $XDG_RUNTIME_DIR/media for now
+       Don't free object twice when deleting a loop device
+       Use /run/media/$USER for mounting
+       Move to /usr-only setup and get rid of hardcoded paths to /lib and sbin
+       Update NEWS for release
+
+
+Thanks to all our contributors.
+
+David Zeuthen,
+Feb 23, 2012
+
+------------
+udisks 1.91.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices. This is the first release of
+the new 2.x series. This release is parallel-installable with udisks
+1.x.
+
+Changes since udisks 1.90.0:
+
+ Benedikt Morbach (1):
+       Install a systemd service file if systemd is used
+
+ David Zeuthen (27):
+       Post-release version bump to version 1.91.0
+       Ensure PATH is set
+       Fix use of memset(3)
+       Rename systemd service to udisks2 and fix a couple of typos
+       Add 2012 to copyright years
+       Remove copyright and license from docs and add link to online docs
+       Fix up doc page
+       Use org.freedesktop.UDisks2.* for errors, not org.freedesktop.UDisks.*
+       Also update the error name in D-Bus docs
+       Move polkit .policy file from policy/ to data/
+       Add Danish translation
+       Add Transifex URL to README file
+       Add targets for release management
+       Use gobject-introspection Makefile
+       Update POTFILES.in
+       Fix 'make distcheck'
+       For mount options, switch from comment=udisks to x-udisks
+       Prefer mounting in /run/user/$USER/media instead of /media
+       With /media and /run on tmfs, switch to temporary store for mounted-fs
+       udisksctl: nuke PORT column in output of 'status' verb
+       udisksctl: sort the drives using Drive:SortKey for 'status' verb
+       Make sure that Drive:SortKey sorts e.g. sdz before sdaa
+       Do coldplug for block devices twice
+       Use g_dbus_interface_dup_object() and check return value
+       Shut up valgrind complaing about LOOP_GET_STATUS64 ioctl
+       Fix a couple of uninitialized warnings and simplify SMART self-test handling
+       Update NEWS for release
+
+ Martin Pitt (1):
+       Fix .gir make dependencies
+
+
+Thanks to all our contributors.
+
+David Zeuthen,
+Feb 6, 2012
+
+------------
+udisks 1.90.0
+------------
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices. This is the first release of
+the new 2.x series. This release is parallel-installable with udisks
+1.x.
+
+Thanks to all our contributors.
+
+David Zeuthen,
+Jan 20, 2012
+

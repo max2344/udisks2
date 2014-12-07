@@ -1,0 +1,344 @@
+<!-- ##### SECTION Title ##### -->
+UDisksEncrypted
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksEncrypted ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksEncrypted::handle-change-passphrase ##### -->
+<para>
+
+</para>
+
+@udisksencrypted: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksEncrypted::handle-lock ##### -->
+<para>
+
+</para>
+
+@udisksencrypted: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksEncrypted::handle-unlock ##### -->
+<para>
+
+</para>
+
+@udisksencrypted: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### STRUCT UDisksEncryptedIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@handle_change_passphrase: 
+@handle_lock: 
+@handle_unlock: 
+
+<!-- ##### FUNCTION udisks_encrypted_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_override_properties ##### -->
+<para>
+
+</para>
+
+@klass: 
+@property_id_begin: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_unlock ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_passphrase: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_unlock_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@out_cleartext_device: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_unlock_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_passphrase: 
+@arg_options: 
+@out_cleartext_device: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_complete_unlock ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+@cleartext_device: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_lock ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_lock_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_lock_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_complete_lock ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_change_passphrase ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_passphrase: 
+@arg_new_passphrase: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_change_passphrase_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_call_change_passphrase_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_passphrase: 
+@arg_new_passphrase: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_complete_change_passphrase ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### STRUCT UDisksEncryptedProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksEncryptedProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_encrypted_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_proxy_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_proxy_new_sync ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_proxy_new_for_bus ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_proxy_new_for_bus_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_encrypted_proxy_new_for_bus_sync ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksEncryptedSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksEncryptedSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_encrypted_skeleton_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

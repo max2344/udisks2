@@ -1,0 +1,1148 @@
+<!-- ##### SECTION Title ##### -->
+UDisksDrive
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksDrive ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksDrive::handle-eject ##### -->
+<para>
+
+</para>
+
+@udisksdrive: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksDrive::handle-power-off ##### -->
+<para>
+
+</para>
+
+@udisksdrive: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksDrive::handle-set-configuration ##### -->
+<para>
+
+</para>
+
+@udisksdrive: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### ARG UDisksDrive:can-power-off ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:configuration ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:connection-bus ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:ejectable ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:id ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:media ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:media-available ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:media-change-detected ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:media-compatibility ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:media-removable ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:model ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:optical ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:optical-blank ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:optical-num-audio-tracks ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:optical-num-data-tracks ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:optical-num-sessions ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:optical-num-tracks ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:removable ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:revision ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:rotation-rate ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:seat ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:serial ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:sibling-id ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:size ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:sort-key ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:time-detected ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:time-media-detected ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:vendor ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDrive:wwn ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT UDisksDriveIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@handle_eject: 
+@handle_set_configuration: 
+@get_configuration: 
+@get_connection_bus: 
+@get_ejectable: 
+@get_id: 
+@get_media: 
+@get_media_available: 
+@get_media_change_detected: 
+@get_media_compatibility: 
+@get_media_removable: 
+@get_model: 
+@get_optical: 
+@get_optical_blank: 
+@get_optical_num_audio_tracks: 
+@get_optical_num_data_tracks: 
+@get_optical_num_sessions: 
+@get_optical_num_tracks: 
+@get_removable: 
+@get_revision: 
+@get_rotation_rate: 
+@get_seat: 
+@get_serial: 
+@get_size: 
+@get_sort_key: 
+@get_time_detected: 
+@get_time_media_detected: 
+@get_vendor: 
+@get_wwn: 
+@handle_power_off: 
+@get_can_power_off: 
+@get_sibling_id: 
+
+<!-- ##### FUNCTION udisks_drive_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_override_properties ##### -->
+<para>
+
+</para>
+
+@klass: 
+@property_id_begin: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_eject ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_eject_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_eject_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_complete_eject ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_set_configuration ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_value: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_set_configuration_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_set_configuration_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_value: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_complete_set_configuration ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_power_off ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_power_off_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_call_power_off_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_complete_power_off ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_connection_bus ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_removable ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_ejectable ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_seat ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_media ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_media_compatibility ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_media_removable ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_media_available ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_media_change_detected ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_time_detected ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_time_media_detected ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_size ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_optical ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_optical_blank ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_optical_num_tracks ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_optical_num_audio_tracks ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_optical_num_data_tracks ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_optical_num_sessions ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_model ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_revision ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_rotation_rate ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_serial ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_vendor ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_wwn ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_sort_key ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_configuration ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_can_power_off ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_get_sibling_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_connection_bus ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_seat ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_media ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_media_compatibility ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_model ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_revision ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_serial ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_vendor ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_wwn ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_sort_key ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_configuration ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_dup_sibling_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_connection_bus ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_removable ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_ejectable ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_seat ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_media ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_media_compatibility ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_media_removable ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_media_available ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_media_change_detected ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_time_detected ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_time_media_detected ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_size ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_optical ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_optical_blank ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_optical_num_tracks ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_optical_num_audio_tracks ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_optical_num_data_tracks ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_optical_num_sessions ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_model ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_revision ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_rotation_rate ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_serial ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_vendor ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_wwn ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_sort_key ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_configuration ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_can_power_off ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_drive_set_sibling_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### STRUCT UDisksDriveProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksDriveProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_drive_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_drive_proxy_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_proxy_new_sync ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_proxy_new_for_bus ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_drive_proxy_new_for_bus_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_drive_proxy_new_for_bus_sync ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksDriveSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksDriveSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_drive_skeleton_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

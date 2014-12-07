@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: UDisksLinuxDriveObject</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-daemon-drives.html" title="Drives on Linux">
+<link rel="prev" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta">
+<link rel="next" href="ref-daemon-mdraid.html" title="Linux RAID">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#UDisksLinuxDriveObject.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#UDisksLinuxDriveObject.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces"> <span class="dim">|</span> 
+                  <a href="#UDisksLinuxDriveObject.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties"> <span class="dim">|</span> 
+                  <a href="#UDisksLinuxDriveObject.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-daemon-drives.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="UDisksLinuxDriveAta.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ref-daemon-mdraid.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="UDisksLinuxDriveObject"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="UDisksLinuxDriveObject.top_of_page"></a>UDisksLinuxDriveObject</span></h2>
+<p>UDisksLinuxDriveObject — Object representing a drive on Linux</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="returnvalue">UDisksLinuxDriveObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-new" title="udisks_linux_drive_object_new ()">udisks_linux_drive_object_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-uevent" title="udisks_linux_drive_object_uevent ()">udisks_linux_drive_object_uevent</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="returnvalue">UDisksDaemon</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-get-daemon" title="udisks_linux_drive_object_get_daemon ()">udisks_linux_drive_object_get_daemon</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksLinuxBlockObject.html" title="UDisksLinuxBlockObject"><span class="returnvalue">UDisksLinuxBlockObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-get-block" title="udisks_linux_drive_object_get_block ()">udisks_linux_drive_object_get_block</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="returnvalue">UDisksLinuxDevice</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-get-device" title="udisks_linux_drive_object_get_device ()">udisks_linux_drive_object_get_device</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-get-devices" title="udisks_linux_drive_object_get_devices ()">udisks_linux_drive_object_get_devices</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-get-siblings" title="udisks_linux_drive_object_get_siblings ()">udisks_linux_drive_object_get_siblings</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-housekeeping" title="udisks_linux_drive_object_housekeeping ()">udisks_linux_drive_object_housekeeping</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveObject.html#udisks-linux-drive-object-is-not-in-use" title="udisks_linux_drive_object_is_not_in_use ()">udisks_linux_drive_object_is_not_in_use</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *</td>
+<td class="property_name"><a class="link" href="UDisksLinuxDriveObject.html#UDisksLinuxDriveObject--daemon" title="The “daemon” property">daemon</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> *</td>
+<td class="property_name"><a class="link" href="UDisksLinuxDriveObject.html#UDisksLinuxDriveObject--device" title="The “device” property">device</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="UDisksLinuxDriveObject.html#UDisksLinuxDriveObject-struct" title="UDisksLinuxDriveObject">UDisksLinuxDriveObject</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> <a href="http://library.gnome.org/devel/gio/unstable/GDBusObjectSkeleton.html">GDBusObjectSkeleton</a>
+        <span class="lineart">╰──</span> <a class="link" href="UDisksObject.html#UDisksObjectSkeleton">UDisksObjectSkeleton</a>
+            <span class="lineart">╰──</span> UDisksLinuxDriveObject
+</pre>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+UDisksLinuxDriveObject implements
+ <a href="http://library.gnome.org/devel/gio/unstable/GDBusObject.html">GDBusObject</a> and  <a class="link" href="UDisksObject.html" title="UDisksObject">UDisksObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.description"></a><h2>Description</h2>
+<p>Object corresponding to a drive on Linux.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-new"></a><h3>udisks_linux_drive_object_new ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="returnvalue">UDisksLinuxDriveObject</span></a> *
+udisks_linux_drive_object_new (<em class="parameter"><code><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *daemon</code></em>,
+                               <em class="parameter"><code><a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> *device</code></em>);</pre>
+<p>Create a new drive object.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>daemon</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> for the sysfs block device.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.2.6"></a><h4>Returns</h4>
+<p> A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> object or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>device</code></em>
+does not represent a drive. Free with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-uevent"></a><h3>udisks_linux_drive_object_uevent ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_linux_drive_object_uevent (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>,
+                                  <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action</code></em>,
+                                  <em class="parameter"><code><a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> *device</code></em>);</pre>
+<p>Updates all information on interfaces on <em class="parameter"><code>drive</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>Uevent action or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> device object or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the device hasn't changed.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-get-daemon"></a><h3>udisks_linux_drive_object_get_daemon ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="returnvalue">UDisksDaemon</span></a> *
+udisks_linux_drive_object_get_daemon (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>);</pre>
+<p>Gets the daemon used by <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.4.6"></a><h4>Returns</h4>
+<p> A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>. Do not free, the object is owned by <em class="parameter"><code>object</code></em>
+.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-get-block"></a><h3>udisks_linux_drive_object_get_block ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksLinuxBlockObject.html" title="UDisksLinuxBlockObject"><span class="returnvalue">UDisksLinuxBlockObject</span></a> *
+udisks_linux_drive_object_get_block (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>,
+                                     <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> get_hw</code></em>);</pre>
+<p>Gets a <a class="link" href="UDisksLinuxBlockObject.html" title="UDisksLinuxBlockObject"><span class="type">UDisksLinuxBlockObject</span></a> representing a block device associated with <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>get_hw</p></td>
+<td class="parameter_description"><p>If the drive is multipath, set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to get a path device instead of the multipath device.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.5.6"></a><h4>Returns</h4>
+<p> A <a class="link" href="UDisksLinuxBlockObject.html" title="UDisksLinuxBlockObject"><span class="type">UDisksLinuxBlockObject</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. The returned object
+must be freed with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-get-device"></a><h3>udisks_linux_drive_object_get_device ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="returnvalue">UDisksLinuxDevice</span></a> *
+udisks_linux_drive_object_get_device (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>,
+                                      <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> get_hw</code></em>);</pre>
+<p>Gets one of the <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> object associated with <em class="parameter"><code>object</code></em>
+.</p>
+<p>If <em class="parameter"><code>get_hw</code></em>
+ is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> and <em class="parameter"><code>object</code></em>
+ represents a multipath device then
+one of the paths is returned rather than the multipath device. This
+is useful if you e.g. need to configure the physical hardware.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.6.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>get_hw</p></td>
+<td class="parameter_description"><p>If the drive is multipath, set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to get a path device instead of the multipath device.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.6.7"></a><h4>Returns</h4>
+<p> A <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. The returned object must be freed
+with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-get-devices"></a><h3>udisks_linux_drive_object_get_devices ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+udisks_linux_drive_object_get_devices (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>);</pre>
+<p>Gets the current <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> objects associated with <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.7.6"></a><h4>Returns</h4>
+<p> A list of <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> objects. Free each element with
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>, then free the list with <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#g-list-free"><code class="function">g_list_free()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-get-siblings"></a><h3>udisks_linux_drive_object_get_siblings ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+udisks_linux_drive_object_get_siblings
+                               (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>);</pre>
+<p>Gets the siblings for <em class="parameter"><code>object</code></em>
+, if any.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.8.6"></a><h4>Returns</h4>
+<p> A list of <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>
+instances. The returned list should be freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#g-list-free"><code class="function">g_list_free()</code></a> after each element has been
+freed with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> UDisksLinuxDriveObject]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-housekeeping"></a><h3>udisks_linux_drive_object_housekeeping ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_linux_drive_object_housekeeping
+                               (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> secs_since_last</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Called periodically (every ten minutes or so) to perform
+housekeeping tasks such as refreshing ATA SMART data.</p>
+<p>The function runs in a dedicated thread and is allowed to perform
+blocking I/O.</p>
+<p>Long-running tasks should periodically check <em class="parameter"><code>cancellable</code></em>
+ to see if
+they have been cancelled.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.9.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>secs_since_last</p></td>
+<td class="parameter_description"><p>Number of seconds sincex the last housekeeping or 0 if the first housekeeping ever.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><code class="literal">GCancellable</code></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.9.8"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-object-is-not-in-use"></a><h3>udisks_linux_drive_object_is_not_in_use ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_linux_drive_object_is_not_in_use
+                               (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Checks if the drive represented by <em class="parameter"><code>object</code></em>
+ is in use and sets
+<em class="parameter"><code>error</code></em>
+ if so.</p>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.4.9.10.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>object</code></em>
+is not is use, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UDisksLinuxDriveObject-struct"></a><h3>UDisksLinuxDriveObject</h3>
+<pre class="programlisting">typedef struct _UDisksLinuxDriveObject UDisksLinuxDriveObject;</pre>
+<p>The <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> structure contains only private data and
+should only be accessed using the provided API.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveObject.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="UDisksLinuxDriveObject--daemon"></a><h3>The <code class="literal">“daemon”</code> property</h3>
+<pre class="programlisting">  “daemon”                   <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *</pre>
+<p>The <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> the object is for.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksLinuxDriveObject--device"></a><h3>The <code class="literal">“device”</code> property</h3>
+<pre class="programlisting">  “device”                   <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> *</pre>
+<p>The <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> for the object. Connect to the <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-notify"><span class="type">“notify”</span></a>
+signal to get notified whenever this is updated.</p>
+<p>Flags: Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

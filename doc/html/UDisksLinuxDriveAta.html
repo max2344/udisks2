@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: UDisksLinuxDriveAta</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-daemon-drives.html" title="Drives on Linux">
+<link rel="prev" href="UDisksLinuxDrive.html" title="UDisksLinuxDrive">
+<link rel="next" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#UDisksLinuxDriveAta.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#UDisksLinuxDriveAta.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces"> <span class="dim">|</span> 
+                  <a href="#UDisksLinuxDriveAta.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-daemon-drives.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="UDisksLinuxDrive.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="UDisksLinuxDriveObject.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="UDisksLinuxDriveAta"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="UDisksLinuxDriveAta.top_of_page"></a>UDisksLinuxDriveAta</span></h2>
+<p>UDisksLinuxDriveAta — Linux implementation of <a class="link" href="UDisksDriveAta.html" title="UDisksDriveAta"><span class="type">UDisksDriveAta</span></a></p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveAta.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksDriveAta.html" title="UDisksDriveAta"><span class="returnvalue">UDisksDriveAta</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveAta.html#udisks-linux-drive-ata-new" title="udisks_linux_drive_ata_new ()">udisks_linux_drive_ata_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveAta.html#udisks-linux-drive-ata-update" title="udisks_linux_drive_ata_update ()">udisks_linux_drive_ata_update</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveAta.html#udisks-linux-drive-ata-refresh-smart-sync" title="udisks_linux_drive_ata_refresh_smart_sync ()">udisks_linux_drive_ata_refresh_smart_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveAta.html#udisks-linux-drive-ata-smart-selftest-sync" title="udisks_linux_drive_ata_smart_selftest_sync ()">udisks_linux_drive_ata_smart_selftest_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveAta.html#udisks-linux-drive-ata-apply-configuration" title="udisks_linux_drive_ata_apply_configuration ()">udisks_linux_drive_ata_apply_configuration</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksLinuxDriveAta.html#udisks-linux-drive-ata-secure-erase-sync" title="udisks_linux_drive_ata_secure_erase_sync ()">udisks_linux_drive_ata_secure_erase_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveAta.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="UDisksLinuxDriveAta.html#UDisksLinuxDriveAta-struct" title="UDisksLinuxDriveAta">UDisksLinuxDriveAta</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveAta.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> <a href="http://library.gnome.org/devel/gio/unstable/GDBusInterfaceSkeleton.html">GDBusInterfaceSkeleton</a>
+        <span class="lineart">╰──</span> <a class="link" href="UDisksDriveAta.html#UDisksDriveAtaSkeleton">UDisksDriveAtaSkeleton</a>
+            <span class="lineart">╰──</span> UDisksLinuxDriveAta
+</pre>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveAta.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+UDisksLinuxDriveAta implements
+ <a href="http://library.gnome.org/devel/gio/unstable/GDBusInterface.html">GDBusInterface</a> and  <a class="link" href="UDisksDriveAta.html" title="UDisksDriveAta">UDisksDriveAta</a>.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveAta.description"></a><h2>Description</h2>
+<p>This type provides an implementation of the <a class="link" href="UDisksDriveAta.html" title="UDisksDriveAta"><span class="type">UDisksDriveAta</span></a>
+interface on Linux.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveAta.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="udisks-linux-drive-ata-new"></a><h3>udisks_linux_drive_ata_new ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksDriveAta.html" title="UDisksDriveAta"><span class="returnvalue">UDisksDriveAta</span></a> *
+udisks_linux_drive_ata_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a> instance.</p>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.2.5"></a><h4>Returns</h4>
+<p> A new <a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a>. Free with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-ata-update"></a><h3>udisks_linux_drive_ata_update ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_linux_drive_ata_update (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a> *drive</code></em>,
+                               <em class="parameter"><code><a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> *object</code></em>);</pre>
+<p>Updates the interface.</p>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>drive</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The enclosing <a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> instance.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.3.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if configuration has changed, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-ata-refresh-smart-sync"></a><h3>udisks_linux_drive_ata_refresh_smart_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_linux_drive_ata_refresh_smart_sync
+                               (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a> *drive</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> nowakeup</code></em>,
+                                <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *simulate_path</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Synchronously refreshes ATA S.M.A.R.T. data on <em class="parameter"><code>drive</code></em>
+ using one of
+the physical drives associated with it. The calling thread is
+blocked until the data has been obtained.</p>
+<p>If <em class="parameter"><code>nowake</code></em>
+ is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> and the disk is in a sleep state this fails
+with <a class="link" href="udisks2-UDisksError.html#UDISKS-ERROR-WOULD-WAKEUP:CAPS"><code class="literal">UDISKS_ERROR_WOULD_WAKEUP</code></a>.</p>
+<p>This may only be called if <em class="parameter"><code>drive</code></em>
+ has been associated with a
+<a class="link" href="UDisksLinuxDriveObject.html" title="UDisksLinuxDriveObject"><span class="type">UDisksLinuxDriveObject</span></a> instance.</p>
+<p>This method may be called from any thread.</p>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.4.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>drive</p></td>
+<td class="parameter_description"><p>The <a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a> to refresh.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nowakeup</p></td>
+<td class="parameter_description"><p>If <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, will not wake up the disk if asleep.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>simulate_path</p></td>
+<td class="parameter_description"><p>If not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the path of a file with a libatasmart blob to use.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.4.9"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-ata-smart-selftest-sync"></a><h3>udisks_linux_drive_ata_smart_selftest_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_linux_drive_ata_smart_selftest_sync
+                               (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a> *drive</code></em>,
+                                <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Starts (or aborts) a SMART self-test on <em class="parameter"><code>drive</code></em>
+. Valid values for
+<em class="parameter"><code>type</code></em>
+ includes 'short', 'extended', 'conveyance' and 'abort'.</p>
+<p>The calling thread is blocked while sending the command to the
+drive but will return immediately after the drive acknowledges the
+command.</p>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>drive</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The type of selftest to run.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> that can be used to cancel the operation or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.5.7"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeed, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-ata-apply-configuration"></a><h3>udisks_linux_drive_ata_apply_configuration ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_linux_drive_ata_apply_configuration
+                               (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a> *drive</code></em>,
+                                <em class="parameter"><code><a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a> *device</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *configuration</code></em>);</pre>
+<p>Spawns a thread to apply <em class="parameter"><code>configuration</code></em>
+ to <em class="parameter"><code>drive</code></em>
+, if any. Does not
+wait for the thread to terminate.</p>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>drive</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDevice.html" title="UDisksLinuxDevice"><span class="type">UDisksLinuxDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>configuration</p></td>
+<td class="parameter_description"><p>The configuration to apply.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-linux-drive-ata-secure-erase-sync"></a><h3>udisks_linux_drive_ata_secure_erase_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_linux_drive_ata_secure_erase_sync
+                               (<em class="parameter"><code><a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a> *drive</code></em>,
+                                <em class="parameter"><code><span class="type">uid_t</span> caller_uid</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> enhanced</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Performs an ATA Secure Erase opeartion. Blocks the calling thread until the operation completes.</p>
+<p>This operation may take a very long time (hours) to complete.</p>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.7.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>drive</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>caller_uid</p></td>
+<td class="parameter_description"><p>The unix user if of the caller requesting the operation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enhanced</p></td>
+<td class="parameter_description"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to use the enhanced version of the ATA secure erase command.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.6.3.8.7.7"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksLinuxDriveAta.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UDisksLinuxDriveAta-struct"></a><h3>UDisksLinuxDriveAta</h3>
+<pre class="programlisting">typedef struct _UDisksLinuxDriveAta UDisksLinuxDriveAta;</pre>
+<p>The <a class="link" href="UDisksLinuxDriveAta.html" title="UDisksLinuxDriveAta"><span class="type">UDisksLinuxDriveAta</span></a> structure contains only private data and should
+only be accessed using the provided API.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

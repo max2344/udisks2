@@ -1,0 +1,1066 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: Utilities</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-daemon-core.html" title="Core">
+<link rel="prev" href="ref-daemon-core.html" title="Core">
+<link rel="next" href="udisks2-Logging.html" title="Logging">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#udisks2-Utilities.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#udisks2-Utilities.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-daemon-core.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ref-daemon-core.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="udisks2-Logging.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="udisks2-Utilities"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="udisks2-Utilities.top_of_page"></a>Utilities</span></h2>
+<p>Utilities — Various utility routines</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="udisks2-Utilities.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-decode-udev-string" title="udisks_decode_udev_string ()">udisks_decode_udev_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-safe-append-to-object-path" title="udisks_safe_append_to_object_path ()">udisks_safe_append_to_object_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-block-get-size" title="udisks_daemon_util_block_get_size ()">udisks_daemon_util_block_get_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-resolve-link" title="udisks_daemon_util_resolve_link ()">udisks_daemon_util_resolve_link</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-resolve-links" title="udisks_daemon_util_resolve_links ()">udisks_daemon_util_resolve_links</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-check-authorization-sync" title="udisks_daemon_util_check_authorization_sync ()">udisks_daemon_util_check_authorization_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-get-caller-uid-sync" title="udisks_daemon_util_get_caller_uid_sync ()">udisks_daemon_util_get_caller_uid_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-get-caller-pid-sync" title="udisks_daemon_util_get_caller_pid_sync ()">udisks_daemon_util_get_caller_pid_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-setup-by-user" title="udisks_daemon_util_setup_by_user ()">udisks_daemon_util_setup_by_user</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-dup-object" title="udisks_daemon_util_dup_object ()">udisks_daemon_util_dup_object</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-escape" title="udisks_daemon_util_escape ()">udisks_daemon_util_escape</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-escape-and-quote" title="udisks_daemon_util_escape_and_quote ()">udisks_daemon_util_escape_and_quote</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="udisks2-Utilities.html#UDisksInhibitCookie" title="UDisksInhibitCookie"><span class="returnvalue">UDisksInhibitCookie</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-inhibit-system-sync" title="udisks_daemon_util_inhibit_system_sync ()">udisks_daemon_util_inhibit_system_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-uninhibit-system-sync" title="udisks_daemon_util_uninhibit_system_sync ()">udisks_daemon_util_uninhibit_system_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-hexdump" title="udisks_daemon_util_hexdump ()">udisks_daemon_util_hexdump</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-hexdump-debug" title="udisks_daemon_util_hexdump_debug ()">udisks_daemon_util_hexdump_debug</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-file-set-contents" title="udisks_daemon_util_file_set_contents ()">udisks_daemon_util_file_set_contents</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-on-same-seat" title="udisks_daemon_util_on_same_seat ()">udisks_daemon_util_on_same_seat</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-get-free-mdraid-device" title="udisks_daemon_util_get_free_mdraid_device ()">udisks_daemon_util_get_free_mdraid_device</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint16</span>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Utilities.html#udisks-ata-identify-get-word" title="udisks_ata_identify_get_word ()">udisks_ata_identify_get_word</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="udisks2-Utilities.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="typedef_keyword">typedef</td>
+<td class="function_name"><a class="link" href="udisks2-Utilities.html#UDisksInhibitCookie" title="UDisksInhibitCookie">UDisksInhibitCookie</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="udisks2-Utilities.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">
+</pre>
+</div>
+<div class="refsect1">
+<a name="udisks2-Utilities.description"></a><h2>Description</h2>
+<p>Various utility routines.</p>
+</div>
+<div class="refsect1">
+<a name="udisks2-Utilities.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="udisks-decode-udev-string"></a><h3>udisks_decode_udev_string ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+udisks_decode_udev_string (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Unescapes sequences like \x20 to " " and ensures the returned string is valid UTF-8.</p>
+<p>If the string is not valid UTF-8, try as hard as possible to convert to UTF-8.</p>
+<p>If <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is passed, then <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned.</p>
+<p>See <a href="http://www.freedesktop.org/software/systemd/libudev/libudev-udev-util.html#udev-util-encode-string"><code class="function">udev_util_encode_string()</code></a> in libudev/libudev-util.c in the udev
+tree for what kinds of strings can be used.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.2.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>An udev-encoded string or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.2.9"></a><h4>Returns</h4>
+<p> A valid UTF-8 string that must be freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-safe-append-to-object-path"></a><h3>udisks_safe_append_to_object_path ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_safe_append_to_object_path (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"><span class="type">GString</span></a> *str</code></em>,
+                                   <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *s</code></em>);</pre>
+<p>Appends <em class="parameter"><code>s</code></em>
+ to <em class="parameter"><code>str</code></em>
+ in a way such that only characters that can be
+used in a D-Bus object path will be used. E.g. a character not in
+<code class="literal">A-Z[0-9]_</code> will be escaped as _HEX where
+HEX is a two-digit hexadecimal number.</p>
+<p>Note that his mapping is not bijective - e.g. you cannot go back
+to the original string.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"><span class="type">GString</span></a> to append to.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>s</p></td>
+<td class="parameter_description"><p>A UTF-8 string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-block-get-size"></a><h3>udisks_daemon_util_block_get_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint64</span>
+udisks_daemon_util_block_get_size (<em class="parameter"><code><a href="http://www.freedesktop.org/software/systemd/gudev/GUdevDevice.html"><span class="type">GUdevDevice</span></a> *device</code></em>,
+                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *out_media_available</code></em>,
+                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *out_media_change_detected</code></em>);</pre>
+<p>Gets the size of the <em class="parameter"><code>device</code></em>
+ top-level block device, checking for media in the process</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>A <a href="http://www.freedesktop.org/software/systemd/gudev/GUdevDevice.html"><span class="type">GUdevDevice</span></a> for a top-level block device.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_media_available</p></td>
+<td class="parameter_description"><p> Return location for whether media is available or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_media_change_detected</p></td>
+<td class="parameter_description"><p> Return location for whether media change is detected or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.4.6"></a><h4>Returns</h4>
+<p> The size of <em class="parameter"><code>device</code></em>
+or 0 if no media is available or if unknown.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-resolve-link"></a><h3>udisks_daemon_util_resolve_link ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+udisks_daemon_util_resolve_link (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                 <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>Resolves the symlink <em class="parameter"><code>path</code></em>
+/<em class="parameter"><code>name</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>A path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>Name of a symlink in <em class="parameter"><code>path</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.5.6"></a><h4>Returns</h4>
+<p> A canonicalized absolute pathname or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the symlink
+could not be resolved. Free with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-resolve-links"></a><h3>udisks_daemon_util_resolve_links ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **
+udisks_daemon_util_resolve_links (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                  <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dir_name</code></em>);</pre>
+<p>Resolves all symlinks in <em class="parameter"><code>path</code></em>
+/<em class="parameter"><code>dir_name</code></em>
+. This can be used to
+easily walk e.g. holders or slaves of block devices.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>A path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dir_name</p></td>
+<td class="parameter_description"><p>Name of a directory in <em class="parameter"><code>path</code></em>
+holding symlinks.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.6.6"></a><h4>Returns</h4>
+<p> An array of canonicalized absolute pathnames. Free with <a href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-check-authorization-sync"></a><h3>udisks_daemon_util_check_authorization_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_daemon_util_check_authorization_sync
+                               (<em class="parameter"><code><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *daemon</code></em>,
+                                <em class="parameter"><code><a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a> *object</code></em>,
+                                <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_id</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *options</code></em>,
+                                <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *message</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a> *invocation</code></em>);</pre>
+<p>Checks if the caller represented by <em class="parameter"><code>invocation</code></em>
+ is authorized for
+the action identified by <em class="parameter"><code>action_id</code></em>
+, optionally displaying <em class="parameter"><code>message</code></em>
+
+if authentication is needed. Additionally, if the caller is not
+authorized, the appropriate error is already returned to the caller
+via <em class="parameter"><code>invocation</code></em>
+.</p>
+<p>The calling thread is blocked for the duration of the authorization
+check which could be a very long time since it may involve
+presenting an authentication dialog and having a human user use
+it. If <span class="quote">“<span class="quote">auth.no_user_interaction</span>”</span> in <em class="parameter"><code>options</code></em>
+ is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>
+no authentication dialog will be presented and the check is not
+expected to take a long time.</p>
+<p>See <a class="xref" href="udisks-polkit-actions.html#udisks-polkit-details" title="Table 1. Known polkit variables">Table 1, “Known polkit variables”</a> for the variables that
+can be used in <em class="parameter"><code>message</code></em>
+ but note that not all variables can be used
+in all checks. For example, any check involving a <a class="link" href="UDisksDrive.html" title="UDisksDrive"><span class="type">UDisksDrive</span></a> or a
+<a class="link" href="UDisksBlock.html" title="UDisksBlock"><span class="type">UDisksBlock</span></a> object can safely include the fragment</p>
+<span class="quote">“<span class="quote">$(drive)</span>”</span> since it will always expand to the name of
+<p>the drive, e.g. <span class="quote">“<span class="quote">INTEL SSDSA2MH080G1GC (/dev/sda1)</span>”</span> or
+the block device file e.g. <span class="quote">“<span class="quote">/dev/vg_lucifer/lv_root</span>”</span>
+or <span class="quote">“<span class="quote">/dev/sda1</span>”</span>. However this won't work for operations
+that isn't on a drive or block device, for example calls on the</p>
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-interface-org-freedesktop-UDisks2-Manager.top_of_page">Manager</a><p>object.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.7.11"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>daemon</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p> The <a href="http://library.gnome.org/devel/gio/unstable/GDBusObject.html"><span class="type">GDBusObject</span></a> that the call is on or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action_id</p></td>
+<td class="parameter_description"><p>The action id to check for.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>options</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> to check for the <span class="quote">“<span class="quote">auth.no_user_interaction</span>”</span> option or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>message</p></td>
+<td class="parameter_description"><p>The message to convey (use N_).</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>invocation</p></td>
+<td class="parameter_description"><p>The invocation to check for.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.7.12"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if caller is authorized, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if not.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-get-caller-uid-sync"></a><h3>udisks_daemon_util_get_caller_uid_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_daemon_util_get_caller_uid_sync
+                               (<em class="parameter"><code><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *daemon</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a> *invocation</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">uid_t</span> *out_uid</code></em>,
+                                <em class="parameter"><code><span class="type">gid_t</span> *out_gid</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_user_name</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the UNIX user id (and possibly group id and user name) of the
+peer represented by <em class="parameter"><code>invocation</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>daemon</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>invocation</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_uid</p></td>
+<td class="parameter_description"><p> Return location for resolved uid or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_gid</p></td>
+<td class="parameter_description"><p> Return location for resolved gid or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_user_name</p></td>
+<td class="parameter_description"><p> Return location for resolved user name or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.8.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the user id (and possibly group id) was obtained, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-get-caller-pid-sync"></a><h3>udisks_daemon_util_get_caller_pid_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_daemon_util_get_caller_pid_sync
+                               (<em class="parameter"><code><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *daemon</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a> *invocation</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">pid_t</span> *out_pid</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the UNIX process id of the peer represented by <em class="parameter"><code>invocation</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>daemon</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>invocation</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_pid</p></td>
+<td class="parameter_description"><p> Return location for resolved pid or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.9.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the process id was obtained, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-setup-by-user"></a><h3>udisks_daemon_util_setup_by_user ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_daemon_util_setup_by_user (<em class="parameter"><code><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *daemon</code></em>,
+                                  <em class="parameter"><code><a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a> *object</code></em>,
+                                  <em class="parameter"><code><span class="type">uid_t</span> user</code></em>);</pre>
+<p>Checks whether the device represented by <em class="parameter"><code>object</code></em>
+ (if any) has been
+setup by <em class="parameter"><code>user</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>daemon</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a href="http://library.gnome.org/devel/gio/unstable/GDBusObject.html"><span class="type">GDBusObject</span></a> that the call is on or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user</p></td>
+<td class="parameter_description"><p>The user in question.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.10.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>object</code></em>
+has been set-up by <em class="parameter"><code>user</code></em>
+, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if not.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-dup-object"></a><h3>udisks_daemon_util_dup_object ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>
+udisks_daemon_util_dup_object (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> interface_</code></em>,
+                               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the enclosing <a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a> for <em class="parameter"><code>interface</code></em>
+, if any.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>interface_</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GDBusInterface.html"><span class="type">GDBusInterface</span></a>-derived instance. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> GDBusInterface]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, or an unset <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> to set if the return value is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.11.6"></a><h4>Returns</h4>
+<p> Either <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or a
+<a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a>-derived instance that must be released with
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/type"><span class="acronym">type</span></a> UDisksObject]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-escape"></a><h3>udisks_daemon_util_escape ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+udisks_daemon_util_escape (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Escapes double-quotes (") and back-<code class="function">slashes()</code> in a string
+using back-<code class="function">slash()</code>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>The string to escape.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.12.6"></a><h4>Returns</h4>
+<p> The escaped string. Free with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-escape-and-quote"></a><h3>udisks_daemon_util_escape_and_quote ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+udisks_daemon_util_escape_and_quote (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>Like <a class="link" href="udisks2-Utilities.html#udisks-daemon-util-escape" title="udisks_daemon_util_escape ()"><code class="function">udisks_daemon_util_escape()</code></a> but also wraps the result in
+double-quotes.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>The string to escape.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.13.6"></a><h4>Returns</h4>
+<p> The double-quoted and escaped string. Free with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-inhibit-system-sync"></a><h3>udisks_daemon_util_inhibit_system_sync ()</h3>
+<pre class="programlisting"><a class="link" href="udisks2-Utilities.html#UDisksInhibitCookie" title="UDisksInhibitCookie"><span class="returnvalue">UDisksInhibitCookie</span></a> *
+udisks_daemon_util_inhibit_system_sync
+                               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *reason</code></em>);</pre>
+<p>Tries to inhibit the system.</p>
+<p>Right now only</p>
+<a class="ulink" href="http://www.freedesktop.org/wiki/Software/systemd/inhibit" target="_top">systemd</a><p>inhibitors are supported but other inhibitors can be added in the future.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.14.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>reason</p></td>
+<td class="parameter_description"><p>A human readable explanation of why the system is being inhibited.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.14.9"></a><h4>Returns</h4>
+<p> A cookie that can be used with <a class="link" href="udisks2-Utilities.html#udisks-daemon-util-uninhibit-system-sync" title="udisks_daemon_util_uninhibit_system_sync ()"><code class="function">udisks_daemon_util_uninhibit_system_sync()</code></a>.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-uninhibit-system-sync"></a><h3>udisks_daemon_util_uninhibit_system_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_daemon_util_uninhibit_system_sync
+                               (<em class="parameter"><code><a class="link" href="udisks2-Utilities.html#UDisksInhibitCookie" title="UDisksInhibitCookie"><span class="type">UDisksInhibitCookie</span></a> *cookie</code></em>);</pre>
+<p>Does nothing if <em class="parameter"><code>cookie</code></em>
+ is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, otherwise uninhibits.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or a cookie obtained from <a class="link" href="udisks2-Utilities.html#udisks-daemon-util-inhibit-system-sync" title="udisks_daemon_util_inhibit_system_sync ()"><code class="function">udisks_daemon_util_inhibit_system_sync()</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-hexdump"></a><h3>udisks_daemon_util_hexdump ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+udisks_daemon_util_hexdump (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>,
+                            <em class="parameter"><code><span class="type">gsize</span> len</code></em>);</pre>
+<p>Utility function to generate a hexadecimal representation of <em class="parameter"><code>len</code></em>
+
+bytes of <em class="parameter"><code>data</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>Pointer to data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>Length of data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.16.6"></a><h4>Returns</h4>
+<p> A multi-line string. Free with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> when done using it.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-hexdump-debug"></a><h3>udisks_daemon_util_hexdump_debug ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_daemon_util_hexdump_debug (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>,
+                                  <em class="parameter"><code><span class="type">gsize</span> len</code></em>);</pre>
+<p>Utility function to dumps the hexadecimal representation of <em class="parameter"><code>len</code></em>
+
+bytes of <em class="parameter"><code>data</code></em>
+ generated with <a class="link" href="udisks2-Utilities.html#udisks-daemon-util-hexdump" title="udisks_daemon_util_hexdump ()"><code class="function">udisks_daemon_util_hexdump()</code></a> using
+<a class="link" href="udisks2-Logging.html#udisks-debug" title="udisks_debug()"><code class="function">udisks_debug()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>Pointer to data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>Length of data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-file-set-contents"></a><h3>udisks_daemon_util_file_set_contents ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_daemon_util_file_set_contents (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                      <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *contents</code></em>,
+                                      <em class="parameter"><code><span class="type">gssize</span> contents_len</code></em>,
+                                      <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> mode_for_new_file</code></em>,
+                                      <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Like <a href="http://library.gnome.org/devel/glib/unstable/glib-File-Utilities.html#g-file-set-contents"><code class="function">g_file_set_contents()</code></a> but preserves the mode of the file if it
+already exists and sets it to <em class="parameter"><code>mode_for_new_file</code></em>
+ otherwise.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p> Name of a file to write <em class="parameter"><code>contents</code></em>
+to, in the GLib file name encoding. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/type"><span class="acronym">type</span></a> filename]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>contents</p></td>
+<td class="parameter_description"><p> String to write to the file. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=length][<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> guint8]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>contents_len</p></td>
+<td class="parameter_description"><p>Length of <em class="parameter"><code>contents</code></em>
+, or -1 if <em class="parameter"><code>contents</code></em>
+is a NUL-terminated string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mode_for_new_file</p></td>
+<td class="parameter_description"><p>Mode for new file.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.18.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if an error occurred</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-on-same-seat"></a><h3>udisks_daemon_util_on_same_seat ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_daemon_util_on_same_seat (<em class="parameter"><code><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *daemon</code></em>,
+                                 <em class="parameter"><code><a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a> *object</code></em>,
+                                 <em class="parameter"><code><span class="type">pid_t</span> process</code></em>);</pre>
+<p>Checks whether the device represented by <em class="parameter"><code>object</code></em>
+ (if any) is plugged into
+a seat where the caller represented by <em class="parameter"><code>process</code></em>
+ is logged in.</p>
+<p>This works if <em class="parameter"><code>object</code></em>
+ is a drive or a block object.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.19.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>daemon</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a href="http://library.gnome.org/devel/gio/unstable/GDBusObject.html"><span class="type">GDBusObject</span></a> that the call is on or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>process</p></td>
+<td class="parameter_description"><p>The process to check for.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.19.7"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>object</code></em>
+and <em class="parameter"><code>process</code></em>
+is on the same seat, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-daemon-util-get-free-mdraid-device"></a><h3>udisks_daemon_util_get_free_mdraid_device ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+udisks_daemon_util_get_free_mdraid_device
+                               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Gets a free MD RAID device.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.20.5"></a><h4>Returns</h4>
+<p> A string of the form "/dev/mdNNN" that should be freed
+with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no free device is available.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-ata-identify-get-word"></a><h3>udisks_ata_identify_get_word ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint16</span>
+udisks_ata_identify_get_word (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *identify_data</code></em>,
+                              <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> word_number</code></em>);</pre>
+<p>Gets a <span class="quote">“<span class="quote">word</span>”</span> from position <em class="parameter"><code>word_number</code></em>
+ from
+<em class="parameter"><code>identify_data</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>identify_data</p></td>
+<td class="parameter_description"><p> A 512-byte array containing ATA IDENTIFY or ATA IDENTIFY PACKET DEVICE data or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>word_number</p></td>
+<td class="parameter_description"><p>The word number to get - must be less than 256.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.2.7.21.6"></a><h4>Returns</h4>
+<p> The word at the specified position or 0 if <em class="parameter"><code>identify_data</code></em>
+is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="udisks2-Utilities.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UDisksInhibitCookie"></a><h3>UDisksInhibitCookie</h3>
+<p>Opaque data structure used in <a class="link" href="udisks2-Utilities.html#udisks-daemon-util-inhibit-system-sync" title="udisks_daemon_util_inhibit_system_sync ()"><code class="function">udisks_daemon_util_inhibit_system_sync()</code></a> and
+<a class="link" href="udisks2-Utilities.html#udisks-daemon-util-uninhibit-system-sync" title="udisks_daemon_util_uninhibit_system_sync ()"><code class="function">udisks_daemon_util_uninhibit_system_sync()</code></a>.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

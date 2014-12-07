@@ -1,0 +1,337 @@
+<!-- ##### SECTION Title ##### -->
+UDisksManager
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksManager ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksManager::handle-loop-setup ##### -->
+<para>
+
+</para>
+
+@udisksmanager: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksManager::handle-mdraid-create ##### -->
+<para>
+
+</para>
+
+@udisksmanager: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+@arg5: 
+@arg6: 
+@Returns: 
+
+<!-- ##### ARG UDisksManager:version ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT UDisksManagerIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@handle_loop_setup: 
+@get_version: 
+@handle_mdraid_create: 
+
+<!-- ##### FUNCTION udisks_manager_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_override_properties ##### -->
+<para>
+
+</para>
+
+@klass: 
+@property_id_begin: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_get_version ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_dup_version ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_set_version ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_manager_call_loop_setup ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_fd: 
+@arg_options: 
+@fd_list: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_manager_call_loop_setup_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@out_resulting_device: 
+@out_fd_list: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_call_loop_setup_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_fd: 
+@arg_options: 
+@fd_list: 
+@out_resulting_device: 
+@out_fd_list: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_complete_loop_setup ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+@fd_list: 
+@resulting_device: 
+
+
+<!-- ##### FUNCTION udisks_manager_call_mdraid_create ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_blocks: 
+@arg_level: 
+@arg_name: 
+@arg_chunk: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_manager_call_mdraid_create_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@out_resulting_array: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_call_mdraid_create_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_blocks: 
+@arg_level: 
+@arg_name: 
+@arg_chunk: 
+@arg_options: 
+@out_resulting_array: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_complete_mdraid_create ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+@resulting_array: 
+
+
+<!-- ##### STRUCT UDisksManagerProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksManagerProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_manager_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_manager_proxy_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_proxy_new_sync ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_proxy_new_for_bus ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_manager_proxy_new_for_bus_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_manager_proxy_new_for_bus_sync ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksManagerSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksManagerSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_manager_skeleton_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

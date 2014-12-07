@@ -1,0 +1,61 @@
+<!-- ##### SECTION Title ##### -->
+udiskslinuxpartition
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxPartition ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION udisks_linux_partition_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_partition_update ##### -->
+<para>
+
+</para>
+
+@partition: 
+@object: 
+
+
+<!-- ##### FUNCTION udisks_linux_partition_set_type_sync ##### -->
+<para>
+
+</para>
+
+@partition: 
+@type: 
+@caller_uid: 
+@cancellable: 
+@error: 
+@Returns: 
+
+

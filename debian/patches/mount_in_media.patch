@@ -1,0 +1,72 @@
+Description: Mount drives in /media, not /run/media/, to stay FHS compatible. As on Debian and Ubuntu /media is not currently a tmpfs, we need to put the "mounted-fs" file to a persistent path as well.
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+Bug: https://bugs.freedesktop.org/show_bug.cgi?id=51709
+Bug-Debian: http://bugs.debian.org/680403
+Bug-Ubuntu: https://launchpad.net/bugs/1020759
+
+Index: udisks2/src/udiskslinuxfilesystem.c
+===================================================================
+--- udisks2.orig/src/udiskslinuxfilesystem.c	2013-03-21 07:44:19.320207135 +0100
++++ udisks2/src/udiskslinuxfilesystem.c	2013-03-21 07:44:19.308207134 +0100
+@@ -877,26 +877,26 @@
+     }
+ 
+   /* If we know the user-name and it doesn't have any '/' character in
+-   * it, mount in /run/media/$USER
++   * it, mount in /media/$USER
+    */
+   if (!fs_shared && (user_name != NULL && strstr (user_name, "/") == NULL))
+     {
+-      mount_dir = g_strdup_printf ("/run/media/%s", user_name);
++      mount_dir = g_strdup_printf ("/media/%s", user_name);
+       if (!g_file_test (mount_dir, G_FILE_TEST_EXISTS))
+         {
+-          /* First ensure that /run/media exists */
+-          if (!g_file_test ("/run/media", G_FILE_TEST_EXISTS))
++          /* First ensure that /media exists */
++          if (!g_file_test ("/media", G_FILE_TEST_EXISTS))
+             {
+-              if (g_mkdir ("/run/media", 0755) != 0)
++              if (g_mkdir ("/media", 0755) != 0)
+                 {
+                   g_set_error (error,
+                                UDISKS_ERROR,
+                                UDISKS_ERROR_FAILED,
+-                               "Error creating directory /run/media: %m");
++                               "Error creating directory /media: %m");
+                   goto out;
+                 }
+             }
+-          /* Then create the per-user /run/media/$USER */
++          /* Then create the per-user /media/$USER */
+           if (g_mkdir (mount_dir, 0700) != 0)
+             {
+               g_set_error (error,
+Index: udisks2/src/udisksstate.c
+===================================================================
+--- udisks2.orig/src/udisksstate.c	2013-03-21 07:44:19.320207135 +0100
++++ udisks2/src/udisksstate.c	2013-03-21 07:44:19.312207135 +0100
+@@ -2235,7 +2235,10 @@
+    * - could also mmap the file
+    */
+ 
+-  path = g_strdup_printf ("/run/udisks2/%s", key);
++  if (strcmp (key, "mounted-fs") == 0)
++    path = g_strdup_printf ("/var/lib/udisks2/%s", key);
++  else
++    path = g_strdup_printf ("/run/udisks2/%s", key);
+ 
+   /* see if it's already in the cache */
+   ret = g_hash_table_lookup (state->cache, path);
+@@ -2301,7 +2304,10 @@
+   data = g_malloc (size);
+   g_variant_store (normalized, data);
+ 
+-  path = g_strdup_printf ("/run/udisks2/%s", key);
++  if (strcmp (key, "mounted-fs") == 0)
++    path = g_strdup_printf ("/var/lib/udisks2/%s", key);
++  else
++    path = g_strdup_printf ("/run/udisks2/%s", key);
+ 
+   g_hash_table_insert (state->cache, g_strdup (path), g_variant_ref (value));
+ 

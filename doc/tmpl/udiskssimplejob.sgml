@@ -1,0 +1,50 @@
+<!-- ##### SECTION Title ##### -->
+UDisksSimpleJob
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksSimpleJob ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION udisks_simple_job_new ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@cancellable: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_simple_job_complete ##### -->
+<para>
+
+</para>
+
+@job: 
+@succeess: 
+@message: 
+
+

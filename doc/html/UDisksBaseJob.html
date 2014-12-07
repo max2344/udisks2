@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: UDisksBaseJob</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-daemon-jobs.html" title="Jobs">
+<link rel="prev" href="ref-daemon-jobs.html" title="Jobs">
+<link rel="next" href="UDisksSimpleJob.html" title="UDisksSimpleJob">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#UDisksBaseJob.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#UDisksBaseJob.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces"> <span class="dim">|</span> 
+                  <a href="#UDisksBaseJob.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties"> <span class="dim">|</span> 
+                  <a href="#UDisksBaseJob.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-daemon-jobs.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ref-daemon-jobs.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="UDisksSimpleJob.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="UDisksBaseJob"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="UDisksBaseJob.top_of_page"></a>UDisksBaseJob</span></h2>
+<p>UDisksBaseJob — Base class for jobs.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="UDisksBaseJob.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="returnvalue">UDisksDaemon</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksBaseJob.html#udisks-base-job-get-daemon" title="udisks_base_job_get_daemon ()">udisks_base_job_get_daemon</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="returnvalue">GCancellable</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksBaseJob.html#udisks-base-job-get-cancellable" title="udisks_base_job_get_cancellable ()">udisks_base_job_get_cancellable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksBaseJob.html#udisks-base-job-get-auto-estimate" title="udisks_base_job_get_auto_estimate ()">udisks_base_job_get_auto_estimate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksBaseJob.html#udisks-base-job-set-auto-estimate" title="udisks_base_job_set_auto_estimate ()">udisks_base_job_set_auto_estimate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksBaseJob.html#udisks-base-job-add-object" title="udisks_base_job_add_object ()">udisks_base_job_add_object</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksBaseJob.html#udisks-base-job-remove-object" title="udisks_base_job_remove_object ()">udisks_base_job_remove_object</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksBaseJob.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="UDisksBaseJob.html#UDisksBaseJob--auto-estimate" title="The “auto-estimate” property">auto-estimate</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *</td>
+<td class="property_name"><a class="link" href="UDisksBaseJob.html#UDisksBaseJob--cancellable" title="The “cancellable” property">cancellable</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *</td>
+<td class="property_name"><a class="link" href="UDisksBaseJob.html#UDisksBaseJob--daemon" title="The “daemon” property">daemon</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksBaseJob.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="UDisksBaseJob.html#UDisksBaseJob-struct" title="UDisksBaseJob">UDisksBaseJob</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="UDisksBaseJob.html#UDisksBaseJobClass" title="struct UDisksBaseJobClass">UDisksBaseJobClass</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksBaseJob.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> <a href="http://library.gnome.org/devel/gio/unstable/GDBusInterfaceSkeleton.html">GDBusInterfaceSkeleton</a>
+        <span class="lineart">╰──</span> <a class="link" href="UDisksJob.html#UDisksJobSkeleton">UDisksJobSkeleton</a>
+            <span class="lineart">╰──</span> UDisksBaseJob
+                <span class="lineart">├──</span> <a class="link" href="UDisksSpawnedJob.html" title="UDisksSpawnedJob">UDisksSpawnedJob</a>
+                <span class="lineart">├──</span> <a class="link" href="UDisksThreadedJob.html" title="UDisksThreadedJob">UDisksThreadedJob</a>
+                <span class="lineart">╰──</span> <a class="link" href="UDisksSimpleJob.html" title="UDisksSimpleJob">UDisksSimpleJob</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="UDisksBaseJob.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+UDisksBaseJob implements
+ <a href="http://library.gnome.org/devel/gio/unstable/GDBusInterface.html">GDBusInterface</a> and  <a class="link" href="UDisksJob.html" title="UDisksJob">UDisksJob</a>.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksBaseJob.description"></a><h2>Description</h2>
+<p>This type provides common features needed by all job types.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksBaseJob.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="udisks-base-job-get-daemon"></a><h3>udisks_base_job_get_daemon ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="returnvalue">UDisksDaemon</span></a> *
+udisks_base_job_get_daemon (<em class="parameter"><code><a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a> *job</code></em>);</pre>
+<p>Gets the <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> for <em class="parameter"><code>job</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>job</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.2.6"></a><h4>Returns</h4>
+<p> A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>. Do not free, the object belongs to <em class="parameter"><code>job</code></em>
+.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-base-job-get-cancellable"></a><h3>udisks_base_job_get_cancellable ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="returnvalue">GCancellable</span></a> *
+udisks_base_job_get_cancellable (<em class="parameter"><code><a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a> *job</code></em>);</pre>
+<p>Gets the <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> for <em class="parameter"><code>job</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>job</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.3.6"></a><h4>Returns</h4>
+<p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a>. Do not free, the object belongs to <em class="parameter"><code>job</code></em>
+.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-base-job-get-auto-estimate"></a><h3>udisks_base_job_get_auto_estimate ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_base_job_get_auto_estimate (<em class="parameter"><code><a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a> *job</code></em>);</pre>
+<p>Gets whether auto-estimation is being used.</p>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>job</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.4.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if auto-estimation is being used, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-base-job-set-auto-estimate"></a><h3>udisks_base_job_set_auto_estimate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_base_job_set_auto_estimate (<em class="parameter"><code><a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a> *job</code></em>,
+                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> value</code></em>);</pre>
+<p>Sets whether auto-estimation is being used.</p>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>job</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if auto-estimation is to be use, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-base-job-add-object"></a><h3>udisks_base_job_add_object ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_base_job_add_object (<em class="parameter"><code><a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a> *job</code></em>,
+                            <em class="parameter"><code><a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a> *object</code></em>);</pre>
+<p>Adds the object path for <em class="parameter"><code>object</code></em>
+ to the <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Objects" title='The "Objects" property'>Objects</a>
+array. If the object path is already in the array, does nothing.</p>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>job</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-base-job-remove-object"></a><h3>udisks_base_job_remove_object ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_base_job_remove_object (<em class="parameter"><code><a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a> *job</code></em>,
+                               <em class="parameter"><code><a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a> *object</code></em>);</pre>
+<p>Removes the object path for <em class="parameter"><code>object</code></em>
+ to the <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Objects" title='The "Objects" property'>Objects</a>
+array. If the object path is not in the array, does nothing.</p>
+<div class="refsect3">
+<a name="id-1.5.4.2.9.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>job</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksObject.html" title="UDisksObject"><span class="type">UDisksObject</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksBaseJob.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UDisksBaseJob-struct"></a><h3>UDisksBaseJob</h3>
+<pre class="programlisting">typedef struct _UDisksBaseJob UDisksBaseJob;</pre>
+<p>The <a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a> structure contains only private data and should
+only be accessed using the provided API.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksBaseJobClass"></a><h3>struct UDisksBaseJobClass</h3>
+<pre class="programlisting">struct UDisksBaseJobClass {
+  UDisksJobSkeletonClass parent_class;
+};
+</pre>
+<p>Class structure for <a class="link" href="UDisksBaseJob.html" title="UDisksBaseJob"><span class="type">UDisksBaseJob</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.4.2.10.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody><tr>
+<td class="struct_member_name"><p><a class="link" href="UDisksJob.html#UDisksJobSkeletonClass" title="struct UDisksJobSkeletonClass"><span class="type">UDisksJobSkeletonClass</span></a> <em class="structfield"><code><a name="UDisksBaseJobClass.parent-class"></a>parent_class</code></em>;</p></td>
+<td class="struct_member_description"><p>Parent class.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksBaseJob.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="UDisksBaseJob--auto-estimate"></a><h3>The <code class="literal">“auto-estimate”</code> property</h3>
+<pre class="programlisting">  “auto-estimate”            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>If <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, the <a class="link" href="UDisksJob.html#UDisksJob--expected-end-time" title="The “expected-end-time” property"><span class="type">“expected-end-time”</span></a> property will be
+automatically updated every time the <a class="link" href="UDisksJob.html#UDisksJob--progress" title="The “progress” property"><span class="type">“progress”</span></a> property
+is updated.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksBaseJob--cancellable"></a><h3>The <code class="literal">“cancellable”</code> property</h3>
+<pre class="programlisting">  “cancellable”              <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *</pre>
+<p>The <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> to use.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksBaseJob--daemon"></a><h3>The <code class="literal">“daemon”</code> property</h3>
+<pre class="programlisting">  “daemon”                   <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *</pre>
+<p>The <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> the object is for.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

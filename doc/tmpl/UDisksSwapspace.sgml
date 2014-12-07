@@ -1,0 +1,301 @@
+<!-- ##### SECTION Title ##### -->
+UDisksSwapspace
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksSwapspace ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksSwapspace::handle-start ##### -->
+<para>
+
+</para>
+
+@udisksswapspace: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksSwapspace::handle-stop ##### -->
+<para>
+
+</para>
+
+@udisksswapspace: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### ARG UDisksSwapspace:active ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT UDisksSwapspaceIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@handle_start: 
+@handle_stop: 
+@get_active: 
+
+<!-- ##### FUNCTION udisks_swapspace_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_override_properties ##### -->
+<para>
+
+</para>
+
+@klass: 
+@property_id_begin: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_call_start ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_call_start_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_call_start_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_complete_start ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_call_stop ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_call_stop_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_call_stop_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_complete_stop ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_get_active ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_set_active ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### STRUCT UDisksSwapspaceProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksSwapspaceProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_swapspace_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_proxy_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_proxy_new_sync ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_proxy_new_for_bus ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_proxy_new_for_bus_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_swapspace_proxy_new_for_bus_sync ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksSwapspaceSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksSwapspaceSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_swapspace_skeleton_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

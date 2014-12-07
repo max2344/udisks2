@@ -1,0 +1,5 @@
+00git_test_fixes.patch
+# Debian patches for udisks
+mount_in_media.patch
+unsupported_acls.patch
+libsystemd.patch

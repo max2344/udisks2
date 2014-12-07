@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: udisks</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="overview.html" title="Part I. Manual pages and Overview">
+<link rel="prev" href="overview.html" title="Part I. Manual pages and Overview">
+<link rel="next" href="udisksd.8.html" title="udisksd">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="overview.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="overview.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="udisksd.8.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="udisks.8"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">udisks</span></h2>
+<p>udisks — Disk Manager</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="id-1.2.2.4"></a><h2>DESCRIPTION</h2>
+<p>
+      udisks provides interfaces to enumerate and perform operations
+      on disks and storage devices. Any application (including
+      unprivileged ones) can access the
+      <a class="link" href="udisksd.8.html" title="udisksd"><span class="citerefentry"><span class="refentrytitle">udisksd</span>(8)</span></a>
+      daemon via the name <span class="emphasis"><em>org.freedesktop.UDisks2</em></span>
+      on the <a class="ulink" href="http://www.freedesktop.org/wiki/Software/dbus" target="_top">system message bus</a>.
+      In addition to the D-Bus API, a
+      library, <code class="filename">libudisks2</code> is also provided. This
+      library can be used from C/C++ and any high-level language with
+      <a class="ulink" href="https://live.gnome.org/GObjectIntrospection" target="_top">GObjectIntrospection</a>
+      support such as Javascript and Python.
+      udisks is only indirectly involved in what devices and objects
+      are shown in the user interface. See these
+      <a class="ulink" href="http://git.gnome.org/browse/gvfs/tree/monitor/udisks2/what-is-shown.txt" target="_top">notes</a>
+      for what is shown in GNOME 3.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.2.5"></a><h2>ACCESS CONTROL</h2>
+<p>
+      By default, logged-in users in active log-in sessions are
+      permitted to perform operations (for example, mounting,
+      unlocking or modifying) on devices attached to the seat their
+      session is on. Access-control is fine-grained and based on
+      <span class="citerefentry"><span class="refentrytitle">polkit</span>(8)</span>,
+      see the <span class="quote">“<span class="quote"><a class="link" href="udisks-polkit-actions.html" title="Authorization Checks">Authorization
+      Checks</a></span>”</span> chapter in the udisks documentation for
+      more information.
+      Note that the <code class="literal">x-udisks-auth</code> option can be
+      used in the <code class="filename">/etc/fstab</code> and
+      <code class="filename">/etc/crypttab</code> files to specify that
+      additional authorization is required to mount resp. unlock the
+      device (typically requiring the user to authenticate as an
+      administrator).
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.2.6"></a><h2>DRIVE CONFIGURATION</h2>
+<p>
+      At start-up and when a drive is connected,
+      <a class="link" href="udisksd.8.html" title="udisksd"><span class="citerefentry"><span class="refentrytitle">udisksd</span>(8)</span></a>
+      will apply configuration stored in the file
+      <code class="filename">/etc/udisks2/IDENTIFIER.conf</code>
+      where <span class="emphasis"><em>IDENTIFIER</em></span> is the value of the
+      <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.Id" title='The "Id" property'>Drive:Id</a>
+      property for the drive. If the file changes on disk its new
+      contents will also be applied to the drive.
+      Typically, users or administrators will never need to edit drive
+      configuration files as they are effectively managed through
+      graphical applications such as
+      <span class="citerefentry"><span class="refentrytitle">gnome-disks</span>(1)</span>.
+      Manually editing configuration files is however supported — the file
+      format is a simple <span class="emphasis"><em>.ini-like format</em></span>
+      (see the
+      <a class="ulink" href="http://freedesktop.org/wiki/Specifications/desktop-entry-spec" target="_top">Desktop Entry Specification</a>
+      for the exact syntax). New groups and keys may
+      be added in the future.
+    </p>
+<div class="refsect2">
+<a name="id-1.2.2.6.3"></a><h3>ATA group</h3>
+<p>
+        The <code class="literal">ATA</code> group is for settings that apply to
+        drives using the ATA command-set. The following keys are
+        supported:
+      </p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="option">StandbyTimeout</code></span></p></td>
+<td><p>
+              The standby timeout.  A value of zero means "timeouts
+              are disabled": the device will not automatically enter
+              standby mode.  Values from 1 to 240 specify multiples of
+              5 seconds, yielding timeouts from 5 seconds to 20
+              minutes. Values from 241 to 251 specify from 1 to 11
+              units of 30 minutes, yielding timeouts from 30 minutes
+              to 5.5 hours.  A value of 252 signifies a timeout of 21
+              minutes. A value of 253 sets a vendor-defined timeout
+              period between 8 and 12 hours, and the value 254 is
+              reserved.  255 is interpreted as 21 minutes plus 15
+              seconds. Note that some older drives may have very
+              different interpretations of these values.
+              This is similar to the <code class="option">-S</code> option in
+              <span class="citerefentry"><span class="refentrytitle">hdparm</span>(8)</span>.
+            </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">APMLevel</code></span></p></td>
+<td><p>
+              The Advanced Power Management level.  A low value means
+              aggressive power management and a high value means
+              better performance. Possible settings range from values
+              1 through 127 (which permit spin-down), and values 128
+              through 254 (which do not permit spin-down).  The
+              highest degree of power management is attained with a
+              setting of 1, and the highest I/O performance with a
+              setting of 254. A value of 255 can be used to disable
+              Advanced Power Management altogether on the drive (not
+              all drives support disabling it, but most do).
+              This is similar to the <code class="option">-B</code> option in
+              <span class="citerefentry"><span class="refentrytitle">hdparm</span>(8)</span>.
+            </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">AAMLevel</code></span></p></td>
+<td><p>
+              The Automatic Acoustic Management level. Most modern
+              harddisk drives have the ability to speed down the head
+              movements to reduce their noise output. The possible
+              values are between 0 and 254. 128 is the most quiet (and
+              therefore slowest) setting and 254 the fastest (and
+              loudest). Some drives have only two levels (quiet /
+              fast), while others may have different levels between
+              128 and 254. At the moment, most drives only support 3
+              options, off, quiet, and fast. These have been assigned
+              the values 0, 128, and 254 at present, respectively, but
+              integer space has been incorporated for future
+              expansion, should this change.
+              This is similar to the <code class="option">-M</code> option in
+              <span class="citerefentry"><span class="refentrytitle">hdparm</span>(8)</span>.
+            </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">WriteCacheEnabled</code></span></p></td>
+<td><p>
+              A boolean specifying whether to enable or disable the
+              Write Cache. Valid values for this key are
+              <span class="quote">“<span class="quote">true</span>”</span> and <span class="quote">“<span class="quote">false</span>”</span>. This is
+              similar to the <code class="option">-W</code> option in
+              <span class="citerefentry"><span class="refentrytitle">hdparm</span>(8)</span>.
+              This key was added in 2.1.
+            </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="id-1.2.2.7"></a><h2>DEVICE INFORMATION</h2>
+<p>
+      udisks relies on recent versions of
+      <span class="citerefentry"><span class="refentrytitle">udev</span>(7)</span>
+      and the Linux kernel. Influential device properties in the udev
+      database include:
+    </p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="option">UDISKS_SYSTEM</code></span></p></td>
+<td><p>
+            If set, this overrides the value of the
+            <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.HintSystem" title='The "HintSystem" property'>HintSystem</a> property.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">UDISKS_IGNORE</code></span></p></td>
+<td><p>
+            If set, this overrides the value of the
+            <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.HintIgnore" title='The "HintIgnore" property'>HintIgnore</a> property.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">UDISKS_AUTO</code></span></p></td>
+<td><p>
+            If set, this overrides the value of the
+            <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.HintAuto" title='The "HintAuto" property'>HintAuto</a> property.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">UDISKS_CAN_POWER_OFF</code></span></p></td>
+<td><p>
+            If set, this overrides the value of the
+            <a class="link" href="gdbus-org.freedesktop.UDisks2.Drive.html#gdbus-property-org-freedesktop-UDisks2-Drive.CanPowerOff" title='The "CanPowerOff" property'>CanPowerOff</a> property.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">UDISKS_NAME</code></span></p></td>
+<td><p>
+            The name to use for the device when presenting it in an user interface.
+            This corresponds to the
+            <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.HintName" title='The "HintName" property'>HintName</a> property.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">UDISKS_ICON_NAME</code></span></p></td>
+<td><p>
+            The icon to use for the device when presenting it in an user interface. If
+            set, the name must adhere to the
+            <a class="ulink" href="http://www.freedesktop.org/wiki/Specifications/icon-theme-spec" target="_top">freedesktop.org icon theme specification</a>.
+            This corresponds to the
+            <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.HintIconName" title='The "HintIconName" property'>HintIconName</a> property.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">UDISKS_SYMBOLIC_ICON_NAME</code></span></p></td>
+<td><p>
+            The icon to use for the device when presenting it in an user interface using a symbolic icon. If
+            set, the name must adhere to the
+            <a class="ulink" href="http://www.freedesktop.org/wiki/Specifications/icon-theme-spec" target="_top">freedesktop.org icon theme specification</a>.
+            This corresponds to the
+            <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-property-org-freedesktop-UDisks2-Block.HintIconName" title='The "HintIconName" property'>HintSymbolicIconName</a> property.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">UDISKS_FILESYSTEM_SHARED</code></span></p></td>
+<td><p>
+            If set to 1, the filesystem on the device will be mounted in a shared directory (e.g. <code class="filename">/media/VolumeName</code>) instead of a private directory (e.g. <code class="filename">/run/media/$USER/VolumeName</code>) when the <a class="link" href="gdbus-org.freedesktop.UDisks2.Filesystem.html#gdbus-method-org-freedesktop-UDisks2-Filesystem.Mount" title="The Mount() method">Filesystem.Mount()</a> method is handled.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">ID_SEAT</code></span></p></td>
+<td><p>
+            The physical seat the device is attached to. If unset or
+            set to the empty string, <span class="quote">“<span class="quote">seat0</span>”</span> (the first
+            seat) is assumed.
+          </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="id-1.2.2.8"></a><h2>API STABILITY</h2>
+<p>
+      udisks guarantees a stable D-Bus API within the same major
+      version and this guarantee also extends to the client-side
+      library <code class="filename">libudisks2</code>. Additionally, several
+      major versions of udisks can be installed and operate at the
+      same time although interoperability may be limited - for
+      example, a device mounted using the udisks N.x API may require
+      additional authorization if attempting to unmount it through the
+      the (N-1).x API.
+    </p>
+<p>
+      The udisks developers do not anticipate breaking API but does
+      reserve the right to do so and if it happens, promises to bump
+      the major version and ensure the new major version of udisks is
+      parallel-installable with any older major version. However, note
+      that programs, man pages and other artifacts may change name
+      (for example, adopt a <span class="quote">“<span class="quote">2</span>”</span> suffix) to make room for
+      the next major version. Therefore, applications can not rely on
+      tools like e.g.
+      <a class="link" href="udisksctl.1.html" title="udisksctl"><span class="citerefentry"><span class="refentrytitle">udisksctl</span>(1)</span></a>
+      to be available. Additionally, there is no guarantee that the
+      options, command-line switches etc. of command-line tools or
+      similar will remain stable.
+    </p>
+<p>
+      Instead, applications should only use the D-Bus API, the
+      <code class="filename">libudisks2</code> library or tools such as
+      <span class="citerefentry"><span class="refentrytitle">dbus-send</span>(1)</span>
+      or
+      <span class="citerefentry"><span class="refentrytitle">gdbus</span>(1)</span>
+      to interact with
+      <a class="link" href="udisksd.8.html" title="udisksd"><span class="citerefentry"><span class="refentrytitle">udisksd</span>(8)</span></a>.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.2.9"></a><h2>AUDIENCE</h2>
+<p>
+      The intended audience of udisks include operating system
+      developers working on the higher-level parts of the operating
+      system, for example the desktop shell (such as <a class="ulink" href="http://www.gnome.org" target="_top">GNOME</a>) and disk management
+      applications (e.g. GNOME's <a class="ulink" href="https://live.gnome.org/Design/Apps/Disks" target="_top">Disks</a>
+      application).  Software on this level typically depend on a
+      specific (major) version of udisks and may even have support for
+      previous versions of udisks or alternative interfaces performing
+      the same role as udisks.
+    </p>
+<p>
+      While udisks indeed provides a stable API and a clear upgrade
+      path, it may not be an appropriate dependency for third party
+      applications. For example, if the operating system switches to
+      udisks version N.x and an application is still using the udisks
+      (N-1).x API, the application will not work unless udisks (N-1).x
+      is installed. While this situation is still workable (since both
+      udisks N.x and udisks (N-1).x can be installed) it may not be
+      desirable to ask the user to install the old version - in fact,
+      the operating system vendor may not even provide a packaged
+      version of the old version. Hence, if an application does not
+      want to tie itself to a specific version of the operating
+      system, it should not use udisks.
+    </p>
+<p>
+      Viable alternatives to udisks are APIs that are guaranteed to be
+      around for longer time-frames, including:
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>
+            Low-level APIs and commands such as e.g.
+            <a class="ulink" href="http://en.wikipedia.org/wiki/Sysfs" target="_top">sysfs</a>,
+            <a class="ulink" href="http://www.freedesktop.org/software/systemd/libudev/" target="_top">libudev</a>,
+            <a class="ulink" href="http://www.kernel.org/doc/Documentation/filesystems/proc.txt" target="_top">/proc/self/mountinfo</a> and
+            <a class="ulink" href="http://en.wikipedia.org/wiki/Util-linux" target="_top">util-linux</a>.
+          </p></li>
+<li class="listitem"><p>
+            High-level APIs such as <a class="ulink" href="http://developer.gnome.org/gio/stable/volume_mon.html" target="_top">GVolumeMonitor</a>.
+          </p></li>
+</ul></div>
+<p>
+      In particular, for desktop applications it is a much better idea
+      to use something like GVolumeMonitor since it will make the
+      application show the same devices as the desktop shell
+      (e.g. file manager, file chooser and so on) is showing.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.2.10"></a><h2>AUTHOR</h2>
+<p>
+      Written by David Zeuthen
+      <code class="email">&lt;<a class="email" href="mailto:zeuthen@gmail.com">zeuthen@gmail.com</a>&gt;</code> with a lot of help
+      from many others.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.2.11"></a><h2>BUGS</h2>
+<p>
+      Please send bug reports to either the distribution bug tracker
+      or the upstream bug tracker at
+      <a class="ulink" href="http://bugs.freedesktop.org/enter_bug.cgi?product=udisks" target="_top">http://bugs.freedesktop.org/enter_bug.cgi?product=udisks</a>.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.2.12"></a><h2>SEE ALSO</h2>
+<p>
+      <span class="citerefentry"><span class="refentrytitle">udev</span>(7)</span>,
+      <span class="citerefentry"><span class="refentrytitle">polkit</span>(8)</span>,
+      <a class="link" href="udisksd.8.html" title="udisksd"><span class="citerefentry"><span class="refentrytitle">udisksd</span>(8)</span></a>,
+      <a class="link" href="udisksctl.1.html" title="udisksctl"><span class="citerefentry"><span class="refentrytitle">udisksctl</span>(1)</span></a>,
+      <span class="citerefentry"><span class="refentrytitle">gnome-disks</span>(1)</span>
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

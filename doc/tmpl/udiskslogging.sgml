@@ -1,0 +1,87 @@
+<!-- ##### SECTION Title ##### -->
+udiskslogging
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM UDisksLogLevel ##### -->
+<para>
+
+</para>
+
+@UDISKS_LOG_LEVEL_DEBUG: 
+@UDISKS_LOG_LEVEL_INFO: 
+@UDISKS_LOG_LEVEL_NOTICE: 
+@UDISKS_LOG_LEVEL_WARNING: 
+@UDISKS_LOG_LEVEL_ERROR: 
+
+<!-- ##### FUNCTION udisks_log ##### -->
+<para>
+
+</para>
+
+@level: 
+@function: 
+@location: 
+@format: 
+@...: 
+
+
+<!-- ##### MACRO udisks_debug ##### -->
+<para>
+
+</para>
+
+@...: 
+
+
+<!-- ##### MACRO udisks_info ##### -->
+<para>
+
+</para>
+
+@...: 
+
+
+<!-- ##### MACRO udisks_notice ##### -->
+<para>
+
+</para>
+
+@...: 
+
+
+<!-- ##### MACRO udisks_warning ##### -->
+<para>
+
+</para>
+
+@...: 
+
+
+<!-- ##### MACRO udisks_error ##### -->
+<para>
+
+</para>
+
+@...: 
+
+

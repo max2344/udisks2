@@ -1,0 +1,53 @@
+<!-- ##### SECTION Title ##### -->
+UDisksLinuxDevice
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxDevice ##### -->
+<para>
+
+</para>
+
+@udev_device: 
+@ata_identify_device_data: 
+@ata_identify_packet_device_data: 
+
+<!-- ##### FUNCTION udisks_linux_device_new_sync ##### -->
+<para>
+
+</para>
+
+@udev_device: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_device_reprobe_sync ##### -->
+<para>
+
+</para>
+
+@device: 
+@cancellable: 
+@error: 
+@Returns: 
+
+

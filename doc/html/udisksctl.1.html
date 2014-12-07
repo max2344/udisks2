@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: udisksctl</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="overview.html" title="Part I. Manual pages and Overview">
+<link rel="prev" href="udisksd.8.html" title="udisksd">
+<link rel="next" href="ref-dbus.html" title="Part II. D-Bus API Reference">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="overview.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="udisksd.8.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ref-dbus.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="udisksctl.1"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">udisksctl</span></h2>
+<p>udisksctl — The udisks command line tool</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>SYNOPSIS</h2>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   status </p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   info  { --object-path <em class="replaceable"><code>OBJECT</code></em>  |   --block-device <em class="replaceable"><code>DEVICE</code></em> }</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   mount   { --object-path <em class="replaceable"><code>OBJECT</code></em>  |   --block-device <em class="replaceable"><code>DEVICE</code></em> } [ --filesystem-type <em class="replaceable"><code>TYPE</code></em> ] [--options <em class="replaceable"><code>OPTIONS</code></em>...] [--no-user-interaction]</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   unmount   { --object-path <em class="replaceable"><code>OBJECT</code></em>  |   --block-device <em class="replaceable"><code>DEVICE</code></em> } [--force] [--no-user-interaction]</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   unlock   { --object-path <em class="replaceable"><code>OBJECT</code></em>  |   --block-device <em class="replaceable"><code>DEVICE</code></em> } [--no-user-interaction]</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   lock   { --object-path <em class="replaceable"><code>OBJECT</code></em>  |   --block-device <em class="replaceable"><code>DEVICE</code></em> } [--no-user-interaction]</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   loop-setup    --file <em class="replaceable"><code>PATH</code></em>  [--read-only] [--offset <em class="replaceable"><code>OFFSET</code></em>] [--size <em class="replaceable"><code>SIZE</code></em>] [--no-user-interaction]</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   loop-delete   { --object-path <em class="replaceable"><code>OBJECT</code></em>  |   --block-device <em class="replaceable"><code>DEVICE</code></em> } [--no-user-interaction]</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   power-off   { --object-path <em class="replaceable"><code>OBJECT</code></em>  |   --block-device <em class="replaceable"><code>DEVICE</code></em> } [--no-user-interaction]</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   smart-simulate    --file <em class="replaceable"><code>PATH</code></em>  { --object-path <em class="replaceable"><code>OBJECT</code></em>  |   --block-device <em class="replaceable"><code>DEVICE</code></em> } [--no-user-interaction]</p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   monitor </p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   dump </p></div>
+<div class="cmdsynopsis"><p><code class="command">udisksctl</code>   help </p></div>
+</div>
+<div class="refsect1">
+<a name="id-1.2.4.5"></a><h2>DESCRIPTION</h2>
+<p>
+      <span class="command"><strong>udisksctl</strong></span> is a command-line program used
+      to interact with the
+      <span class="citerefentry"><span class="refentrytitle">udisksd</span>(8)</span>
+      daemon process.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.4.6"></a><h2>COMMANDS</h2>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="option">status</code></span></p></td>
+<td><p>
+            Shows high-level information about disk drives and block
+            devices.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">info</code></span></p></td>
+<td><p>
+            Shows detailed information about
+            <em class="replaceable"><code>OBJECT</code></em> or
+            <em class="replaceable"><code>DEVICE</code></em>.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">mount</code></span></p></td>
+<td>
+<p>
+            Mounts a device. The device will be mounted in a
+            subdirectory in the <code class="filename">/media</code> hierarchy
+            - upon successful completion, the mount point will be
+            printed to standard output.
+          </p>
+<p>
+            The device will be mounted with a safe set of default
+            options. You can influence the options passed to the
+            <span class="citerefentry"><span class="refentrytitle">mount</span>(8)</span>
+            command with <code class="option">--options</code>. Note that only
+            safe options are allowed - requests with inherently unsafe
+            options such as <em class="parameter"><code>suid</code></em> or
+            <em class="parameter"><code>dev</code></em> that would allow the caller to
+            gain additional privileges, are rejected.
+          </p>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">unmount</code></span></p></td>
+<td><p>
+            Unmounts a device. This only works if the device is
+            mounted. The option <code class="option">--force</code> can be used
+            to request that the device is unmounted even if active
+            references exists.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">unlock</code></span></p></td>
+<td><p>
+            Unlocks an encrypted device. The passphrase will be
+            requested from the controlling terminal and upon
+            successful completion, the cleartext device will be
+            printed to standard output.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">lock</code></span></p></td>
+<td><p>
+            Locks a device. This only works if the device is a
+            cleartext device backed by a cryptotext device.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">loop-setup</code></span></p></td>
+<td><p>
+            Sets up a loop device backed by <em class="replaceable"><code>FILE</code></em>.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">loop-delete</code></span></p></td>
+<td><p>
+            Tears down a loop device.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">power-off</code></span></p></td>
+<td>
+<p>
+            Arranges for the drive to be safely removed and powered
+            off. On the OS side this includes ensuring that no process
+            is using the drive, then requesting that in-flight buffers
+            and caches are committed to stable storage. The exact
+            steps for powering off the drive depends on the drive
+            itself and the interconnect used. For drives connected
+            through USB, the effect is that the USB device will be
+            deconfigured followed by disabling the upstream hub port
+            it is connected to.
+          </p>
+<p>
+            Note that as some physical devices contain multiple drives
+            (for example 4-in-1 flash card reader USB devices)
+            powering off one drive may affect other drives. As such
+            there are not a lot of guarantees associated with
+            performing this action. Usually the effect is that the
+            drive disappears as if it was unplugged.
+          </p>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">smart-simulate</code></span></p></td>
+<td><p>
+            Sets SMART data from the libatasmart blob given by
+            <em class="replaceable"><code>FILE</code></em> - see
+            <code class="filename">/usr/share/doc/libatasmart-devel-VERSION/</code>
+            for blobs shipped with libatasmart. This is a debugging
+            feature used to check that applications act correctly when
+            a disk is failing.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">monitor</code></span></p></td>
+<td><p>
+          Monitors the daemon for events.
+        </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">dump</code></span></p></td>
+<td><p>
+          Prints the current state of the daemon.
+        </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">help</code></span></p></td>
+<td><p>
+          Prints help and exit.
+        </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="id-1.2.4.7"></a><h2>COMMON OPTIONS</h2>
+<p>
+      The option <code class="option">--no-user-interaction</code> can be used
+      to request that no interaction (such as the user being
+      presented with an authentication dialog) must occur when
+      checking with
+      <span class="citerefentry"><span class="refentrytitle">polkit</span>(8)</span>
+      whether the caller is authorized to perform the requested
+      action.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.4.8"></a><h2>AUDIENCE</h2>
+<p>
+      This program does not assume that the caller is the super user -
+      it is intended to be used by unprivileged users and
+      authorizations are checked by the udisks daemon using
+      <span class="citerefentry"><span class="refentrytitle">polkit</span>(8)</span>.
+      Additionally, this program is not intended to be used by scripts
+      or other programs - options/commands may change in incompatible
+      ways in the future even in maintenance releases. See the
+      <span class="quote">“<span class="quote">API STABILITY</span>”</span> section of
+      <a class="link" href="udisks.8.html" title="udisks"><span class="citerefentry"><span class="refentrytitle">udisks</span>(8)</span></a>
+      for more information.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.4.9"></a><h2>BASH COMPLETION</h2>
+<p>
+      <span class="command"><strong>udisksctl</strong></span> ships with a bash completion script to
+      complete commands, objects, block devices and some options.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.4.10"></a><h2>AUTHOR</h2>
+<p>
+      Written by David Zeuthen
+      <code class="email">&lt;<a class="email" href="mailto:zeuthen@gmail.com">zeuthen@gmail.com</a>&gt;</code> with a lot of help
+      from many others.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.4.11"></a><h2>BUGS</h2>
+<p>
+      Please send bug reports to either the distribution bug tracker
+      or the upstream bug tracker at
+      <a class="ulink" href="http://bugs.freedesktop.org/enter_bug.cgi?product=udisks" target="_top">http://bugs.freedesktop.org/enter_bug.cgi?product=udisks</a>.
+    </p>
+</div>
+<div class="refsect1">
+<a name="id-1.2.4.12"></a><h2>SEE ALSO</h2>
+<p>
+      <a class="link" href="udisks.8.html" title="udisks"><span class="citerefentry"><span class="refentrytitle">udisks</span>(8)</span></a>,
+      <a class="link" href="udisksd.8.html" title="udisksd"><span class="citerefentry"><span class="refentrytitle">udisksd</span>(8)</span></a>,
+      <span class="citerefentry"><span class="refentrytitle">polkit</span>(8)</span>
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

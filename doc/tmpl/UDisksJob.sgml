@@ -1,0 +1,500 @@
+<!-- ##### SECTION Title ##### -->
+UDisksJob
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksJob ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksJob::completed ##### -->
+<para>
+
+</para>
+
+@udisksjob: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL UDisksJob::handle-cancel ##### -->
+<para>
+
+</para>
+
+@udisksjob: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### ARG UDisksJob:bytes ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:cancelable ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:expected-end-time ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:objects ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:operation ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:progress ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:progress-valid ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:rate ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:start-time ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksJob:started-by-uid ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT UDisksJobIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@handle_cancel: 
+@get_cancelable: 
+@get_expected_end_time: 
+@get_objects: 
+@get_operation: 
+@get_progress: 
+@get_progress_valid: 
+@get_start_time: 
+@get_started_by_uid: 
+@completed: 
+@get_bytes: 
+@get_rate: 
+
+<!-- ##### FUNCTION udisks_job_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_override_properties ##### -->
+<para>
+
+</para>
+
+@klass: 
+@property_id_begin: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_call_cancel ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_job_call_cancel_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_call_cancel_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_complete_cancel ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_job_emit_completed ##### -->
+<para>
+
+</para>
+
+@object: 
+@arg_success: 
+@arg_message: 
+
+
+<!-- ##### FUNCTION udisks_job_get_expected_end_time ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_progress ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_bytes ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_rate ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_start_time ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_objects ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_cancelable ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_operation ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_progress_valid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_get_started_by_uid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_dup_objects ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_dup_operation ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_set_expected_end_time ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_progress ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_bytes ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_rate ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_start_time ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_objects ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_cancelable ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_operation ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_progress_valid ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_job_set_started_by_uid ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### STRUCT UDisksJobProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksJobProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_job_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_job_proxy_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_proxy_new_sync ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_proxy_new_for_bus ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_job_proxy_new_for_bus_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_job_proxy_new_for_bus_sync ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksJobSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksJobSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_job_skeleton_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

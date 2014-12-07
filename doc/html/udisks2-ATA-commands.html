@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: ATA commands</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-daemon-core.html" title="Core">
+<link rel="prev" href="UDisksState.html" title="UDisksState">
+<link rel="next" href="ref-daemon-monitoring.html" title="State and Configuration">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#udisks2-ATA-commands.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#udisks2-ATA-commands.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-daemon-core.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="UDisksState.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ref-daemon-monitoring.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="udisks2-ATA-commands"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="udisks2-ATA-commands.top_of_page"></a>ATA commands</span></h2>
+<p>ATA commands — Helper routines for ATA commands</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="udisks2-ATA-commands.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody><tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-ATA-commands.html#udisks-ata-send-command-sync" title="udisks_ata_send_command_sync ()">udisks_ata_send_command_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="udisks2-ATA-commands.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="udisks2-ATA-commands.html#UDisksAtaCommandProtocol" title="enum UDisksAtaCommandProtocol">UDisksAtaCommandProtocol</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="udisks2-ATA-commands.html#UDisksAtaCommandInput" title="UDisksAtaCommandInput">UDisksAtaCommandInput</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="udisks2-ATA-commands.html#UDisksAtaCommandOutput" title="UDisksAtaCommandOutput">UDisksAtaCommandOutput</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="udisks2-ATA-commands.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">
+</pre>
+</div>
+<div class="refsect1">
+<a name="udisks2-ATA-commands.description"></a><h2>Description</h2>
+<p>Helper routines for sending ATA commands to a device.</p>
+</div>
+<div class="refsect1">
+<a name="udisks2-ATA-commands.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="udisks-ata-send-command-sync"></a><h3>udisks_ata_send_command_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_ata_send_command_sync (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> fd</code></em>,
+                              <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> timeout_msec</code></em>,
+                              <em class="parameter"><code><a class="link" href="udisks2-ATA-commands.html#UDisksAtaCommandProtocol" title="enum UDisksAtaCommandProtocol"><span class="type">UDisksAtaCommandProtocol</span></a> protocol</code></em>,
+                              <em class="parameter"><code><a class="link" href="udisks2-ATA-commands.html#UDisksAtaCommandInput" title="UDisksAtaCommandInput"><span class="type">UDisksAtaCommandInput</span></a> *input</code></em>,
+                              <em class="parameter"><code><a class="link" href="udisks2-ATA-commands.html#UDisksAtaCommandOutput" title="UDisksAtaCommandOutput"><span class="type">UDisksAtaCommandOutput</span></a> *output</code></em>,
+                              <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Sends a command to an ATA device. Blocks the calling thread while the command is pending.</p>
+<div class="refsect3">
+<a name="id-1.5.2.7.7.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>fd</p></td>
+<td class="parameter_description"><p>A file descriptor for a ATA device.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>timeout_msec</p></td>
+<td class="parameter_description"><p>Timeout in milli-seconds for the command. Use -1 for the default (5 seconds) timeout and <code class="literal">G_MAXINT</code> for no timeout.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protocol</p></td>
+<td class="parameter_description"><p>The direction of the command.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>input</p></td>
+<td class="parameter_description"><p>The input for the command.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>output</p></td>
+<td class="parameter_description"><p>The output for the command.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.7.7.2.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the command succeded, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="udisks2-ATA-commands.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UDisksAtaCommandProtocol"></a><h3>enum UDisksAtaCommandProtocol</h3>
+<p>Enumeration used to specify the protocol of an ATA command</p>
+<div class="refsect3">
+<a name="id-1.5.2.7.8.2.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="UDISKS-ATA-COMMAND-PROTOCOL-NONE:CAPS"></a>UDISKS_ATA_COMMAND_PROTOCOL_NONE</p></td>
+<td class="enum_member_description">
+<p>Non-data</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="UDISKS-ATA-COMMAND-PROTOCOL-DRIVE-TO-HOST:CAPS"></a>UDISKS_ATA_COMMAND_PROTOCOL_DRIVE_TO_HOST</p></td>
+<td class="enum_member_description">
+<p>PIO Data-In</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="UDISKS-ATA-COMMAND-PROTOCOL-HOST-TO-DRIVE:CAPS"></a>UDISKS_ATA_COMMAND_PROTOCOL_HOST_TO_DRIVE</p></td>
+<td class="enum_member_description">
+<p>PIO Data-Out</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksAtaCommandInput"></a><h3>UDisksAtaCommandInput</h3>
+<pre class="programlisting">typedef struct {
+  guint8  command;
+  guint8  feature;
+  guint8  count;
+  guint8  device;
+  guint32 lba;
+  gsize   buffer_size;
+  guchar *buffer;
+} UDisksAtaCommandInput;
+</pre>
+<p>Struct used for input data when sending ATA commands.</p>
+<div class="refsect3">
+<a name="id-1.5.2.7.8.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="UDisksAtaCommandInput.command"></a>command</code></em>;</p></td>
+<td class="struct_member_description"><p>Command</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="UDisksAtaCommandInput.feature"></a>feature</code></em>;</p></td>
+<td class="struct_member_description"><p>Feature</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="UDisksAtaCommandInput.count"></a>count</code></em>;</p></td>
+<td class="struct_member_description"><p>Count</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="UDisksAtaCommandInput.device"></a>device</code></em>;</p></td>
+<td class="struct_member_description"><p>Device</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint32</span> <em class="structfield"><code><a name="UDisksAtaCommandInput.lba"></a>lba</code></em>;</p></td>
+<td class="struct_member_description"><p>LBA</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gsize</span> <em class="structfield"><code><a name="UDisksAtaCommandInput.buffer-size"></a>buffer_size</code></em>;</p></td>
+<td class="struct_member_description"><p>Size of the <em class="parameter"><code>buffer</code></em>
+member or 0</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *<em class="structfield"><code><a name="UDisksAtaCommandInput.buffer"></a>buffer</code></em>;</p></td>
+<td class="struct_member_description"><p>Data to send to device or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksAtaCommandOutput"></a><h3>UDisksAtaCommandOutput</h3>
+<pre class="programlisting">typedef struct {
+  guint8  error;
+  guint8  count;
+  guint8  device;
+  guint8  status;
+  guint32 lba;
+  gsize   buffer_size;
+  guchar *buffer;
+} UDisksAtaCommandOutput;
+</pre>
+<p>Struct used for output data when sending ATA commands.</p>
+<div class="refsect3">
+<a name="id-1.5.2.7.8.4.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="UDisksAtaCommandOutput.error"></a>error</code></em>;</p></td>
+<td class="struct_member_description"><p>Error</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="UDisksAtaCommandOutput.count"></a>count</code></em>;</p></td>
+<td class="struct_member_description"><p>Count</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="UDisksAtaCommandOutput.device"></a>device</code></em>;</p></td>
+<td class="struct_member_description"><p>Device</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="UDisksAtaCommandOutput.status"></a>status</code></em>;</p></td>
+<td class="struct_member_description"><p>Status</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint32</span> <em class="structfield"><code><a name="UDisksAtaCommandOutput.lba"></a>lba</code></em>;</p></td>
+<td class="struct_member_description"><p>LBA</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gsize</span> <em class="structfield"><code><a name="UDisksAtaCommandOutput.buffer-size"></a>buffer_size</code></em>;</p></td>
+<td class="struct_member_description"><p>Size of the <em class="parameter"><code>buffer</code></em>
+member or 0</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *<em class="structfield"><code><a name="UDisksAtaCommandOutput.buffer"></a>buffer</code></em>;</p></td>
+<td class="struct_member_description"><p>Pointer to where to recieve data from the device or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

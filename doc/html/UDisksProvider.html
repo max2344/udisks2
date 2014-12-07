@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: UDisksProvider</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-daemon-core.html" title="Core">
+<link rel="prev" href="UDisksDaemon.html" title="UDisksDaemon">
+<link rel="next" href="UDisksState.html" title="UDisksState">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#UDisksProvider.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#UDisksProvider.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties"> <span class="dim">|</span> 
+                  <a href="#UDisksProvider.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-daemon-core.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="UDisksDaemon.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="UDisksState.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="UDisksProvider"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="UDisksProvider.top_of_page"></a>UDisksProvider</span></h2>
+<p>UDisksProvider — Abstract base class for all data providers</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="UDisksProvider.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksProvider.html#udisks-provider-start" title="udisks_provider_start ()">udisks_provider_start</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="returnvalue">UDisksDaemon</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksProvider.html#udisks-provider-get-daemon" title="udisks_provider_get_daemon ()">udisks_provider_get_daemon</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksProvider.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *</td>
+<td class="property_name"><a class="link" href="UDisksProvider.html#UDisksProvider--daemon" title="The “daemon” property">daemon</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksProvider.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="UDisksProvider.html#UDisksProvider-struct" title="UDisksProvider">UDisksProvider</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="UDisksProvider.html#UDisksProviderClass" title="struct UDisksProviderClass">UDisksProviderClass</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksProvider.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> UDisksProvider
+        <span class="lineart">╰──</span> <a class="link" href="UDisksLinuxProvider.html" title="UDisksLinuxProvider">UDisksLinuxProvider</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="UDisksProvider.description"></a><h2>Description</h2>
+<p>Abstract base class for all data providers.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksProvider.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="udisks-provider-start"></a><h3>udisks_provider_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_provider_start (<em class="parameter"><code><a class="link" href="UDisksProvider.html" title="UDisksProvider"><span class="type">UDisksProvider</span></a> *provider</code></em>);</pre>
+<p>Starts the provider.</p>
+<div class="refsect3">
+<a name="id-1.5.2.5.8.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksProvider.html" title="UDisksProvider"><span class="type">UDisksProvider</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-provider-get-daemon"></a><h3>udisks_provider_get_daemon ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="returnvalue">UDisksDaemon</span></a> *
+udisks_provider_get_daemon (<em class="parameter"><code><a class="link" href="UDisksProvider.html" title="UDisksProvider"><span class="type">UDisksProvider</span></a> *provider</code></em>);</pre>
+<p>Gets the daemon used by <em class="parameter"><code>provider</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.5.8.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksProvider.html" title="UDisksProvider"><span class="type">UDisksProvider</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.5.8.3.6"></a><h4>Returns</h4>
+<p> A <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a>. Do not free, the object is owned by <em class="parameter"><code>provider</code></em>
+.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksProvider.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UDisksProvider-struct"></a><h3>UDisksProvider</h3>
+<pre class="programlisting">typedef struct _UDisksProvider UDisksProvider;</pre>
+<p>The <a class="link" href="UDisksProvider.html" title="UDisksProvider"><span class="type">UDisksProvider</span></a> structure contains only private data and
+should only be accessed using the provided API.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksProviderClass"></a><h3>struct UDisksProviderClass</h3>
+<pre class="programlisting">struct UDisksProviderClass {
+  GObjectClass parent_class;
+
+  void (*start) (UDisksProvider *provider);
+};
+</pre>
+<p>Class structure for <a class="link" href="UDisksProvider.html" title="UDisksProvider"><span class="type">UDisksProvider</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.5.9.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> <em class="structfield"><code><a name="UDisksProviderClass.parent-class"></a>parent_class</code></em>;</p></td>
+<td class="struct_member_description"><p>The parent class.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="UDisksProviderClass.start"></a>start</code></em> ()</p></td>
+<td class="struct_member_description"><p>Virtual function for <a class="link" href="UDisksProvider.html#udisks-provider-start" title="udisks_provider_start ()"><code class="function">udisks_provider_start()</code></a>. The default implementation does nothing.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksProvider.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="UDisksProvider--daemon"></a><h3>The <code class="literal">“daemon”</code> property</h3>
+<pre class="programlisting">  “daemon”                   <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> *</pre>
+<p>The <a class="link" href="UDisksDaemon.html" title="UDisksDaemon"><span class="type">UDisksDaemon</span></a> the provider is for.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

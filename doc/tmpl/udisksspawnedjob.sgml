@@ -1,0 +1,85 @@
+<!-- ##### SECTION Title ##### -->
+UDisksSpawnedJob
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksSpawnedJob ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksSpawnedJob::spawned-job-completed ##### -->
+<para>
+
+</para>
+
+@udisksspawnedjob: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+@Returns: 
+
+<!-- ##### ARG UDisksSpawnedJob:command-line ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksSpawnedJob:input-string ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksSpawnedJob:run-as-euid ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksSpawnedJob:run-as-uid ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION udisks_spawned_job_new ##### -->
+<para>
+
+</para>
+
+@command_line: 
+@input_string: 
+@run_as_uid: 
+@run_as_euid: 
+@daemon: 
+@cancellable: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_spawned_job_get_command_line ##### -->
+<para>
+
+</para>
+
+@job: 
+@Returns: 
+
+

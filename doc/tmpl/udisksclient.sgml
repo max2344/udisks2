@@ -1,0 +1,487 @@
+<!-- ##### SECTION Title ##### -->
+UDisksClient
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO UDISKS_MAJOR_VERSION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO UDISKS_MINOR_VERSION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO UDISKS_MICRO_VERSION ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO UDISKS_CHECK_VERSION ##### -->
+<para>
+
+</para>
+
+@major: 
+@minor: 
+@micro: 
+
+
+<!-- ##### STRUCT UDisksClient ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksClient::changed ##### -->
+<para>
+
+</para>
+
+@udisksclient: the object which received the signal.
+
+<!-- ##### ARG UDisksClient:manager ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksClient:object-manager ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION udisks_client_new ##### -->
+<para>
+
+</para>
+
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_client_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_new_sync ##### -->
+<para>
+
+</para>
+
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_object ##### -->
+<para>
+
+</para>
+
+@client: 
+@object_path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_peek_object ##### -->
+<para>
+
+</para>
+
+@client: 
+@object_path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_object_manager ##### -->
+<para>
+
+</para>
+
+@client: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_manager ##### -->
+<para>
+
+</para>
+
+@client: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_settle ##### -->
+<para>
+
+</para>
+
+@client: 
+
+
+<!-- ##### FUNCTION udisks_client_queue_changed ##### -->
+<para>
+
+</para>
+
+@client: 
+
+
+<!-- ##### FUNCTION udisks_client_get_jobs_for_object ##### -->
+<para>
+
+</para>
+
+@client: 
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_job_description ##### -->
+<para>
+
+</para>
+
+@client: 
+@job: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_block_for_dev ##### -->
+<para>
+
+</para>
+
+@client: 
+@block_device_number: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_block_for_label ##### -->
+<para>
+
+</para>
+
+@client: 
+@label: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_block_for_uuid ##### -->
+<para>
+
+</para>
+
+@client: 
+@uuid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_block_for_drive ##### -->
+<para>
+
+</para>
+
+@client: 
+@drive: 
+@get_physical: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_drive_for_block ##### -->
+<para>
+
+</para>
+
+@client: 
+@block: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_cleartext_block ##### -->
+<para>
+
+</para>
+
+@client: 
+@block: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partition_table ##### -->
+<para>
+
+</para>
+
+@client: 
+@partition: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_loop_for_block ##### -->
+<para>
+
+</para>
+
+@client: 
+@block: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partitions ##### -->
+<para>
+
+</para>
+
+@client: 
+@table: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_drive_siblings ##### -->
+<para>
+
+</para>
+
+@client: 
+@drive: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_block_for_mdraid ##### -->
+<para>
+
+</para>
+
+@client: 
+@raid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_all_blocks_for_mdraid ##### -->
+<para>
+
+</para>
+
+@client: 
+@raid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_members_for_mdraid ##### -->
+<para>
+
+</para>
+
+@client: 
+@raid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_mdraid_for_block ##### -->
+<para>
+
+</para>
+
+@client: 
+@block: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_object_info ##### -->
+<para>
+
+</para>
+
+@client: 
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_drive_info ##### -->
+<para>
+
+</para>
+
+@client: 
+@drive: 
+@out_name: 
+@out_description: 
+@out_drive_icon: 
+@out_media_description: 
+@out_media_icon: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partition_info ##### -->
+<para>
+
+</para>
+
+@client: 
+@partition: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_size_for_display ##### -->
+<para>
+
+</para>
+
+@client: 
+@size: 
+@use_pow2: 
+@long_string: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_id_for_display ##### -->
+<para>
+
+</para>
+
+@client: 
+@usage: 
+@type: 
+@version: 
+@long_string: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_media_compat_for_display ##### -->
+<para>
+
+</para>
+
+@client: 
+@media_compat: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksPartitionTypeInfo ##### -->
+<para>
+
+</para>
+
+@table_type: 
+@table_subtype: 
+@type: 
+@flags: 
+
+<!-- ##### ENUM UDisksPartitionTypeInfoFlags ##### -->
+<para>
+
+</para>
+
+@UDISKS_PARTITION_TYPE_INFO_FLAGS_NONE: 
+@UDISKS_PARTITION_TYPE_INFO_FLAGS_SWAP: 
+@UDISKS_PARTITION_TYPE_INFO_FLAGS_RAID: 
+@UDISKS_PARTITION_TYPE_INFO_FLAGS_HIDDEN: 
+@UDISKS_PARTITION_TYPE_INFO_FLAGS_CREATE_ONLY: 
+@UDISKS_PARTITION_TYPE_INFO_FLAGS_SYSTEM: 
+
+<!-- ##### FUNCTION udisks_partition_type_info_free ##### -->
+<para>
+
+</para>
+
+@info: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partition_type_infos ##### -->
+<para>
+
+</para>
+
+@client: 
+@partition_table_type: 
+@partition_table_subtype: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partition_table_subtypes ##### -->
+<para>
+
+</para>
+
+@client: 
+@partition_table_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partition_type_for_display ##### -->
+<para>
+
+</para>
+
+@client: 
+@partition_table_type: 
+@partition_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partition_type_and_subtype_for_display ##### -->
+<para>
+
+</para>
+
+@client: 
+@partition_table_type: 
+@partition_table_subtype: 
+@partition_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partition_table_type_for_display ##### -->
+<para>
+
+</para>
+
+@client: 
+@partition_table_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_client_get_partition_table_subtype_for_display ##### -->
+<para>
+
+</para>
+
+@client: 
+@partition_table_type: 
+@partition_table_subtype: 
+@Returns: 
+
+

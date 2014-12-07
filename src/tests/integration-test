@@ -1,0 +1,1351 @@
+#!/usr/bin/python3
+#
+# udisks2 integration test suite
+#
+# Run in udisks built tree to test local built binaries (needs
+# --localstatedir=/var), or from anywhere else to test system installed
+# binaries.
+#
+# Usage:
+# - Run all tests:
+#   src/tests/integration-test
+# - Run only a particular class of tests:
+#   src/tests/integration-test Drive
+# - Run only a single test:
+#   src/tests/integration-test FS.test_ext3
+#
+# Copyright: (C) 2011 Martin Pitt <martin.pitt@ubuntu.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# TODO:
+# - add and test method for changing LUKS passphrase
+# - test Format with take-ownership
+
+import sys
+import os
+
+srcdir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+libdir = os.path.join(srcdir, 'udisks', '.libs')
+
+# as we can't change LD_LIBRARY_PATH within a running program, and doing
+# #!/usr/bin/env LD_LIBRARY_PATH=... python3 does not work either, do this
+# nasty hack
+if 'LD_LIBRARY_PATH' not in os.environ and os.path.isdir(libdir):
+    os.environ['LD_LIBRARY_PATH'] = libdir
+    os.environ['GI_TYPELIB_PATH'] = '%s/udisks:%s' % (
+        srcdir,
+        os.environ.get('GI_TYPELIB_PATH', ''))
+    os.execv(sys.argv[0], sys.argv)
+    assert False, 'not expecting to land here'
+
+import subprocess
+import unittest
+import tempfile
+import atexit
+import time
+import shutil
+import signal
+import argparse
+import re
+from glob import glob
+from gi.repository import GLib, Gio, UDisks
+
+# find local test_polkit.py
+sys.path.insert(0, os.path.dirname(__file__))
+import test_polkitd
+
+# GI_TYPELIB_PATH=udisks LD_LIBRARY_PATH=udisks/.libs
+VDEV_SIZE = 300000000  # size of virtual test device
+
+# Those file systems are known to have a broken handling of permissions, in
+# particular the executable bit
+BROKEN_PERMISSIONS_FS = ['ntfs', 'exfat']
+
+no_options = GLib.Variant('a{sv}', {})
+
+
+# ----------------------------------------------------------------------------
+
+class UDisksTestCase(unittest.TestCase):
+    '''Base class for udisks test cases.
+
+    This provides static functions which are useful for all test cases.
+    '''
+    daemon = None
+    daemon_path = None
+    daemon_log = None
+    device = None
+
+    client = None
+    manager = None
+
+    @classmethod
+    def init(klass, logfile=None):
+        '''start daemon and set up test environment'''
+
+        if os.geteuid() != 0:
+            print('this test suite needs to run as root', file=sys.stderr)
+            sys.exit(0)
+
+        # run from local build tree if we are in one, otherwise use system instance
+        klass.daemon_path = os.path.join(srcdir, 'src', 'udisksd')
+        if (os.access(klass.daemon_path, os.X_OK)):
+            print('Testing binaries from local build tree')
+            klass.check_build_tree_config()
+        else:
+            print('Testing installed system binaries')
+            klass.daemon_path = None
+            for l in open('/usr/share/dbus-1/system-services/org.freedesktop.UDisks2.service'):
+                if l.startswith('Exec='):
+                    klass.daemon_path = l.split('=', 1)[1].split()[0]
+                    break
+            assert klass.daemon_path, 'could not determine daemon path from D-BUS .service file'
+
+        print('daemon path: ' + klass.daemon_path)
+
+        (klass.device, klass.cd_device) = klass.setup_vdev()
+
+        # start polkit and udisks on a private DBus
+        klass.dbus = Gio.TestDBus()
+        klass.dbus.up()
+        os.environ['DBUS_SYSTEM_BUS_ADDRESS'] = klass.dbus.get_bus_address()
+        # do not try to communicate with the current desktop session; this will
+        # confuse it, as it cannot see this D-BUS instance
+        try:
+            del os.environ['DISPLAY']
+        except KeyError:
+            pass
+        if logfile:
+            klass.daemon_log = open(logfile, 'w')
+        else:
+            klass.daemon_log = tempfile.TemporaryFile()
+        atexit.register(klass.cleanup)
+
+        klass.start_daemon()
+
+    @classmethod
+    def cleanup(klass):
+        '''stop daemon again and clean up test environment'''
+
+        subprocess.call(['umount', klass.device], stderr=subprocess.PIPE)  # if a test failed
+
+        klass.stop_daemon()
+
+        klass.teardown_vdev(klass.device)
+        klass.device = None
+
+        del os.environ['DBUS_SYSTEM_BUS_ADDRESS']
+        klass.dbus.down()
+
+    @classmethod
+    def start_daemon(klass):
+        assert klass.daemon is None
+        klass.daemon = subprocess.Popen([klass.daemon_path, '--replace'],
+                                        stdout=klass.daemon_log,
+                                        stderr=subprocess.STDOUT)
+        assert klass.daemon.pid, 'daemon failed to start'
+
+        # wait until the daemon has started up
+        timeout = 10
+        klass.manager = None
+        while klass.manager is None and timeout > 0:
+            time.sleep(0.2)
+            klass.client = UDisks.Client.new_sync(None)
+            assert klass.client is not None
+            klass.manager = klass.client.get_manager()
+            timeout -= 1
+        assert klass.manager, 'daemon failed to start'
+        assert klass.daemon.pid, 'daemon failed to start'
+
+        klass.sync()
+
+    @classmethod
+    def stop_daemon(klass):
+        assert klass.daemon
+        os.kill(klass.daemon.pid, signal.SIGTERM)
+        os.wait()
+        klass.daemon = None
+
+    @classmethod
+    def sync(klass):
+        '''Wait until pending events finished processing.
+
+        This should only be called for situations where we genuinely have an
+        asynchronous response, like invoking a CLI program and waiting for
+        udev/udisks to catch up on the change events.
+        '''
+        subprocess.call(['udevadm', 'settle'])
+        context = GLib.main_context_default()
+        timeout = 100
+        # wait until all GDBus events have been processed
+        while context.pending() and timeout > 0:
+            klass.client.settle()
+            time.sleep(0.1)
+            timeout -= 1
+        if timeout <= 0:
+            sys.stderr.write('[wait timeout!] ')
+
+    @classmethod
+    def zero_device(klass):
+        subprocess.call(['dd', 'if=/dev/zero', 'of=' + klass.device, 'bs=10M'],
+                        stderr=subprocess.PIPE)
+        time.sleep(0.5)
+        klass.sync()
+
+    @classmethod
+    def devname(klass, partition=None, cd=False):
+        '''Get name of test device or one of its partitions
+
+        If cd is True, return the CD device, otherwise the hard disk device.
+        '''
+        if cd:
+            dev = klass.cd_device
+        else:
+            dev = klass.device
+        if partition:
+            if dev[-1].isdigit():
+                return dev + 'p' + str(partition)
+            else:
+                return dev + str(partition)
+        else:
+            return dev
+
+    @classmethod
+    def udisks_block(klass, partition=None, cd=False):
+        '''Get UDisksBlock object for test device or partition
+
+        If cd is True, return the CD device, otherwise the hard disk device.
+        '''
+        assert klass.client
+        devname = klass.devname(partition, cd)
+        dev_t = os.stat(devname).st_rdev
+        block = klass.client.get_block_for_dev(dev_t)
+        assert block, 'did not find an UDisksBlock object for %s' % devname
+        return block
+
+    @classmethod
+    def udisks_filesystem(klass, partition=None, cd=False):
+        '''Get UDisksFilesystem object for test device or partition
+
+        Return None if there is no file system on that device.
+
+        If cd is True, return the CD device, otherwise the hard disk device.
+        '''
+        block = klass.udisks_block(partition, cd)
+        return klass.client.get_object(block.get_object_path()).get_filesystem()
+
+    @classmethod
+    def blkid(klass, partition=None, device=None):
+        '''Call blkid and return dictionary of results.'''
+
+        if not device:
+            device = klass.devname(partition)
+        result = {}
+        cmd = subprocess.Popen(['blkid', '-p', '-o', 'udev', device], stdout=subprocess.PIPE)
+        for l in cmd.stdout:
+            (key, value) = l.decode('UTF-8').split('=', 1)
+            result[key] = value.strip()
+        assert cmd.wait() == 0
+        return result
+
+    @classmethod
+    def is_mountpoint(klass, path):
+        '''Check if given path is a mount point.'''
+
+        return subprocess.call(['mountpoint', path], stdout=subprocess.PIPE) == 0
+
+    @classmethod
+    def mkfs(klass, type, label=None, partition=None):
+        '''Create file system using mkfs.'''
+
+        if type == 'minix':
+            assert label is None, 'minix does not support labels'
+
+        # work around mkswap not properly cleaning up an existing reiserfs
+        # signature (mailed kzak about it)
+        if type == 'swap':
+            subprocess.check_call(['wipefs', '-a', klass.devname(partition)],
+                                  stdout=subprocess.PIPE)
+
+        mkcmd = {'swap': 'mkswap',
+                 'ntfs': 'mkntfs'}
+        label_opt = {'vfat': '-n',
+                     'exfat': '-n',
+                     'reiserfs': '-l'}
+        extra_opt = {'vfat': ['-I', '-F', '32'],
+                     'swap': ['-f'],
+                     'xfs': ['-f'],   # XFS complains if there's an existing FS, so force
+                     'ext2': ['-F'],  # ext* complains about using entire device, so force
+                     'ext3': ['-F'],
+                     'ext4': ['-F'],
+                     'ntfs': ['-F'],
+                     'reiserfs': ['-ff']}
+
+        cmd = [mkcmd.get(type, 'mkfs.' + type)] + extra_opt.get(type, [])
+        if label:
+            cmd += [label_opt.get(type, '-L'), label]
+        cmd.append(klass.devname(partition))
+
+        subprocess.check_call(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+        # kernel/udev generally detect those changes itself, but do not quite
+        # tell us when they are done; so do a little kludge here to know how
+        # long we need to wait
+        subprocess.call(['udevadm', 'trigger', '--action=change',
+                         '--sysname-match=' + os.path.basename(klass.devname(partition))])
+        klass.sync()
+
+    @classmethod
+    def fs_create(klass, partition, type, options):
+        '''Create file system using udisks.'''
+
+        block = klass.udisks_block(partition)
+        block.call_format_sync(type, options, None)
+
+    @classmethod
+    def retry_busy(klass, fn, *args):
+        '''Call a function until it does not fail with "Busy".'''
+
+        timeout = 10
+        while timeout >= 0:
+            try:
+                return fn(*args)
+            except GLib.GError as e:
+                if 'UDisks2.Error.DeviceBusy' not in e.message:
+                    raise
+                sys.stderr.write('[busy] ')
+                time.sleep(0.3)
+                timeout -= 1
+
+    @classmethod
+    def check_build_tree_config(klass):
+        '''Check configuration of build tree'''
+
+        # read make variables
+        make_vars = {}
+        var_re = re.compile('^([a-zA-Z_]+) = (.*)$')
+        make = subprocess.Popen(['make', '-p', '/dev/null'], stdout=subprocess.PIPE)
+        for l in make.stdout:
+            l = l.decode('UTF-8')
+            m = var_re.match(l)
+            if m:
+                make_vars[m.group(1)] = m.group(2)
+        make.wait()
+
+        # expand make variables
+        subst_re = re.compile('\${([a-zA-Z_]+)}')
+        for (k, v) in make_vars.items():
+            while True:
+                m = subst_re.search(v)
+                if m:
+                    v = subst_re.sub(make_vars.get(m.group(1), ''), v)
+                    make_vars[k] = v
+                else:
+                    break
+
+        # check localstatedir
+        for d in (os.path.join(make_vars['localstatedir'], 'run', 'udisks2'),
+                  os.path.join(make_vars['localstatedir'], 'lib', 'udisks2')):
+            if not os.path.exists(d):
+                sys.stderr.write('The directory %s does not exist; please create it before running these tests.\n' % d)
+                sys.exit(0)
+
+    @classmethod
+    def setup_vdev(klass):
+        '''create virtual test devices
+
+        It is zeroed out initially.
+
+        Return a pair (writable HD device path, readonly CD device path).
+        '''
+        # ensure that the scsi_debug module is loaded
+        if os.path.isdir('/sys/module/scsi_debug'):
+            sys.stderr.write('The scsi_debug module is already loaded; please remove before running this test.\n')
+            sys.exit(1)
+
+        # work around scsi_debug not implementing CD-ROM SCSI commands, so that
+        # udev's cdrom_id does not recognize tracks
+        scsi_debug_rules = '/run/udev/rules.d/60-persistent-storage-scsi_debug.rules'
+        if os.path.isdir('/run/udev') and not os.path.exists(scsi_debug_rules):
+            os.makedirs('/run/udev/rules.d', exist_ok=True)
+            with open(scsi_debug_rules, 'w') as f:
+                f.write('''KERNEL=="sr*", ENV{DISK_EJECT_REQUEST}!="?*", ATTRS{model}=="scsi_debug*", ENV{ID_CDROM_MEDIA}=="?*", IMPORT{program}="/sbin/blkid -o udev -p -u noraid $tempnode"
+''')
+            # reload udev
+            subprocess.call('sync; pkill --signal HUP udevd || pkill --signal HUP systemd-udevd',
+                            shell=True)
+
+        # craete a fake SCSI hard drive
+        assert subprocess.call(['modprobe', 'scsi_debug', 'dev_size_mb=%i' % (
+            VDEV_SIZE / 1048576)]) == 0, 'Failure to modprobe scsi_debug'
+
+        # wait until drive got created
+        rw_dirs = []
+        while len(rw_dirs) < 1:
+            rw_dirs = glob('/sys/bus/pseudo/drivers/scsi_debug/adapter*/host*/target*/*:*/block')
+            time.sleep(0.1)
+        assert len(rw_dirs) == 1
+
+        # create a fake CD-ROM, too
+        with open('/sys/bus/pseudo/drivers/scsi_debug/ptype', 'w') as f:
+            f.write('5')  # henceforth, created devices will be CD drives
+        with open('/sys/bus/pseudo/drivers/scsi_debug/add_host', 'w') as f:
+            f.write('1')  # generate a new drive
+        subprocess.call(['udevadm', 'settle'])
+        with open('/sys/bus/pseudo/drivers/scsi_debug/ptype', 'w') as f:
+            f.write('0')
+
+        ro_dirs = []
+        while len(ro_dirs) < 2:
+            ro_dirs = glob('/sys/bus/pseudo/drivers/scsi_debug/adapter*/host*/target*/*:*/block')
+            time.sleep(0.1)
+        ro_dirs.remove(rw_dirs[0])
+        assert len(ro_dirs) == 1
+
+        # determine the debug block devices
+        devs = os.listdir(ro_dirs[0])
+        assert len(devs) == 1
+        ro_dev = '/dev/' + devs[0]
+        devs = os.listdir(rw_dirs[0])
+        assert len(devs) == 1
+        rw_dev = '/dev/' + devs[0]
+        assert os.path.exists(ro_dev)
+        assert os.path.exists(rw_dev)
+
+        # let's be 100% sure that we pick a virtual one
+        assert open('/sys/block/%s/device/model' % os.path.basename(rw_dev)).read().strip() == 'scsi_debug'
+
+        print('Set up test device: r/w: %s, r/o: %s' % (rw_dev, ro_dev))
+        return (rw_dev, ro_dev)
+
+    @classmethod
+    def teardown_vdev(klass, device):
+        '''release and remove virtual test device'''
+
+        klass.remove_device(device)
+        assert subprocess.call(['rmmod', 'scsi_debug']) == 0, 'Failure to rmmod scsi_debug'
+
+    @classmethod
+    def remove_device(klass, device):
+        '''remove virtual test device'''
+
+        device = device.split('/')[-1]
+        if os.path.exists('/sys/block/' + device):
+            f = open('/sys/block/%s/device/delete' % device, 'w')
+            f.write('1')
+            f.close()
+        while os.path.exists(device):
+            time.sleep(0.1)
+        klass.sync()
+        time.sleep(0.5)  # TODO
+
+    @classmethod
+    def readd_devices(klass):
+        '''re-add virtual test devices after removal'''
+
+        scan_files = glob('/sys/bus/pseudo/devices/adapter*/host*/scsi_host/host*/scan')
+        assert len(scan_files) > 0
+        for f in scan_files:
+            open(f, 'w').write('- - -\n')
+        while not os.path.exists(klass.device):
+            time.sleep(0.1)
+        time.sleep(0.5)
+        klass.sync()
+
+    def assertEventually(self, fn, value):
+        '''Check that an function is eventually equal to value.
+
+        This is mostly meant for checking object properties, as these are
+        updated asynchronously. This retries up to 10 times.
+        '''
+        retries = 10
+        while retries > 0:
+            if fn() == value:
+                break
+            retries -= 1
+            time.sleep(0.1)
+            self.sync()
+
+        self.assertEqual(fn(), value)
+
+    def assertProperty(self, obj, name, value):
+        '''Check that an object's property is eventually equal to value'''
+
+        self.assertEventually(lambda: obj.get_property(name), value)
+
+
+# ----------------------------------------------------------------------------
+
+class Manager(UDisksTestCase):
+    '''UDisksManager operations'''
+
+    def test_version(self):
+        '''daemon version'''
+
+        self.assertTrue(self.manager.get_property('version')[0].isdigit())
+
+    def test_loop_rw(self):
+        '''loop device R/W'''
+
+        with tempfile.NamedTemporaryFile() as f:
+            f.truncate(100000000)
+            fd_list = Gio.UnixFDList.new_from_array([f.fileno()])
+
+            (path, out_fd_list) = self.manager.call_loop_setup_sync(
+                GLib.Variant('h', 0),  # fd index
+                no_options,
+                fd_list,
+                None)
+            self.client.settle()
+
+            obj = self.client.get_object(path)
+            loop = obj.get_property('loop')
+            block = obj.get_property('block')
+            self.assertNotEqual(block, None)
+            self.assertNotEqual(loop, None)
+            self.assertEqual(obj.get_property('filesystem'), None)
+
+            try:
+                self.assertEqual(loop.get_property('backing-file'), f.name)
+
+                options = GLib.Variant('a{sv}', {'label': GLib.Variant('s', 'foo')})
+                block.call_format_sync('ext2', options, None)
+                self.client.settle()
+                self.assertNotEqual(obj.get_property('filesystem'), None)
+
+                self.assertEqual(block.get_property('id-label'), 'foo')
+                self.assertEqual(block.get_property('id-usage'), 'filesystem')
+                self.assertEqual(block.get_property('id-type'), 'ext2')
+            finally:
+                loop.call_delete_sync(no_options, None)
+
+    def test_loop_ro(self):
+        '''loop device R/O'''
+
+        with tempfile.NamedTemporaryFile() as f:
+            f.truncate(100000000)
+            fd_list = Gio.UnixFDList.new_from_array([f.fileno()])
+
+            (path, out_fd_list) = self.manager.call_loop_setup_sync(
+                GLib.Variant('h', 0),  # fd index
+                GLib.Variant('a{sv}', {'read-only': GLib.Variant('b', True)}),
+                fd_list,
+                None)
+            self.client.settle()
+
+            obj = self.client.get_object(path)
+            loop = obj.get_property('loop')
+            block = obj.get_property('block')
+            self.assertNotEqual(block, None)
+            self.assertNotEqual(loop, None)
+            self.assertEqual(obj.get_property('filesystem'), None)
+
+            try:
+                self.assertEqual(loop.get_property('backing-file'), f.name)
+
+                # can't format due to permission error
+                self.assertRaises(GLib.GError, block.call_format_sync, 'ext2', no_options, None)
+
+                self.assertProperty(block, 'id-label', '')
+                self.assertProperty(block, 'id-usage', '')
+                self.assertProperty(block, 'id-type', '')
+            finally:
+                self.client.settle()
+                loop.call_delete_sync(no_options, None)
+
+
+# ----------------------------------------------------------------------------
+
+class Drive(UDisksTestCase):
+    '''UDisksDrive'''
+
+    def setUp(self):
+        self.drive = self.client.get_drive_for_block(self.udisks_block())
+        self.assertNotEqual(self.drive, None)
+
+    def test_properties(self):
+        '''properties of UDisksDrive object'''
+
+        self.assertEqual(self.drive.get_property('model'), 'scsi_debug')
+        self.assertEqual(self.drive.get_property('vendor'), 'Linux')
+        self.assertAlmostEqual(self.drive.get_property('size') / 1.e6, VDEV_SIZE / 1.e6, 0)
+        self.assertEqual(self.drive.get_property('media-available'), True)
+        self.assertEqual(self.drive.get_property('optical'), False)
+
+        self.assertNotEqual(len(self.drive.get_property('serial')), 0)
+        self.assertNotEqual(len(self.drive.get_property('revision')), 0)
+
+
+# ----------------------------------------------------------------------------
+
+class FS(UDisksTestCase):
+    '''Test detection of all supported file systems'''
+
+    def setUp(self):
+        self.workdir = tempfile.mkdtemp()
+        self.block = self.udisks_block()
+        self.assertNotEqual(self.block, None)
+
+    def tearDown(self):
+        if subprocess.call(['umount', self.device], stderr=subprocess.PIPE) == 0:
+            sys.stderr.write('[cleanup unmount] ')
+        shutil.rmtree(self.workdir)
+
+    def test_zero(self):
+        '''properties of zeroed out device'''
+
+        self.zero_device()
+        self.assertProperty(self.block, 'device', self.device)
+        self.assertTrue('Linux_scsi_debug' in self.block.get_property('drive'))
+        self.assertProperty(self.block, 'id-label', '')
+        self.assertEqual(self.block.get_property('hint-system'), True)
+        self.assertEqual(self.block.get_property('id-usage'), '')
+        self.assertEqual(self.block.get_property('id-type'), '')
+        self.assertEqual(self.block.get_property('id-uuid'), '')
+        self.assertAlmostEqual(self.block.get_property('size') / 1.e6, VDEV_SIZE / 1.e6, 0)
+        obj = self.client.get_object(self.block.get_object_path())
+        self.assertEqual(obj.get_property('filesystem'), None)
+        self.assertEqual(obj.get_property('partition'), None)
+        self.assertEqual(obj.get_property('partition-table'), None)
+
+    def test_ext2(self):
+        '''fs: ext2'''
+        self._do_fs_check('ext2')
+
+    def test_ext3(self):
+        '''fs: ext3'''
+        self._do_fs_check('ext3')
+
+    def test_ext4(self):
+        '''fs: ext4'''
+        self._do_fs_check('ext4')
+
+    def test_btrfs(self):
+        '''fs: btrfs'''
+        self._do_fs_check('btrfs')
+
+    def test_minix(self):
+        '''fs: minix'''
+        self._do_fs_check('minix')
+
+    def test_xfs(self):
+        '''fs: XFS'''
+        self._do_fs_check('xfs')
+
+    def test_ntfs(self):
+        '''fs: NTFS'''
+        self._do_fs_check('ntfs')
+
+    def test_vfat(self):
+        '''fs: FAT'''
+        self._do_fs_check('vfat')
+
+    def test_exfat(self):
+        '''fs: exFAT'''
+        self._do_fs_check('exfat')
+
+    def test_reiserfs(self):
+        '''fs: reiserfs'''
+        self._do_fs_check('reiserfs')
+
+    def test_swap(self):
+        '''fs: swap'''
+        self._do_fs_check('swap')
+
+    def test_nilfs2(self):
+        '''fs: nilfs2'''
+        self._do_fs_check('nilfs2')
+
+    def test_empty(self):
+        '''fs: empty'''
+
+        self.mkfs('ext4', 'foo')
+        block = self.udisks_block()
+        self.assertProperty(block, 'id-usage', 'filesystem')
+        self.assertProperty(block, 'id-type', 'ext4')
+        self.assertProperty(block, 'id-label', 'foo')
+        self.assertNotEqual(self.udisks_filesystem(), None)
+
+        self.fs_create(None, 'empty', no_options)
+
+        self.assertProperty(block, 'id-usage', '')
+        self.assertProperty(block, 'id-type', '')
+        self.assertProperty(block, 'id-label', '')
+        self.assertEqual(self.udisks_filesystem(), None)
+
+    def test_create_fs_unknown_type(self):
+        '''Format() with unknown type'''
+
+        try:
+            self.fs_create(None, 'bogus', no_options)
+            self.fail('Expected failure for bogus file system')
+        except GLib.GError as e:
+            self.assertTrue('UDisks2.Error.NotSupported' in e.message)
+            self.assertTrue('type bogus' in e.message)
+
+    def test_create_fs_unsupported_label(self):
+        '''Format() with unsupported label'''
+
+        options = GLib.Variant('a{sv}', {'label': GLib.Variant('s', 'foo')})
+        try:
+            self.fs_create(None, 'minix', options)
+            self.fail('Expected failure for unsupported label')
+        except GLib.GError as e:
+            self.assertTrue('UDisks2.Error.NotSupported' in e.message)
+
+    def test_force_removal(self):
+        '''fs: forced removal'''
+
+        # create a fs and mount it
+        self.mkfs('ext4', 'udiskstest')
+        fs = self.udisks_filesystem()
+        mount_path = fs.call_mount_sync(no_options, None)
+        self.assertTrue(mount_path.endswith('udiskstest'))
+        self.assertTrue('/media/' in mount_path)
+        self.assertTrue(self.is_mountpoint(mount_path))
+
+        dev_t = os.stat(self.devname()).st_rdev
+
+        # removal should clean up mounts
+        self.remove_device(self.device)
+        self.assertFalse(os.path.exists(mount_path))
+        self.assertEqual(self.client.get_block_for_dev(dev_t), None)
+
+        # after putting it back, it should be mountable again
+        self.readd_devices()
+        fs = self.udisks_filesystem()
+        self.assertProperty(fs, 'mount-points', [])
+
+        mount_path = fs.call_mount_sync(no_options, None)
+        self.assertTrue(mount_path.endswith('udiskstest'))
+        self.assertTrue('/media/' in mount_path)
+        self.assertTrue(self.is_mountpoint(mount_path))
+        self.assertProperty(fs, 'mount-points', [mount_path])
+
+        self.retry_busy(fs.call_unmount_sync, no_options, None)
+        self.assertProperty(fs, 'mount-points', [])
+
+    def test_existing_manual_mount_point(self):
+        '''fs: does not reuse existing manual mount point'''
+
+        self.mkfs('ext4', 'udiskstest')
+        fs = self.udisks_filesystem()
+
+        # mount it, determine mount path, and unmount again
+        mount_path = fs.call_mount_sync(no_options, None)
+        self.assertTrue(mount_path.endswith('udiskstest'))
+
+        self.retry_busy(fs.call_unmount_sync, no_options, None)
+        self.assertProperty(fs, 'mount-points', [])
+
+        # cleans up mountpoint
+        self.assertFalse(os.path.exists(mount_path))
+
+        # now manually create the mount point
+        os.mkdir(mount_path)
+
+        # now this should use mount_path + '1'
+        try:
+            new_mount_path = fs.call_mount_sync(no_options, None)
+            self.retry_busy(fs.call_unmount_sync, no_options, None)
+            self.assertProperty(fs, 'mount-points', [])
+            self.assertEqual(new_mount_path, mount_path + '1')
+        finally:
+            os.rmdir(mount_path)
+
+    def test_existing_udisks_mount_point(self):
+        '''fs: reuses existing udisks mount point'''
+
+        self.mkfs('ext4', 'udiskstest')
+        fs = self.udisks_filesystem()
+
+        # mount it, determine mount path
+        mount_path = fs.call_mount_sync(no_options, None)
+        self.assertTrue(mount_path.endswith('udiskstest'))
+
+        # stop the daemon (happens during a package upgrade)
+        UDisksTestCase.stop_daemon()
+
+        # mount should still be there; unmount it manually
+        self.assertTrue(self.is_mountpoint(mount_path))
+        subprocess.check_call(['umount', mount_path])
+
+        # restart daemon, mount again; this should use the same mount point as
+        # before
+        UDisksTestCase.start_daemon()
+        fs = self.udisks_filesystem()
+        new_mount_path = fs.call_mount_sync(no_options, None)
+        self.retry_busy(fs.call_unmount_sync, no_options, None)
+        self.assertProperty(fs, 'mount-points', [])
+        self.assertEqual(new_mount_path, mount_path)
+
+    def _do_fs_check(self, type):
+        '''Run checks for a particular file system.'''
+        if type == 'ntfs':
+            mkfs = 'mkntfs'
+        else:
+            mkfs = 'mkfs.' + type
+
+        if type != 'swap' and subprocess.call(['which', mkfs],
+                                              stdout=subprocess.PIPE) != 0:
+            sys.stderr.write('[no %s, skip] ' % mkfs)
+
+            # check correct D-Bus exception
+            try:
+                self.fs_create(None, type, no_options)
+                self.fail('Expected failure for missing mkfs.' + type)
+            except GLib.GError as e:
+                self.assertTrue('UDisks2.Error.Failed' in e.message)
+            return
+
+        # do checks with command line tools (mkfs/mount/umount)
+        sys.stderr.write('[cli] ')
+        sys.stderr.flush()
+
+        self._do_cli_check(type)
+        if type != 'minix':
+            self._do_cli_check(type, 'test%stst' % type)
+
+        # put a different fs here instead of zeroing, so that we verify that
+        # udisks overrides existing FS (e. g. XFS complains then), and does not
+        # leave traces of other FS around
+        if type == 'ext3':
+            self.mkfs('swap')
+        else:
+            self.mkfs('ext3')
+
+        # do checks with udisks operations
+        sys.stderr.write('[ud] ')
+        self._do_udisks_check(type)
+        if type != 'minix':
+            self._do_udisks_check(type, 'test%stst' % type)
+            # also test fs_create with an empty label
+            self._do_udisks_check(type, '')
+
+    def _do_cli_check(self, type, label=None):
+        '''udisks correctly picks up file system changes from command line tools'''
+
+        self.mkfs(type, label)
+
+        block = self.udisks_block()
+
+        self.assertProperty(block, 'id-usage', (type == 'swap') and 'other' or 'filesystem')
+        self.assertProperty(block, 'id-type', type)
+        l = block.get_property('id-label')
+        if type == 'vfat':
+            l = l.lower()  # VFAT is case insensitive
+        self.assertEqual(l, label or '')
+        self.assertEqual(block.get_property('hint-name'), '')
+        if type != 'minix':
+            self.assertEqual(block.get_property('id-uuid'), self.blkid()['ID_FS_UUID'])
+
+        obj = self.client.get_object(self.block.get_object_path())
+        self.assertEqual(obj.get_property('partition'), None)
+        self.assertEqual(obj.get_property('partition-table'), None)
+
+        fs = obj.get_property('filesystem')
+        if type == 'swap':
+            self.assertEqual(fs, None)
+        else:
+            self.assertNotEqual(fs, None)
+
+        if type == 'swap':
+            return
+
+        # mount it
+        if type == 'ntfs' and subprocess.call(['which', 'mount.ntfs-3g'],
+                                              stdout=subprocess.PIPE) == 0:
+            # prefer mount.ntfs-3g if we have it (on Debian; Ubuntu
+            # defaults to ntfs-3g if installed); TODO: check other distros
+            mount_prog = 'mount.ntfs-3g'
+        else:
+            mount_prog = 'mount'
+        ret = subprocess.call([mount_prog, self.device, self.workdir])
+        if ret == 32:
+            # missing fs driver
+            sys.stderr.write('[missing kernel driver, skip] ')
+            return
+        self.assertEqual(ret, 0)
+
+        self.assertProperty(fs, 'mount-points', [self.workdir])
+
+        # unmount it
+        subprocess.call(['umount', self.workdir])
+        self.assertProperty(fs, 'mount-points', [])
+
+    def _do_udisks_check(self, type, label=None):
+        '''udisks API correctly changes file system'''
+
+        # create fs
+        if label is not None:
+            options = GLib.Variant('a{sv}', {'label': GLib.Variant('s', label)})
+        else:
+            options = no_options
+        self.fs_create(None, type, options)
+
+        # properties
+        id = self.blkid()
+        self.assertEqual(id['ID_FS_USAGE'], type == 'swap' and 'other' or 'filesystem')
+        self.assertEqual(id['ID_FS_TYPE'], type)
+        l = id.get('ID_FS_LABEL', '')
+        if type == 'vfat':
+            l = l.lower()  # VFAT is case insensitive
+        self.assertEqual(l, label or '')
+
+        block = self.udisks_block()
+        self.assertProperty(block, 'id-usage', (type == 'swap') and 'other' or 'filesystem')
+        self.assertProperty(block, 'id-type', type)
+        if type == 'vfat' and label:
+            # VFAT is case insensitive
+            self.assertEventually(lambda: block.get_property('id-label').lower(), label.lower())
+        else:
+            self.assertProperty(block, 'id-label', label or '')
+
+        if type == 'swap':
+            return
+
+        obj = self.client.get_object(self.block.get_object_path())
+        self.assertEqual(obj.get_property('partition'), None)
+        self.assertEqual(obj.get_property('partition-table'), None)
+
+        fs = self.udisks_filesystem()
+        self.assertNotEqual(fs, None, 'no Filesystem interface for test device')
+        self.assertEqual(fs.get_property('mount-points'), [])
+
+        # mount
+        mount_path = fs.call_mount_sync(no_options, None)
+
+        self.assertTrue('/media/' in mount_path)
+        if label:
+            if type == 'vfat':
+                self.assertTrue(mount_path.lower().endswith(label))
+            else:
+                self.assertTrue(mount_path.endswith(label))
+
+        self.assertTrue(self.is_mountpoint(mount_path))
+        # FIXME: this should work on the existing fs object, but doesn't!
+        self.sync()
+        fs = self.udisks_filesystem()
+        self.assertProperty(fs, 'mount-points', [mount_path])
+
+        # no ownership taken, should be root owned
+        st = os.stat(mount_path)
+        self.assertEqual((st.st_uid, st.st_gid), (0, 0))
+
+        self._do_file_perms_checks(type, mount_path)
+
+        # unmount
+        self.retry_busy(fs.call_unmount_sync, no_options, None)
+        self.assertFalse(os.path.exists(mount_path), 'mount point was not removed')
+        self.assertProperty(fs, 'mount-points', [])
+
+        # create fs with taking ownership (daemon:mail == 1:8)
+        # if supports_unix_owners:
+        #     options.append('take_ownership_uid=1')
+        #     options.append('take_ownership_gid=8')
+        #     self.fs_create(None, type, options)
+        #     mount_path = iface.FilesystemMount('', [])
+        #     st = os.stat(mount_path)
+        #     self.assertEqual((st.st_uid, st.st_gid), (1, 8))
+        #     self.retry_busy(self.partition_iface().FilesystemUnmount, [])
+        #     self.assertFalse(os.path.exists(mount_path), 'mount point was not removed')
+
+        # change label
+        supported = True
+        l = 'n"a\m\\"e' + type
+        if type == 'vfat':
+            # VFAT does not support some characters
+            self.assertRaises(GLib.GError, fs.call_set_label_sync, l, no_options, None)
+            l = "n@a$me"
+        try:
+            fs.call_set_label_sync(l, no_options, None)
+        except GLib.GError as e:
+            if 'UDisks2.Error.NotSupported' in e.message:
+                # these fses are known to not support relabeling
+                self.assertTrue(type in ['minix', 'btrfs'])
+                supported = False
+            else:
+                raise
+
+        if supported:
+            block = self.udisks_block()
+            blkid_label = self.blkid().get('ID_FS_LABEL_ENC', '').replace('\\x22', '"').replace(
+                '\\x5c', '\\').replace('\\x24', '$')
+            if type == 'vfat':
+                # EXFAIL: often (but not always) the label appears in all upper case
+                self.assertEqual(blkid_label.upper(), l.upper())
+                self.assertEventually(lambda: block.get_property('id-label').upper(), l.upper())
+            else:
+                self.assertEqual(blkid_label, l)
+                self.assertProperty(block, 'id-label', l)
+
+            # test setting empty label
+            fs.call_set_label_sync('', no_options, None)
+            self.assertEqual(self.blkid().get('ID_FS_LABEL_ENC', ''), '')
+            self.assertProperty(block, 'id-label', '')
+
+        # check fs - Not implemented in udisks yet
+        # self.assertEqual(iface.FilesystemCheck([]), True)
+
+        # check mounting of a read-only device
+        # this is known-broken for reiserfs and xfs right now:
+        # https://github.com/karelzak/util-linux/issues/17
+        # https://github.com/karelzak/util-linux/issues/18
+        if type not in ['reiserfs', 'xfs']:
+            # the scsi_debug CD drive content is the same as for the HD drive, but
+            # udev does not know about this; so give it a nudge to re-probe
+            subprocess.call(['udevadm', 'trigger', '--action=change',
+                             '--sysname-match=' + os.path.basename(self.cd_device)])
+            self.sync()
+            self.sync()
+            cd_fs = self.udisks_filesystem(cd=True)
+
+            mount_path = cd_fs.call_mount_sync(no_options, None)
+            try:
+                self.assertTrue('/media/' in mount_path)
+                self.assertProperty(cd_fs, 'mount-points', [mount_path])
+                self.assertTrue(self.is_mountpoint(mount_path))
+
+                self.assertProperty(self.udisks_block(cd=True), 'read-only', True)
+            finally:
+                self.retry_busy(cd_fs.call_unmount_sync, no_options, None)
+                self.assertFalse(os.path.exists(mount_path), 'mount point was not removed')
+                self.assertProperty(cd_fs, 'mount-points', [])
+
+    def _do_file_perms_checks(self, type, mount_point):
+        '''Check for permissions for data files and executables.
+
+        This particularly checks sane and useful permissions on non-Unix file
+        systems like vfat.
+        '''
+        if type in BROKEN_PERMISSIONS_FS:
+            return
+
+        f = os.path.join(mount_point, 'simpledata.txt')
+        open(f, 'w').close()
+        self.assertTrue(os.access(f, os.R_OK))
+        self.assertTrue(os.access(f, os.W_OK))
+        self.assertFalse(os.access(f, os.X_OK))
+
+        f = os.path.join(mount_point, 'simple.exe')
+        shutil.copy('/bin/bash', f)
+        self.assertTrue(os.access(f, os.R_OK))
+        self.assertTrue(os.access(f, os.W_OK))
+        self.assertTrue(os.access(f, os.X_OK))
+
+        os.mkdir(os.path.join(mount_point, 'subdir'))
+        f = os.path.join(mount_point, 'subdir', 'subdirdata.txt')
+        open(f, 'w').close()
+        self.assertTrue(os.access(f, os.R_OK))
+        self.assertTrue(os.access(f, os.W_OK))
+        self.assertFalse(os.access(f, os.X_OK))
+
+        f = os.path.join(mount_point, 'subdir', 'subdir.exe')
+        shutil.copy('/bin/bash', f)
+        self.assertTrue(os.access(f, os.R_OK))
+        self.assertTrue(os.access(f, os.W_OK))
+        self.assertTrue(os.access(f, os.X_OK))
+
+
+# ----------------------------------------------------------------------------
+
+class Smart(UDisksTestCase):
+    '''Check SMART operation.'''
+
+    def test_sda(self):
+        '''SMART status of first internal hard disk
+
+        This is a best-effort readonly test.
+        '''
+        hd = '/dev/sda'
+
+        if not os.path.exists(hd):
+            sys.stderr.write('[skip] ')
+            return
+
+        has_smart = subprocess.call(['skdump', '--can-smart', hd],
+                                    stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT) == 0
+
+        block = self.client.get_block_for_dev(os.stat(hd).st_rdev)
+        self.assertNotEqual(block, None)
+        drive = self.client.get_drive_for_block(block)
+        ata = self.client.get_object(drive.get_object_path()).get_property('drive-ata')
+        self.assertEqual(ata is not None, has_smart)
+
+        if has_smart:
+            sys.stderr.write('[avail] ')
+            self.assertEqual(ata.get_property('smart-supported'), True)
+            self.assertEqual(ata.get_property('smart-enabled'), True)
+
+            # wait for SMART data to be read
+            while ata.get_property('smart-updated') == 0:
+                sys.stderr.write('[wait for data] ')
+                time.sleep(0.5)
+
+            # this is of course not truly correct for a test suite, but let's
+            # consider it a courtesy for developers :-)
+            self.assertEqual(ata.get_property('smart-failing'), False)
+            self.assertTrue(ata.get_property('smart-selftest-status') in ['success', 'inprogress'])
+        else:
+            sys.stderr.write('[N/A] ')
+
+
+# ----------------------------------------------------------------------------
+
+class Luks(UDisksTestCase):
+    '''Check LUKS.'''
+
+    def tearDown(self):
+        '''clean up behind failed test cases'''
+
+        crypt_obj = self.client.get_object(self.udisks_block().get_object_path())
+        if crypt_obj:
+            encrypted = crypt_obj.get_property('encrypted')
+            if encrypted:
+                try:
+                    encrypted.call_lock_sync(no_options, None)
+                    sys.stderr.write('[cleanup lock] ')
+                except GLib.GError:
+                    pass
+
+    # needs to run before the other tests
+    def test_0_create_teardown(self):
+        '''LUKS create/teardown'''
+
+        self.fs_create(None, 'ext4', GLib.Variant('a{sv}', {
+            'encrypt.passphrase': GLib.Variant('s', 's3kr1t'),
+            'label': GLib.Variant('s', 'treasure')}))
+        self.client.settle()
+
+        try:
+            block = self.udisks_block()
+            obj = self.client.get_object(block.get_object_path())
+            self.assertEqual(obj.get_property('filesystem'), None)
+            encrypted = obj.get_property('encrypted')
+            self.assertNotEqual(encrypted, None)
+
+            # check crypted device info
+            self.assertEqual(block.get_property('id-type'), 'crypto_LUKS')
+            self.assertEqual(block.get_property('id-usage'), 'crypto')
+            self.assertEqual(block.get_property('id-label'), '')
+            self.assertEqual(block.get_property('id-uuid'), self.blkid()['ID_FS_UUID'])
+            self.assertEqual(block.get_property('device'), self.devname())
+
+            # check whether we can lock/unlock; we also need this to get the
+            # cleartext device
+            encrypted.call_lock_sync(no_options, None)
+            self.assertRaises(GLib.GError, encrypted.call_lock_sync,
+                              no_options, None)
+
+            # wrong password
+            self.assertRaises(GLib.GError, encrypted.call_unlock_sync,
+                              'h4ckpassword', no_options, None)
+            # right password
+            clear_path = encrypted.call_unlock_sync('s3kr1t',
+                                                    no_options, None)
+
+            # check cleartext device info
+            clear_obj = self.client.get_object(clear_path)
+            self.assertEqual(clear_obj.get_property('encrypted'), None)
+            clear_block = clear_obj.get_property('block')
+            self.assertEqual(clear_block.get_property('id-type'), 'ext4')
+            self.assertEqual(clear_block.get_property('id-usage'), 'filesystem')
+            self.assertEqual(clear_block.get_property('id-label'), 'treasure')
+            self.assertNotEqual(clear_block.get_property('crypto-backing-device'), None)
+            clear_dev = clear_block.get_property('device')
+            self.assertNotEqual(clear_dev, None)
+            self.assertEqual(clear_block.get_property('id-uuid'),
+                             self.blkid(device=clear_dev)['ID_FS_UUID'])
+
+            clear_fs = clear_obj.get_property('filesystem')
+            self.assertEqual(clear_fs.get_property('mount-points'), [])
+
+            # check that we do not leak key information
+            udev_dump = subprocess.Popen(['udevadm', 'info', '--export-db'],
+                                         stdout=subprocess.PIPE)
+            out = udev_dump.communicate()[0]
+            self.assertFalse(b's3kr1t' in out, 'password in udev properties')
+            self.assertFalse(b'essiv:sha' in out, 'key information in udev properties')
+
+        finally:
+            # tear down cleartext device
+            encrypted.call_lock_sync(no_options, None)
+            self.assertFalse(os.path.exists(clear_dev))
+
+    def test_luks_mount(self):
+        '''LUKS mount/unmount'''
+
+        crypt_obj = self.client.get_object(self.udisks_block().get_object_path())
+        encrypted = crypt_obj.get_property('encrypted')
+
+        path = encrypted.call_unlock_sync('s3kr1t', no_options, None)
+        self.client.settle()
+        obj = self.client.get_object(path)
+        fs = obj.get_property('filesystem')
+        self.assertNotEqual(fs, None)
+
+        # mount
+        mount_path = fs.call_mount_sync(no_options, None)
+
+        try:
+            self.assertTrue('/media/' in mount_path)
+            self.assertTrue(mount_path.endswith('treasure'))
+            self.assertTrue(self.is_mountpoint(mount_path))
+            self.assertProperty(fs, 'mount-points', [mount_path])
+
+            # can't lock, busy
+            try:
+                encrypted.call_lock_sync(no_options, None)
+                self.fail('Lock() unexpectedly succeeded on mounted file system')
+            except GLib.GError as e:
+                self.assertTrue('UDisks2.Error.Failed' in e.message)
+        finally:
+            # umount
+            self.retry_busy(fs.call_unmount_sync, no_options, None)
+            self.client.settle()
+            self.assertFalse(os.path.exists(mount_path), 'mount point was not removed')
+            self.assertEqual(fs.get_property('mount-points'), [])
+
+            # lock
+            encrypted.call_lock_sync(no_options, None)
+            self.client.settle()
+            self.assertEqual(self.client.get_object(path), None)
+
+    def test_luks_forced_removal(self):
+        '''LUKS forced removal'''
+
+        # unlock and mount it
+        crypt_obj = self.client.get_object(self.udisks_block().get_object_path())
+        path = crypt_obj.get_property('encrypted').call_unlock_sync(
+            's3kr1t', no_options, None)
+        try:
+            fs = self.client.get_object(path).get_property('filesystem')
+            mount_path = fs.call_mount_sync(no_options, None)
+            self.assertTrue('/media/' in mount_path)
+            self.assertTrue(mount_path.endswith('treasure'))
+
+            # removal should clean up mounts
+            try:
+                self.remove_device(self.device)
+                self.assertFalse(os.path.exists(mount_path))
+                timeout = 50
+                while timeout > 0:
+                    if self.client.get_object(path) is None:
+                        break
+                    timeout -= 1
+                    # we do not have a main loop, and cannot currently use
+                    # g_main_context_get_default() from introspection, so
+                    # instead of refreshing self.client, get a new one
+                    self.client = UDisks.Client.new_sync(None)
+                    time.sleep(0.1)
+                self.assertGreater(timeout, 0, 'timeout waiting for object path %s to disappear' % path)
+            finally:
+                self.readd_devices()
+
+            # after putting it back, it should be mountable again
+            crypt_obj = self.client.get_object(self.udisks_block().get_object_path())
+            path = crypt_obj.get_property('encrypted').call_unlock_sync(
+                's3kr1t', no_options, None)
+            self.client.settle()
+            fs = self.client.get_object(path).get_property('filesystem')
+            mount_path = fs.call_mount_sync(no_options, None)
+            self.assertTrue('/media/' in mount_path)
+            self.assertTrue(mount_path.endswith('treasure'))
+
+            # umount
+            self.retry_busy(fs.call_unmount_sync, no_options, None)
+            self.client.settle()
+            self.assertFalse(os.path.exists(mount_path), 'mount point was not removed')
+            self.assertEqual(fs.get_property('mount-points'), [])
+        finally:
+            # lock
+            crypt_obj.get_property('encrypted').call_lock_sync(
+                no_options, None)
+            self.client.settle()
+            self.assertEqual(self.client.get_object(path), None)
+
+
+# ----------------------------------------------------------------------------
+
+class Polkit(UDisksTestCase, test_polkitd.PolkitTestCase):
+    '''Check operation with polkit.'''
+
+    def test_internal_fs_forbidden(self):
+        '''Create FS on internal drive (forbidden)'''
+
+        self.start_polkitd(['org.freedesktop.udisks2.modify-device'])
+
+        options = GLib.Variant('a{sv}', {'label': GLib.Variant('s', 'polkitno')})
+        with self.assertRaises(GLib.GError) as cm:
+            self.fs_create(None, 'ext4', options)
+        self.assertTrue('UDisks2.Error.NotAuthorized' in cm.exception.message,
+                        cm.exception.message)
+
+        # did not actually do anything
+        block = self.udisks_block()
+        self.assertNotEqual(block.get_property('id-label'), 'polkitno')
+
+    def test_internal_fs_allowed(self):
+        '''Create FS on internal drive (allowed)'''
+
+        self.start_polkitd(['org.freedesktop.udisks2.modify-device-system',
+                            'org.freedesktop.udisks2.modify-device'])
+
+        options = GLib.Variant('a{sv}', {'label': GLib.Variant('s', 'polkityes')})
+        self.fs_create(None, 'ext4', options)
+        block = self.udisks_block()
+        self.assertProperty(block, 'id-usage', 'filesystem')
+        self.assertEqual(block.get_property('id-type'), 'ext4')
+        self.assertEqual(block.get_property('id-label'), 'polkityes')
+
+    def test_removable_fs(self):
+        '''Create FS on removable drive (allowed)'''
+
+        self.start_polkitd(['org.freedesktop.udisks2.filesystem-mount',
+                            'org.freedesktop.udisks2.filesystem-mount-other-seat'])
+
+        # the scsi_debug CD drive content is the same as for the HD drive, but
+        # udev does not know about this; so give it a nudge to re-probe
+        subprocess.call(['udevadm', 'trigger', '--action=change',
+                         '--sysname-match=' + os.path.basename(self.cd_device)])
+        self.sync()
+        self.sync()
+
+        fs = self.udisks_filesystem(cd=True)
+        self.assertNotEqual(fs, None)
+        mount_path = fs.call_mount_sync(no_options, None)
+        self.assertTrue('/media/' in mount_path, mount_path)
+
+        self.retry_busy(fs.call_unmount_sync, no_options, None)
+        self.client.settle()
+
+# ----------------------------------------------------------------------------
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser(description='udisks2 integration test suite')
+    argparser.add_argument('-l', '--log-file', dest='logfile',
+                           help='write daemon log to a file')
+    argparser.add_argument('testname', nargs='*',
+                           help='name of test class or method (e. g. "Drive", "FS.test_ext2")')
+    args = argparser.parse_args()
+
+    UDisksTestCase.init(logfile=args.logfile)
+    if args.testname:
+        tests = unittest.TestLoader().loadTestsFromNames(
+            args.testname, __import__('__main__'))
+    else:
+        tests = unittest.TestLoader().loadTestsFromName('__main__')
+    if unittest.TextTestRunner(verbosity=2).run(tests).wasSuccessful():
+        sys.exit(0)
+    else:
+        sys.exit(1)

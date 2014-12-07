@@ -1,0 +1,466 @@
+<!-- ##### SECTION Title ##### -->
+UDisksObject
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksObject ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG UDisksObject:block ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:drive ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:drive-ata ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:encrypted ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:filesystem ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:job ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:loop ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:manager ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:mdraid ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:partition ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:partition-table ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksObject:swapspace ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT UDisksObjectIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+
+<!-- ##### FUNCTION udisks_object_get_block ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_drive ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_drive_ata ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_filesystem ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_job ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_swapspace ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_encrypted ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_loop ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_manager ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_partition ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_partition_table ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_get_mdraid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_block ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_drive ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_drive_ata ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_filesystem ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_job ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_swapspace ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_encrypted ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_loop ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_manager ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_partition ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_partition_table ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_peek_mdraid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksObjectProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksObjectProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_object_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@object_path: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksObjectSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksObjectSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_object_skeleton_new ##### -->
+<para>
+
+</para>
+
+@object_path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_block ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_drive ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_drive_ata ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_filesystem ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_job ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_swapspace ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_encrypted ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_loop ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_manager ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_partition ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_partition_table ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+
+<!-- ##### FUNCTION udisks_object_skeleton_set_mdraid ##### -->
+<para>
+
+</para>
+
+@object: 
+@interface_: 
+
+

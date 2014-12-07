@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: Logging</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-daemon-core.html" title="Core">
+<link rel="prev" href="udisks2-Utilities.html" title="Utilities">
+<link rel="next" href="UDisksDaemon.html" title="UDisksDaemon">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#udisks2-Logging.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#udisks2-Logging.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-daemon-core.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="udisks2-Utilities.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="UDisksDaemon.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="udisks2-Logging"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="udisks2-Logging.top_of_page"></a>Logging</span></h2>
+<p>Logging — Logging Routines</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="udisks2-Logging.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="udisks2-Logging.html#udisks-log" title="udisks_log ()">udisks_log</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="udisks2-Logging.html#udisks-debug" title="udisks_debug()">udisks_debug</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="udisks2-Logging.html#udisks-info" title="udisks_info()">udisks_info</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="udisks2-Logging.html#udisks-notice" title="udisks_notice()">udisks_notice</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="udisks2-Logging.html#udisks-warning" title="udisks_warning()">udisks_warning</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="udisks2-Logging.html#udisks-error" title="udisks_error()">udisks_error</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="udisks2-Logging.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="udisks2-Logging.html#UDisksLogLevel" title="enum UDisksLogLevel">UDisksLogLevel</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="udisks2-Logging.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">
+</pre>
+</div>
+<div class="refsect1">
+<a name="udisks2-Logging.description"></a><h2>Description</h2>
+<p>Logging routines.</p>
+</div>
+<div class="refsect1">
+<a name="udisks2-Logging.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="udisks-log"></a><h3>udisks_log ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_log (<em class="parameter"><code><a class="link" href="udisks2-Logging.html#UDisksLogLevel" title="enum UDisksLogLevel"><span class="type">UDisksLogLevel</span></a> level</code></em>,
+            <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *function</code></em>,
+            <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *location</code></em>,
+            <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *format</code></em>,
+            <em class="parameter"><code>...</code></em>);</pre>
+<p>Low-level logging function used by <a class="link" href="udisks2-Logging.html#udisks-debug" title="udisks_debug()"><code class="function">udisks_debug()</code></a> and other macros.</p>
+<div class="refsect3">
+<a name="id-1.5.2.3.7.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>level</p></td>
+<td class="parameter_description"><p>A <a class="link" href="udisks2-Logging.html#UDisksLogLevel" title="enum UDisksLogLevel"><span class="type">UDisksLogLevel</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>function</p></td>
+<td class="parameter_description"><p>Pass <a href="http://library.gnome.org/devel/glib/unstable/glib-Miscellaneous-Macros.html#G-STRFUNC:CAPS"><span class="type">G_STRFUNC</span></a> here.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>location</p></td>
+<td class="parameter_description"><p>Pass <a href="http://library.gnome.org/devel/glib/unstable/glib-Miscellaneous-Macros.html#G-STRLOC:CAPS"><span class="type">G_STRLOC</span></a> here.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>format</p></td>
+<td class="parameter_description"><p>printf()-style format.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>Arguments for format.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-debug"></a><h3>udisks_debug()</h3>
+<pre class="programlisting">#define             udisks_debug(args...)</pre>
+<p>Logging macro for <a class="link" href="udisks2-Logging.html#UDISKS-LOG-LEVEL-DEBUG:CAPS"><code class="literal">UDISKS_LOG_LEVEL_DEBUG</code></a>.</p>
+<p>See <a class="link" href="udisks2-Logging.html#UDisksLogLevel" title="enum UDisksLogLevel"><span class="type">UDisksLogLevel</span></a> for more details.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-info"></a><h3>udisks_info()</h3>
+<pre class="programlisting">#define             udisks_info(args...)</pre>
+<p>Logging macro for <a class="link" href="udisks2-Logging.html#UDISKS-LOG-LEVEL-INFO:CAPS"><code class="literal">UDISKS_LOG_LEVEL_INFO</code></a>.</p>
+<p>See <a class="link" href="udisks2-Logging.html#UDisksLogLevel" title="enum UDisksLogLevel"><span class="type">UDisksLogLevel</span></a> for more details.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-notice"></a><h3>udisks_notice()</h3>
+<pre class="programlisting">#define             udisks_notice(args...)</pre>
+<p>Logging macro for <a class="link" href="udisks2-Logging.html#UDISKS-LOG-LEVEL-NOTICE:CAPS"><code class="literal">UDISKS_LOG_LEVEL_NOTICE</code></a>.</p>
+<p>See <a class="link" href="udisks2-Logging.html#UDisksLogLevel" title="enum UDisksLogLevel"><span class="type">UDisksLogLevel</span></a> for more details.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-warning"></a><h3>udisks_warning()</h3>
+<pre class="programlisting">#define             udisks_warning(args...)</pre>
+<p>Logging macro for <a class="link" href="udisks2-Logging.html#UDISKS-LOG-LEVEL-WARNING:CAPS"><code class="literal">UDISKS_LOG_LEVEL_WARNING</code></a>.</p>
+<p>See <a class="link" href="udisks2-Logging.html#UDisksLogLevel" title="enum UDisksLogLevel"><span class="type">UDisksLogLevel</span></a> for more details.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-error"></a><h3>udisks_error()</h3>
+<pre class="programlisting">#define             udisks_error(args...)</pre>
+<p>Logging macro for <a class="link" href="udisks2-Logging.html#UDISKS-LOG-LEVEL-ERROR:CAPS"><code class="literal">UDISKS_LOG_LEVEL_ERROR</code></a>.</p>
+<p>See <a class="link" href="udisks2-Logging.html#UDisksLogLevel" title="enum UDisksLogLevel"><span class="type">UDisksLogLevel</span></a> for more details.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="udisks2-Logging.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UDisksLogLevel"></a><h3>enum UDisksLogLevel</h3>
+<p>Logging levels. The level <em class="parameter"><code>UDISKS_LOG_LEVEL_NOTICE</code></em>
+ and above goes to syslog.</p>
+<p>Unlike <a href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-warning"><code class="function">g_warning()</code></a> and <a href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-error"><code class="function">g_error()</code></a>, none of these logging levels causes the program to ever terminate.</p>
+<div class="refsect3">
+<a name="id-1.5.2.3.8.2.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="UDISKS-LOG-LEVEL-DEBUG:CAPS"></a>UDISKS_LOG_LEVEL_DEBUG</p></td>
+<td class="enum_member_description">
+<p>Debug messages.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="UDISKS-LOG-LEVEL-INFO:CAPS"></a>UDISKS_LOG_LEVEL_INFO</p></td>
+<td class="enum_member_description">
+<p>Informational messages.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="UDISKS-LOG-LEVEL-NOTICE:CAPS"></a>UDISKS_LOG_LEVEL_NOTICE</p></td>
+<td class="enum_member_description">
+<p>Messages that the administrator should take notice of.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="UDISKS-LOG-LEVEL-WARNING:CAPS"></a>UDISKS_LOG_LEVEL_WARNING</p></td>
+<td class="enum_member_description">
+<p>Warning messages.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="UDISKS-LOG-LEVEL-ERROR:CAPS"></a>UDISKS_LOG_LEVEL_ERROR</p></td>
+<td class="enum_member_description">
+<p>Error messages.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

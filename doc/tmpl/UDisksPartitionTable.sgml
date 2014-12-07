@@ -1,0 +1,251 @@
+<!-- ##### SECTION Title ##### -->
+UDisksPartitionTable
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksPartitionTable ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksPartitionTableIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@handle_create_partition: 
+@get_type_: 
+
+<!-- ##### FUNCTION udisks_partition_table_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_override_properties ##### -->
+<para>
+
+</para>
+
+@klass: 
+@property_id_begin: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_call_create_partition ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_offset: 
+@arg_size: 
+@arg_type: 
+@arg_name: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_call_create_partition_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@out_created_partition: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_call_create_partition_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_offset: 
+@arg_size: 
+@arg_type: 
+@arg_name: 
+@arg_options: 
+@out_created_partition: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_complete_create_partition ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+@created_partition: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_get_type_ ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_dup_type_ ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_set_type_ ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### STRUCT UDisksPartitionTableProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksPartitionTableProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_partition_table_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_proxy_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_proxy_new_sync ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_proxy_new_for_bus ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_proxy_new_for_bus_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_partition_table_proxy_new_for_bus_sync ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksPartitionTableSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksPartitionTableSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_partition_table_skeleton_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

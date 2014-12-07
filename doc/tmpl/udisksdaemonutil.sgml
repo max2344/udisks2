@@ -1,0 +1,239 @@
+<!-- ##### SECTION Title ##### -->
+udisksdaemonutil
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION udisks_decode_udev_string ##### -->
+<para>
+
+</para>
+
+@str: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_safe_append_to_object_path ##### -->
+<para>
+
+</para>
+
+@str: 
+@s: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_block_get_size ##### -->
+<para>
+
+</para>
+
+@device: 
+@out_media_available: 
+@out_media_change_detected: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_resolve_link ##### -->
+<para>
+
+</para>
+
+@path: 
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_resolve_links ##### -->
+<para>
+
+</para>
+
+@path: 
+@dir_name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_check_authorization_sync ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@object: 
+@action_id: 
+@options: 
+@message: 
+@invocation: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_get_caller_uid_sync ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@invocation: 
+@cancellable: 
+@out_uid: 
+@out_gid: 
+@out_user_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_get_caller_pid_sync ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@invocation: 
+@cancellable: 
+@out_pid: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_setup_by_user ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@object: 
+@user: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_dup_object ##### -->
+<para>
+
+</para>
+
+@interface_: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_escape ##### -->
+<para>
+
+</para>
+
+@str: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_escape_and_quote ##### -->
+<para>
+
+</para>
+
+@str: 
+@Returns: 
+
+
+<!-- ##### TYPEDEF UDisksInhibitCookie ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION udisks_daemon_util_inhibit_system_sync ##### -->
+<para>
+
+</para>
+
+@reason: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_uninhibit_system_sync ##### -->
+<para>
+
+</para>
+
+@cookie: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_hexdump ##### -->
+<para>
+
+</para>
+
+@data: 
+@len: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_hexdump_debug ##### -->
+<para>
+
+</para>
+
+@data: 
+@len: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_file_set_contents ##### -->
+<para>
+
+</para>
+
+@filename: 
+@contents: 
+@contents_len: 
+@mode_for_new_file: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_on_same_seat ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@object: 
+@process: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_util_get_free_mdraid_device ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_ata_identify_get_word ##### -->
+<para>
+
+</para>
+
+@identify_data: 
+@word_number: 
+@Returns: 
+
+

@@ -1,0 +1,48 @@
+<!-- ##### SECTION Title ##### -->
+udiskslinuxloop
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxLoop ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION udisks_linux_loop_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_loop_update ##### -->
+<para>
+
+</para>
+
+@loop: 
+@object: 
+
+

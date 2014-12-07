@@ -1,0 +1,57 @@
+<!-- ##### SECTION Title ##### -->
+UDisksLinuxProvider
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxProvider ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION udisks_linux_provider_new ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_provider_get_udev_client ##### -->
+<para>
+
+</para>
+
+@provider: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_provider_get_coldplug ##### -->
+<para>
+
+</para>
+
+@provider: 
+@Returns: 
+
+

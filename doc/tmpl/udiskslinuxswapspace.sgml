@@ -1,0 +1,48 @@
+<!-- ##### SECTION Title ##### -->
+udiskslinuxswapspace
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxSwapspace ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION udisks_linux_swapspace_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_swapspace_update ##### -->
+<para>
+
+</para>
+
+@swapspace: 
+@object: 
+
+

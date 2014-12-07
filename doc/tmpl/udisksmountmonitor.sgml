@@ -1,0 +1,127 @@
+<!-- ##### SECTION Title ##### -->
+UDisksMountMonitor
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksMount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ENUM UDisksMountType ##### -->
+<para>
+
+</para>
+
+@UDISKS_MOUNT_TYPE_FILESYSTEM: 
+@UDISKS_MOUNT_TYPE_SWAP: 
+
+<!-- ##### FUNCTION udisks_mount_get_dev ##### -->
+<para>
+
+</para>
+
+@mount: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mount_get_mount_type ##### -->
+<para>
+
+</para>
+
+@mount: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mount_get_mount_path ##### -->
+<para>
+
+</para>
+
+@mount: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mount_compare ##### -->
+<para>
+
+</para>
+
+@mount: 
+@other_mount: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksMountMonitor ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksMountMonitor::mount-added ##### -->
+<para>
+
+</para>
+
+@udisksmountmonitor: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL UDisksMountMonitor::mount-removed ##### -->
+<para>
+
+</para>
+
+@udisksmountmonitor: the object which received the signal.
+@arg1: 
+
+<!-- ##### FUNCTION udisks_mount_monitor_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mount_monitor_get_mounts_for_dev ##### -->
+<para>
+
+</para>
+
+@monitor: 
+@dev: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mount_monitor_is_dev_in_use ##### -->
+<para>
+
+</para>
+
+@monitor: 
+@dev: 
+@out_type: 
+@Returns: 
+
+

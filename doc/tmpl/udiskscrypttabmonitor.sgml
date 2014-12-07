@@ -1,0 +1,116 @@
+<!-- ##### SECTION Title ##### -->
+UDisksCrypttabMonitor
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksCrypttabEntry ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION udisks_crypttab_entry_get_name ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_crypttab_entry_get_device ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_crypttab_entry_get_passphrase_path ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_crypttab_entry_get_options ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_crypttab_entry_compare ##### -->
+<para>
+
+</para>
+
+@entry: 
+@other_entry: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksCrypttabMonitor ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksCrypttabMonitor::entry-added ##### -->
+<para>
+
+</para>
+
+@udiskscrypttabmonitor: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL UDisksCrypttabMonitor::entry-removed ##### -->
+<para>
+
+</para>
+
+@udiskscrypttabmonitor: the object which received the signal.
+@arg1: 
+
+<!-- ##### FUNCTION udisks_crypttab_monitor_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_crypttab_monitor_get_entries ##### -->
+<para>
+
+</para>
+
+@monitor: 
+@Returns: 
+
+

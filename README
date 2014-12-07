@@ -1,0 +1,46 @@
+OVERVIEW
+========
+
+The udisks project provides a daemon, tools and libraries to access
+and manipulate disks and storage devices.
+
+For API stability and intended audience of udisks, see the API
+STABILITY and AUDIENCE section of the udisks(8) man page
+(doc/man/udisks.xml in the tarball and git repository).
+
+LICENSE
+=======
+
+See the COPYING file for the license. In a nutshell, the daemon and
+tools are licensed under the GPLv2 (or later) and libraries are
+licensed under LGPLv2 (or later).
+
+I18N and L10N
+=============
+
+We're using Transifex for translations, see
+
+ https://www.transifex.net/projects/p/udisks/
+
+for how to contribute.
+
+RELEASES
+========
+
+Releases of udisks are available in compressed tarballs from
+
+ http://udisks.freedesktop.org/releases/
+
+To verify the authenticity of the compressed tarball, use this command
+
+ $ gpg --verify udisks-$(VERSION).tar.bz2.sign udisks-$(VERSION).tar.bz2
+ gpg: Signature made Sat 10 Mar 2012 03:00:30 PM EST using RSA key ID 3418A891
+ gpg: Good signature from "David Zeuthen <zeuthen@gmail.com>"
+ gpg:                 aka "[jpeg image of size 5237]"
+
+BUGS and DEVELOPMENT
+====================
+
+Please report bugs via the freedesktop.org bugzilla at
+
+ http://bugs.freedesktop.org/enter_bug.cgi?product=udisks

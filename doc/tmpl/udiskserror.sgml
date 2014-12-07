@@ -1,0 +1,52 @@
+<!-- ##### SECTION Title ##### -->
+UDisksError
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO UDISKS_ERROR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### ENUM UDisksError ##### -->
+<para>
+
+</para>
+
+@UDISKS_ERROR_FAILED: 
+@UDISKS_ERROR_CANCELLED: 
+@UDISKS_ERROR_ALREADY_CANCELLED: 
+@UDISKS_ERROR_NOT_AUTHORIZED: 
+@UDISKS_ERROR_NOT_AUTHORIZED_CAN_OBTAIN: 
+@UDISKS_ERROR_NOT_AUTHORIZED_DISMISSED: 
+@UDISKS_ERROR_ALREADY_MOUNTED: 
+@UDISKS_ERROR_NOT_MOUNTED: 
+@UDISKS_ERROR_OPTION_NOT_PERMITTED: 
+@UDISKS_ERROR_MOUNTED_BY_OTHER_USER: 
+@UDISKS_ERROR_ALREADY_UNMOUNTING: 
+@UDISKS_ERROR_NOT_SUPPORTED: 
+@UDISKS_ERROR_TIMED_OUT: 
+@UDISKS_ERROR_WOULD_WAKEUP: 
+@UDISKS_ERROR_DEVICE_BUSY: 
+

@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: org.freedesktop.UDisks2.Job</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ch02.html" title="D-Bus Interfaces">
+<link rel="prev" href="gdbus-org.freedesktop.UDisks2.Loop.html" title="org.freedesktop.UDisks2.Loop">
+<link rel="next" href="ref-library.html" title="Part III. Library API Reference">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#gdbus-org.freedesktop.UDisks2.Job.description" class="shortcut">Description</a></span><span id="nav_properties"> <span class="dim">|</span> 
+                  <a href="#gdbus-org.freedesktop.UDisks2.Job.properties" class="shortcut">Properties</a></span><span id="nav_signals"> <span class="dim">|</span> 
+                  <a href="#gdbus-org.freedesktop.UDisks2.Job.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gdbus-org.freedesktop.UDisks2.Loop.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ref-library.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gdbus-org.freedesktop.UDisks2.Job"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gdbus-interface-org-freedesktop-UDisks2-Job.top_of_page"></a>org.freedesktop.UDisks2.Job</span></h2>
+<p>org.freedesktop.UDisks2.Job — Long-running tasks</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Methods</h2>
+<pre class="synopsis">
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-method-org-freedesktop-UDisks2-Job.Cancel" title="The Cancel() method">Cancel</a> (IN  a{sv} options);
+</pre>
+</div>
+<div class="refsect1">
+<a name="id-1.3.3.13.4"></a><h2>Signals</h2>
+<pre class="synopsis">
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-signal-org-freedesktop-UDisks2-Job.Completed" title='The "Completed" signal'>Completed</a> (b success,
+           s message);
+</pre>
+</div>
+<div class="refsect1">
+<a name="id-1.3.3.13.5"></a><h2>Properties</h2>
+<pre class="synopsis">
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Operation" title='The "Operation" property'>Operation</a>        readable   s
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Progress" title='The "Progress" property'>Progress</a>         readable   d
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.ProgressValid" title='The "ProgressValid" property'>ProgressValid</a>    readable   b
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Bytes" title='The "Bytes" property'>Bytes</a>            readable   t
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Rate" title='The "Rate" property'>Rate</a>             readable   t
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.StartTime" title='The "StartTime" property'>StartTime</a>        readable   t
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.ExpectedEndTime" title='The "ExpectedEndTime" property'>ExpectedEndTime</a>  readable   t
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Objects" title='The "Objects" property'>Objects</a>          readable   ao
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.StartedByUID" title='The "StartedByUID" property'>StartedByUID</a>     readable   u
+<a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Cancelable" title='The "Cancelable" property'>Cancelable</a>       readable   b
+</pre>
+</div>
+<div class="refsect1">
+<a name="gdbus-interface-org-freedesktop-UDisks2-Job"></a><h2>Description</h2>
+<p>      Some operations may take a long time (hours) to complete, that
+      is, to actually send the D-Bus reply message back. One example
+      of such an operation is the
+      <a class="link" href="gdbus-org.freedesktop.UDisks2.Block.html#gdbus-method-org-freedesktop-UDisks2-Block.Format" title="The Format() method">Format()</a> method that is used to
+      format a block device.
+</p>
+<p>      When such operations are initated, a job object implementing
+      this interface may be created so the progress can be tracked by
+      the caller (and also other observers).
+</p>
+<p>      The object(s) that a job affects (such as block devices or
+      drives) can be determined by looking at the
+      <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Objects" title='The "Objects" property'>"Objects"</a> property. Among other
+      things, this can be used to draw a spinner in the user interface
+      next to e.g. an icon for the drive or device in question.
+</p>
+<p>      The <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Operation" title='The "Operation" property'>"Operation"</a> property is used to
+      convey the type of job currently in progress.
+</p>
+<p>      The user id of the user who started the job is set in the
+      <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.StartedByUID" title='The "StartedByUID" property'>"StartedByUID"</a> property.
+</p>
+<p>      A job <span class="emphasis"><em>may</em></span> convey how much progress has been
+      made, see the <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Progress" title='The "Progress" property'>"Progress"</a> and
+      <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.ProgressValid" title='The "ProgressValid" property'>"ProgressValid"</a> properties.
+</p>
+<p>      When a job completes, the <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-signal-org-freedesktop-UDisks2-Job.Completed" title='The "Completed" signal'>"Completed"</a> signal
+      is emitted.
+</p>
+<p>      A job may or may not be cancelable, see the
+      <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Cancelable" title='The "Cancelable" property'>"Cancelable"</a> property. To cancel a
+      job use the <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-method-org-freedesktop-UDisks2-Job.Cancel" title="The Cancel() method">Cancel()</a> method. This
+      will cause the job to complete (with <em class="parameter"><code>success</code></em> set to <code class="constant">FALSE</code>) and
+      the D-Bus method used to initiate the operation to return,
+      usually returning the
+      <code class="literal">org.freedesktop.UDisks2.Error.Cancelled</code>
+      error.
+</p>
+</div>
+<div class="refsect1">
+<a name="gdbus-methods-org.freedesktop.UDisks2.Job"></a><h2>Method Details</h2>
+<div class="refsect2">
+<a name="gdbus-method-org-freedesktop-UDisks2-Job.Cancel"></a><h3>The Cancel() method</h3>
+<pre class="programlisting">
+Cancel (IN  a{sv} options);
+</pre>
+<p>        Cancels the job. Fails with the
+        <code class="literal">org.freedesktop.UDisks2.Error.Failed</code> error
+        if <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Cancelable" title='The "Cancelable" property'>"Cancelable"</a> is <code class="constant">FALSE</code>.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN a{sv} <em class="parameter"><code>options</code></em></code>:</span></p></td>
+<td><p>Options (currently unused except for <a class="link" href="udisks-std-options.html" title="The options parameter">standard options</a>).</p></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gdbus-signals-org.freedesktop.UDisks2.Job"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="gdbus-signal-org-freedesktop-UDisks2-Job.Completed"></a><h3>The "Completed" signal</h3>
+<pre class="programlisting">
+Completed (b success,
+           s message);
+</pre>
+<p>        Emitted when a job completes.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">b <em class="parameter"><code>success</code></em></code>:</span></p></td>
+<td><p>If <code class="constant">TRUE</code>, the job completed successfully.</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">s <em class="parameter"><code>message</code></em></code>:</span></p></td>
+<td><p>A message describing the completion of the job, e.g. an error message.</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gdbus-properties-org.freedesktop.UDisks2.Job"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.Operation"></a><h3>The "Operation" property</h3>
+<pre class="programlisting">
+Operation  readable   s
+</pre>
+<p>         The type of the operation that the job represents.
+</p>
+<p>         Known job operation types include:
+         </p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">ata-smart-selftest</span></p></td>
+<td><p>SMART self-test operation.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">drive-eject</span></p></td>
+<td><p>Ejecting the medium from a drive.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">encrypted-unlock</span></p></td>
+<td><p>Unlocking encrypted device.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">encrypted-lock</span></p></td>
+<td><p>Locking encrypted device.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">encrypted-modify</span></p></td>
+<td><p>Modifying encrypted device.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">swapspace-start</span></p></td>
+<td><p>Starting swapspace.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">swapspace-stop</span></p></td>
+<td><p>Stopping swapspace.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">filesystem-mount</span></p></td>
+<td><p>Mounting a filesystem.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">filesystem-unmount</span></p></td>
+<td><p>Unmounting a filesystem.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">filesystem-modify</span></p></td>
+<td><p>Modifying a filesystem.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">format-erase</span></p></td>
+<td><p>Erasing a device.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">format-mkfs</span></p></td>
+<td><p>Creating a filesystem.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">loop-setup</span></p></td>
+<td><p>Setting up a loop device.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">partition-modify</span></p></td>
+<td><p>Modifying a partition.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">partition-delete</span></p></td>
+<td><p>Deleting a partition.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">partition-create</span></p></td>
+<td><p>Creating a partition.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">cleanup</span></p></td>
+<td><p>Cleaning up devices that were removed without being properly unmounted or shut down.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">ata-secure-erase</span></p></td>
+<td><p>ATA Secure Erase.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">ata-enhanced-secure-erase</span></p></td>
+<td><p>ATA Enhanced Secure Erase.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">md-raid-stop</span></p></td>
+<td><p>Stopping a RAID Array.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">md-raid-start</span></p></td>
+<td><p>Starting a RAID Array.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">md-raid-fault-device</span></p></td>
+<td><p>Marking device in RAID Array as faulty.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">md-raid-remove-device</span></p></td>
+<td><p>Removing device from RAID Array.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">md-raid-create</span></p></td>
+<td><p>Create a RAID Array.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+         The
+         <a class="link" href="UDisksClient.html#udisks-client-get-job-description" title="udisks_client_get_job_description ()">udisks_client_get_job_description()</a>
+         function can be used to get a localized human readable description.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.Progress"></a><h3>The "Progress" property</h3>
+<pre class="programlisting">
+Progress  readable   d
+</pre>
+<p>         How much progress has been made. Values are in the range 0 to 1.
+</p>
+<p>         Do not use unless <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.ProgressValid" title='The "ProgressValid" property'>"ProgressValid"</a> is <code class="constant">TRUE</code>.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.ProgressValid"></a><h3>The "ProgressValid" property</h3>
+<pre class="programlisting">
+ProgressValid  readable   b
+</pre>
+<p>Set to <code class="constant">TRUE</code> if the <a class="link" href="gdbus-org.freedesktop.UDisks2.Job.html#gdbus-property-org-freedesktop-UDisks2-Job.Progress" title='The "Progress" property'>"Progress"</a> is valid.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.Bytes"></a><h3>The "Bytes" property</h3>
+<pre class="programlisting">
+Bytes  readable   t
+</pre>
+<p>         If the job involves processing a known number of bytes (for
+         example, erasing a disk), this property contains the total
+         number of bytes to process. If not, the value of this
+         property is zero.
+</p>
+<p>         The intent of this property is for user interfaces to convey
+         information such as <span class="quote">“<span class="quote">123 GB of 1.0 TB completed</span>”</span>.
+</p>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.Rate"></a><h3>The "Rate" property</h3>
+<pre class="programlisting">
+Rate  readable   t
+</pre>
+<p>         If the job involves processing a number of bytes (for
+         example, erasing) and the rate at which the processing takes
+         place is known, this property contains the rate (measured in
+         bytes per second).  Otherwise the value of this property is
+         zero.
+</p>
+<p>         The intent of this property is for user interfaces to convey
+         information such as <span class="quote">“<span class="quote">110 MB/sec</span>”</span>.
+</p>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.StartTime"></a><h3>The "StartTime" property</h3>
+<pre class="programlisting">
+StartTime  readable   t
+</pre>
+<p>         The point in time (micro-seconds since the <a class="ulink" href="http://en.wikipedia.org/wiki/Unix_epoch" target="_top">Unix
+         Epoch</a>) that the job was started.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.ExpectedEndTime"></a><h3>The "ExpectedEndTime" property</h3>
+<pre class="programlisting">
+ExpectedEndTime  readable   t
+</pre>
+<p>         The expected point in time (micro-seconds since the <a class="ulink" href="http://en.wikipedia.org/wiki/Unix_epoch" target="_top">Unix
+         Epoch</a>) that the job will complete or 0 if unknown.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.Objects"></a><h3>The "Objects" property</h3>
+<pre class="programlisting">
+Objects  readable   ao
+</pre>
+<p>The objects that the job is related to, if any.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.StartedByUID"></a><h3>The "StartedByUID" property</h3>
+<pre class="programlisting">
+StartedByUID  readable   u
+</pre>
+<p>         The id of the user who started the job or 0 if started
+         by root or not through udisks.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gdbus-property-org-freedesktop-UDisks2-Job.Cancelable"></a><h3>The "Cancelable" property</h3>
+<pre class="programlisting">
+Cancelable  readable   b
+</pre>
+<p>Whether the job can be canceled.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

@@ -1,0 +1,875 @@
+<!-- ##### SECTION Title ##### -->
+UDisksMDRaid
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksMDRaid ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksMDRaid::handle-add-device ##### -->
+<para>
+
+</para>
+
+@udisksmdraid: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksMDRaid::handle-remove-device ##### -->
+<para>
+
+</para>
+
+@udisksmdraid: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksMDRaid::handle-request-sync-action ##### -->
+<para>
+
+</para>
+
+@udisksmdraid: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksMDRaid::handle-set-bitmap-location ##### -->
+<para>
+
+</para>
+
+@udisksmdraid: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksMDRaid::handle-start ##### -->
+<para>
+
+</para>
+
+@udisksmdraid: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksMDRaid::handle-stop ##### -->
+<para>
+
+</para>
+
+@udisksmdraid: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### ARG UDisksMDRaid:active-devices ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:bitmap-location ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:chunk-size ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:degraded ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:level ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:name ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:num-devices ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:size ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:sync-action ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:sync-completed ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:sync-rate ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:sync-remaining-time ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksMDRaid:uuid ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT UDisksMDRaidIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@handle_add_device: 
+@handle_remove_device: 
+@handle_request_sync_action: 
+@handle_set_bitmap_location: 
+@handle_start: 
+@handle_stop: 
+@get_active_devices: 
+@get_bitmap_location: 
+@get_chunk_size: 
+@get_degraded: 
+@get_level: 
+@get_name: 
+@get_num_devices: 
+@get_size: 
+@get_sync_action: 
+@get_sync_completed: 
+@get_sync_rate: 
+@get_sync_remaining_time: 
+@get_uuid: 
+
+<!-- ##### FUNCTION udisks_mdraid_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_override_properties ##### -->
+<para>
+
+</para>
+
+@klass: 
+@property_id_begin: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_remove_device ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_device: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_remove_device_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_remove_device_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_device: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_complete_remove_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_add_device ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_device: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_add_device_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_add_device_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_device: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_complete_add_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_start ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_start_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_start_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_complete_start ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_stop ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_stop_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_stop_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_complete_stop ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_set_bitmap_location ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_value: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_set_bitmap_location_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_set_bitmap_location_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_value: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_complete_set_bitmap_location ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_request_sync_action ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_sync_action: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_request_sync_action_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_call_request_sync_action_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_sync_action: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_complete_request_sync_action ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_active_devices ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_bitmap_location ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_chunk_size ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_degraded ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_level ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_num_devices ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_size ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_sync_action ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_sync_completed ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_sync_rate ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_sync_remaining_time ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_get_uuid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_dup_active_devices ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_dup_bitmap_location ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_dup_level ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_dup_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_dup_sync_action ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_dup_uuid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_active_devices ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_bitmap_location ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_chunk_size ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_degraded ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_level ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_num_devices ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_size ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_sync_action ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_sync_completed ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_sync_rate ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_sync_remaining_time ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_set_uuid ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### STRUCT UDisksMDRaidProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksMDRaidProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_mdraid_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_proxy_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_proxy_new_sync ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_proxy_new_for_bus ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_proxy_new_for_bus_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_mdraid_proxy_new_for_bus_sync ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksMDRaidSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksMDRaidSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_mdraid_skeleton_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

@@ -1,0 +1,106 @@
+<!-- ##### SECTION Title ##### -->
+udiskslinuxmdraidobject
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxMDRaidObject ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG UDisksLinuxMDRaidObject:daemon ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksLinuxMDRaidObject:uuid ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION udisks_linux_mdraid_object_new ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@uuid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_mdraid_object_uevent ##### -->
+<para>
+
+</para>
+
+@object: 
+@action: 
+@device: 
+@is_member: 
+
+
+<!-- ##### FUNCTION udisks_linux_mdraid_object_have_devices ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_mdraid_object_get_daemon ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_mdraid_object_get_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_mdraid_object_get_members ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_mdraid_object_get_uuid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+

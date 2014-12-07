@@ -1,0 +1,1436 @@
+<!-- ##### SECTION Title ##### -->
+UDisksBlock
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksBlock ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksBlock::handle-add-configuration-item ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksBlock::handle-format ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksBlock::handle-get-secret-configuration ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksBlock::handle-open-for-backup ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksBlock::handle-open-for-benchmark ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksBlock::handle-open-for-restore ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksBlock::handle-remove-configuration-item ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksBlock::handle-rescan ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL UDisksBlock::handle-update-configuration-item ##### -->
+<para>
+
+</para>
+
+@udisksblock: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+@Returns: 
+
+<!-- ##### ARG UDisksBlock:configuration ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:crypto-backing-device ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:device ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:device-number ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:drive ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:hint-auto ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:hint-icon-name ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:hint-ignore ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:hint-name ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:hint-partitionable ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:hint-symbolic-icon-name ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:hint-system ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:id ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:id-label ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:id-type ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:id-usage ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:id-uuid ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:id-version ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:mdraid ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:mdraid-member ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:preferred-device ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:read-only ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:size ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksBlock:symlinks ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT UDisksBlockIface ##### -->
+<para>
+
+</para>
+
+@parent_iface: 
+@handle_add_configuration_item: 
+@handle_format: 
+@handle_get_secret_configuration: 
+@handle_open_for_backup: 
+@handle_open_for_benchmark: 
+@handle_open_for_restore: 
+@handle_remove_configuration_item: 
+@handle_rescan: 
+@handle_update_configuration_item: 
+@get_configuration: 
+@get_crypto_backing_device: 
+@get_device: 
+@get_device_number: 
+@get_drive: 
+@get_hint_auto: 
+@get_hint_icon_name: 
+@get_hint_ignore: 
+@get_hint_name: 
+@get_hint_partitionable: 
+@get_hint_system: 
+@get_id_label: 
+@get_id_type: 
+@get_id_usage: 
+@get_id_uuid: 
+@get_id_version: 
+@get_preferred_device: 
+@get_read_only: 
+@get_size: 
+@get_symlinks: 
+@get_hint_symbolic_icon_name: 
+@get_id: 
+@get_mdraid: 
+@get_mdraid_member: 
+
+<!-- ##### FUNCTION udisks_block_interface_info ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_override_properties ##### -->
+<para>
+
+</para>
+
+@klass: 
+@property_id_begin: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_get_secret_configuration ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_get_secret_configuration_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@out_configuration: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_get_secret_configuration_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@out_configuration: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_get_secret_configuration ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+@configuration: 
+
+
+<!-- ##### FUNCTION udisks_block_call_add_configuration_item ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_item: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_add_configuration_item_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_add_configuration_item_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_item: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_add_configuration_item ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_block_call_remove_configuration_item ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_item: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_remove_configuration_item_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_remove_configuration_item_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_item: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_remove_configuration_item ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_block_call_update_configuration_item ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_old_item: 
+@arg_new_item: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_update_configuration_item_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_update_configuration_item_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_old_item: 
+@arg_new_item: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_update_configuration_item ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_block_call_format ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_type: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_format_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_format_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_type: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_format ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_backup ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@fd_list: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_backup_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@out_fd: 
+@out_fd_list: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_backup_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@fd_list: 
+@out_fd: 
+@out_fd_list: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_open_for_backup ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+@fd_list: 
+@fd: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_restore ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@fd_list: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_restore_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@out_fd: 
+@out_fd_list: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_restore_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@fd_list: 
+@out_fd: 
+@out_fd_list: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_open_for_restore ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+@fd_list: 
+@fd: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_benchmark ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@fd_list: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_benchmark_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@out_fd: 
+@out_fd_list: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_open_for_benchmark_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@fd_list: 
+@out_fd: 
+@out_fd_list: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_open_for_benchmark ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+@fd_list: 
+@fd: 
+
+
+<!-- ##### FUNCTION udisks_block_call_rescan ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_call_rescan_finish ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_call_rescan_sync ##### -->
+<para>
+
+</para>
+
+@proxy: 
+@arg_options: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_complete_rescan ##### -->
+<para>
+
+</para>
+
+@object: 
+@invocation: 
+
+
+<!-- ##### FUNCTION udisks_block_get_configuration ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_crypto_backing_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_drive ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_id_label ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_id_type ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_id_usage ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_id_uuid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_id_version ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_device_number ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_preferred_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_size ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_read_only ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_symlinks ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_hint_partitionable ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_hint_system ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_hint_ignore ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_hint_auto ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_hint_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_hint_icon_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_hint_symbolic_icon_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_mdraid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_get_mdraid_member ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_configuration ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_crypto_backing_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_drive ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_id_label ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_id_type ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_id_usage ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_id_uuid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_id_version ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_preferred_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_symlinks ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_hint_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_hint_icon_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_hint_symbolic_icon_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_mdraid ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_dup_mdraid_member ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_set_configuration ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_crypto_backing_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_drive ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_id_label ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_id_type ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_id_usage ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_id_uuid ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_id_version ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_device_number ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_preferred_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_id ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_size ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_read_only ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_symlinks ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_hint_partitionable ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_hint_system ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_hint_ignore ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_hint_auto ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_hint_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_hint_icon_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_hint_symbolic_icon_name ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_mdraid ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### FUNCTION udisks_block_set_mdraid_member ##### -->
+<para>
+
+</para>
+
+@object: 
+@value: 
+
+
+<!-- ##### STRUCT UDisksBlockProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksBlockProxyClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_block_proxy_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_proxy_new_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_proxy_new_sync ##### -->
+<para>
+
+</para>
+
+@connection: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_proxy_new_for_bus ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION udisks_block_proxy_new_for_bus_finish ##### -->
+<para>
+
+</para>
+
+@res: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_block_proxy_new_for_bus_sync ##### -->
+<para>
+
+</para>
+
+@bus_type: 
+@flags: 
+@name: 
+@object_path: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksBlockSkeleton ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT UDisksBlockSkeletonClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION udisks_block_skeleton_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

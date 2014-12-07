@@ -1,0 +1,60 @@
+<!-- ##### SECTION Title ##### -->
+UDisksProvider
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksProvider ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG UDisksProvider:daemon ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT UDisksProviderClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@start: 
+
+<!-- ##### FUNCTION udisks_provider_start ##### -->
+<para>
+
+</para>
+
+@provider: 
+
+
+<!-- ##### FUNCTION udisks_provider_get_daemon ##### -->
+<para>
+
+</para>
+
+@provider: 
+@Returns: 
+
+

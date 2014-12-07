@@ -1,0 +1,85 @@
+
+------------------------------------------------------------------------
+- TODO List
+------------------------------------------------------------------------
+
+ - D-Bus interface optimizations
+   - problem: right now a lot of round-tripping is needed
+   - solution: for Foo=Device,Adapter,Expander,Port
+     - EnumerateFoo() should return a(oa{sv}) instead of just 'ao'
+       where the a{sv} contains the properties
+     - FooAdded() should be 'oa{sv}' instead of just 'o'
+       where the a{sv} contains all properties
+     - FooChanged() should be 'oa{sv}' instead of just 'o'
+       where the a{sv} contains the properties that has
+       changed
+   - this will break the D-Bus interface so we we need to bump the
+     minor number (e.g. 1.0.x -> 1.1.0 transition)
+
+ - We should probably use "Phy" instead of "Port"
+   - do this when breaking the D-Bus interface for other reasons
+
+ - When the GDBus stuff lands in GLib we should probably start using it
+   - probably do this when breaking the D-Bus interface for other reasons
+
+ - UTF-8 assumptions
+   - Some properties contain file paths. Since Linux/UNIX allows any
+     NUL-terminated string of bytes as file names (restricting file
+     names to UTF-8 is clearly insane, *boggle*), we could end up with
+     strings that are not UTF-8. We should probably use the type 'ay'
+     instead of 's' for such things.
+
+ - We probably have too many polkit actions - probably just two are enough
+   - reads should require org.fd.udisks.read
+     - this should be 'yes'
+   - write/modification should require org.fd.udisks.write
+     - this should be 'auth_admin_keep'
+
+ - Jobs should be separate D-Bus objects instead of Job* properties
+   on the Device objects. We should probably also synthesize Job objects
+   for jobs being tracked/managed by separate kernel- and/or user-subsystems.
+   For example, if the user does
+
+     # echo check > /sys/block/md0/md/sync_action
+
+   from the command-line, we should create a Job object. Things like that
+
+ - We should have a notion of events and a history of events. This
+   would include SMART data, IO errors and such things. Each event
+   would have generic metadata (type, collection date, source,
+   relationship to 0 or more devices, human readable string,
+   type-specific blobs) and UI like Palimpsest would allow searching,
+   viewing, organizing and purging any type of event.
+
+   We probably want some way of rate-limiting / collapsing multiple events
+   into one etc. Think tons of IO errors.
+
+   The type-specific blob could contain e.g. SMART data and this could be
+   used to realize SMART graphs.
+
+ - It would be nice to be able to have different back-ends
+
+ - The D-BUS API is supposed to be synchronous, but property updates are racy
+   in many cases (tests/run --no-workarounds exposes those). These should get
+   fixed by having the methods only return after the properties that were
+   affected by the call got updated.
+
+------------------------------------------------------------------------
+- Future features
+------------------------------------------------------------------------
+
+ - iSCSI
+   - initiator (connect to drive)
+   - target (share drive)
+   - see notes in doc/TODO-ISCSI
+
+ - Filesystem check
+   - how can we do interactive fsck? Connect to a socket on the
+     client and then make the client includes a terminal emulator?
+     Yuck
+
+ - Partition/Filesystem resizing
+   - Maybe just enhance PartitionModify
+
+ - SES2 Enclosure Management
+   - In particular, we should do something with the LEDs

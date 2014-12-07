@@ -1,0 +1,94 @@
+<!-- ##### SECTION Title ##### -->
+UDisksLinuxBlockObject
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxBlockObject ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG UDisksLinuxBlockObject:daemon ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksLinuxBlockObject:device ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION udisks_linux_block_object_new ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@device: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_block_object_uevent ##### -->
+<para>
+
+</para>
+
+@object: 
+@action: 
+@device: 
+
+
+<!-- ##### FUNCTION udisks_linux_block_object_get_daemon ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_block_object_get_device ##### -->
+<para>
+
+</para>
+
+@object: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_block_object_trigger_uevent ##### -->
+<para>
+
+</para>
+
+@object: 
+
+
+<!-- ##### FUNCTION udisks_linux_block_object_reread_partition_table ##### -->
+<para>
+
+</para>
+
+@object: 
+
+

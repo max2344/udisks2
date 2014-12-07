@@ -1,0 +1,37 @@
+From 301855291954c5b7343ca826c478fa80219149a0 Mon Sep 17 00:00:00 2001
+From: Michael Biebl <biebl@debian.org>
+Date: Mon, 29 Sep 2014 23:13:33 +0200
+Subject: [PATCH] Support building against libsystemd library
+
+In systemd v209, the various libraries were merged into a single
+libsystemd library [1].
+Add support for building against this new library and fall back to the
+old library names if not found.
+
+[1] http://lists.freedesktop.org/archives/systemd-devel/2014-February/017146.html
+---
+ configure.ac | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 3a39b5a..e3125cb 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -145,10 +145,10 @@ PKG_CHECK_MODULES(LIBATASMART, [libatasmart >= 0.17])
+ AC_SUBST(LIBATASMART_CFLAGS)
+ AC_SUBST(LIBATASMART_LIBS)
+ 
+-PKG_CHECK_MODULES(LIBSYSTEMD_LOGIN,
+-                  [libsystemd-login >= 44 libsystemd-daemon],
+-                  have_libsystemd_login=yes,
+-                  have_libsystemd_login=no)
++PKG_CHECK_MODULES(LIBSYSTEMD_LOGIN, [libsystemd >= 209], [have_libsystemd_login=yes],
++                  [PKG_CHECK_MODULES(LIBSYSTEMD_LOGIN, [libsystemd-login >= 44 libsystemd-daemon],
++                  [have_libsystemd_login=yes],
++                  [have_libsystemd_login=no])])
+ AM_CONDITIONAL(HAVE_LIBSYSTEMD_LOGIN, test x$have_libsystemd_login = xyes)
+ if test "x$have_libsystemd_login" = "xyes"; then
+   AC_DEFINE([HAVE_LIBSYSTEMD_LOGIN], 1, [Define to 1 if libsystemd-login is available])
+-- 
+2.1.1
+

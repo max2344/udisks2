@@ -1,0 +1,73 @@
+<!-- ##### SECTION Title ##### -->
+udisksata
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM UDisksAtaCommandProtocol ##### -->
+<para>
+
+</para>
+
+@UDISKS_ATA_COMMAND_PROTOCOL_NONE: 
+@UDISKS_ATA_COMMAND_PROTOCOL_DRIVE_TO_HOST: 
+@UDISKS_ATA_COMMAND_PROTOCOL_HOST_TO_DRIVE: 
+
+<!-- ##### STRUCT UDisksAtaCommandInput ##### -->
+<para>
+
+</para>
+
+@command: 
+@feature: 
+@count: 
+@device: 
+@lba: 
+@buffer_size: 
+@buffer: 
+
+<!-- ##### STRUCT UDisksAtaCommandOutput ##### -->
+<para>
+
+</para>
+
+@error: 
+@count: 
+@device: 
+@status: 
+@lba: 
+@buffer_size: 
+@buffer: 
+
+<!-- ##### FUNCTION udisks_ata_send_command_sync ##### -->
+<para>
+
+</para>
+
+@fd: 
+@timeout_msec: 
+@protocol: 
+@input: 
+@output: 
+@error: 
+@Returns: 
+
+

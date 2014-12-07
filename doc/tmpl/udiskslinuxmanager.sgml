@@ -1,0 +1,53 @@
+<!-- ##### SECTION Title ##### -->
+UDisksLinuxManager
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksLinuxManager ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG UDisksLinuxManager:daemon ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION udisks_linux_manager_new ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_linux_manager_get_daemon ##### -->
+<para>
+
+</para>
+
+@manager: 
+@Returns: 
+
+

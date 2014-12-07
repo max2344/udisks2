@@ -1,0 +1,89 @@
+<!-- ##### SECTION Title ##### -->
+UDisksThreadedJob
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksThreadedJob ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksThreadedJob::threaded-job-completed ##### -->
+<para>
+
+</para>
+
+@udisksthreadedjob: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### ARG UDisksThreadedJob:job-func ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksThreadedJob:user-data ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksThreadedJob:user-data-free-func ##### -->
+<para>
+
+</para>
+
+<!-- ##### USER_FUNCTION UDisksThreadedJobFunc ##### -->
+<para>
+
+</para>
+
+@job: 
+@cancellable: 
+@user_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_threaded_job_new ##### -->
+<para>
+
+</para>
+
+@job_func: 
+@user_data: 
+@user_data_free_func: 
+@daemon: 
+@cancellable: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_threaded_job_get_user_data ##### -->
+<para>
+
+</para>
+
+@job: 
+@Returns: 
+
+

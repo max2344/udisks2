@@ -1,0 +1,134 @@
+<!-- ##### SECTION Title ##### -->
+UDisksFstabMonitor
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksFstabEntry ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION udisks_fstab_entry_get_fsname ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_fstab_entry_get_dir ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_fstab_entry_get_fstype ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_fstab_entry_get_opts ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_fstab_entry_get_freq ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_fstab_entry_get_passno ##### -->
+<para>
+
+</para>
+
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_fstab_entry_compare ##### -->
+<para>
+
+</para>
+
+@entry: 
+@other_entry: 
+@Returns: 
+
+
+<!-- ##### STRUCT UDisksFstabMonitor ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL UDisksFstabMonitor::entry-added ##### -->
+<para>
+
+</para>
+
+@udisksfstabmonitor: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL UDisksFstabMonitor::entry-removed ##### -->
+<para>
+
+</para>
+
+@udisksfstabmonitor: the object which received the signal.
+@arg1: 
+
+<!-- ##### FUNCTION udisks_fstab_monitor_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_fstab_monitor_get_entries ##### -->
+<para>
+
+</para>
+
+@monitor: 
+@Returns: 
+
+

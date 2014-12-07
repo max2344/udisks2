@@ -1,0 +1,1572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UDisks Reference Manual: UDisksManager</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="UDisks Reference Manual">
+<link rel="up" href="ref-library-generated.html" title="Generated Code">
+<link rel="prev" href="UDisksObjectManagerClient.html" title="UDisksObjectManagerClient">
+<link rel="next" href="UDisksDrive.html" title="UDisksDrive">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#UDisksManager.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#UDisksManager.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces"> <span class="dim">|</span> 
+                  <a href="#UDisksManager.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_prerequisites"> <span class="dim">|</span> 
+                  <a href="#UDisksManager.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_implementations"> <span class="dim">|</span> 
+                  <a href="#UDisksManager.implementations" class="shortcut">Known Implementations</a></span><span id="nav_properties"> <span class="dim">|</span> 
+                  <a href="#UDisksManager.properties" class="shortcut">Properties</a></span><span id="nav_signals"> <span class="dim">|</span> 
+                  <a href="#UDisksManager.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ref-library-generated.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="UDisksObjectManagerClient.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="UDisksDrive.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="UDisksManager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="UDisksManager.top_of_page"></a>UDisksManager</span></h2>
+<p>UDisksManager — Generated C code for the org.freedesktop.UDisks2.Manager D-Bus interface</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="UDisksManager.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/gio/unstable/gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="returnvalue">GDBusInterfaceInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-interface-info" title="udisks_manager_interface_info ()">udisks_manager_interface_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-override-properties" title="udisks_manager_override_properties ()">udisks_manager_override_properties</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-get-version" title="udisks_manager_get_version ()">udisks_manager_get_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-dup-version" title="udisks_manager_dup_version ()">udisks_manager_dup_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-set-version" title="udisks_manager_set_version ()">udisks_manager_set_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-call-loop-setup" title="udisks_manager_call_loop_setup ()">udisks_manager_call_loop_setup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-call-loop-setup-finish" title="udisks_manager_call_loop_setup_finish ()">udisks_manager_call_loop_setup_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-call-loop-setup-sync" title="udisks_manager_call_loop_setup_sync ()">udisks_manager_call_loop_setup_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-complete-loop-setup" title="udisks_manager_complete_loop_setup ()">udisks_manager_complete_loop_setup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-call-mdraid-create" title="udisks_manager_call_mdraid_create ()">udisks_manager_call_mdraid_create</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-call-mdraid-create-finish" title="udisks_manager_call_mdraid_create_finish ()">udisks_manager_call_mdraid_create_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-call-mdraid-create-sync" title="udisks_manager_call_mdraid_create_sync ()">udisks_manager_call_mdraid_create_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-complete-mdraid-create" title="udisks_manager_complete_mdraid_create ()">udisks_manager_complete_mdraid_create</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-proxy-new" title="udisks_manager_proxy_new ()">udisks_manager_proxy_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-proxy-new-finish" title="udisks_manager_proxy_new_finish ()">udisks_manager_proxy_new_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-proxy-new-sync" title="udisks_manager_proxy_new_sync ()">udisks_manager_proxy_new_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-proxy-new-for-bus" title="udisks_manager_proxy_new_for_bus ()">udisks_manager_proxy_new_for_bus</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-proxy-new-for-bus-finish" title="udisks_manager_proxy_new_for_bus_finish ()">udisks_manager_proxy_new_for_bus_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-proxy-new-for-bus-sync" title="udisks_manager_proxy_new_for_bus_sync ()">udisks_manager_proxy_new_for_bus_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="UDisksManager.html#udisks-manager-skeleton-new" title="udisks_manager_skeleton_new ()">udisks_manager_skeleton_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="UDisksManager.html#UDisksManager--version" title="The “version” property">version</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="UDisksManager.html#UDisksManager-handle-loop-setup" title="The “handle-loop-setup” signal">handle-loop-setup</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+<tr>
+<td class="signal_type"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="UDisksManager.html#UDisksManager-handle-mdraid-create" title="The “handle-mdraid-create” signal">handle-mdraid-create</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="UDisksManagerProxy"></a><a name="UDisksManagerSkeleton"></a><div class="refsect1">
+<a name="UDisksManager.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="UDisksManager.html#UDisksManager-struct" title="UDisksManager">UDisksManager</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="UDisksManager.html#UDisksManagerIface" title="struct UDisksManagerIface">UDisksManagerIface</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="UDisksManager.html#UDisksManagerProxy-struct" title="struct UDisksManagerProxy">UDisksManagerProxy</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="UDisksManager.html#UDisksManagerProxyClass" title="struct UDisksManagerProxyClass">UDisksManagerProxyClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="UDisksManager.html#UDisksManagerSkeleton-struct" title="struct UDisksManagerSkeleton">UDisksManagerSkeleton</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="UDisksManager.html#UDisksManagerSkeletonClass" title="struct UDisksManagerSkeletonClass">UDisksManagerSkeletonClass</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GInterface
+    <span class="lineart">╰──</span> UDisksManager
+    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">├──</span> <a href="http://library.gnome.org/devel/gio/unstable/GDBusInterfaceSkeleton.html">GDBusInterfaceSkeleton</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> UDisksManagerSkeleton
+    <span class="lineart">│</span>       <span class="lineart">╰──</span> <a class="link" href="UDisksLinuxManager.html" title="UDisksLinuxManager">UDisksLinuxManager</a>
+    <span class="lineart">╰──</span> <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html">GDBusProxy</a>
+        <span class="lineart">╰──</span> UDisksManagerProxy
+</pre>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+UDisksManager requires
+ <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+UDisksManagerProxy implements
+ <a href="http://library.gnome.org/devel/gio/unstable/GDBusInterface.html">GDBusInterface</a>,  <a href="http://library.gnome.org/devel/gio/unstable/GInitable.html">GInitable</a>,  <a href="http://library.gnome.org/devel/gio/unstable/GAsyncInitable.html">GAsyncInitable</a> and  <a class="link" href="UDisksManager.html" title="UDisksManager">UDisksManager</a>.</p>
+<p>
+UDisksManagerSkeleton implements
+ <a href="http://library.gnome.org/devel/gio/unstable/GDBusInterface.html">GDBusInterface</a> and  <a class="link" href="UDisksManager.html" title="UDisksManager">UDisksManager</a>.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.implementations"></a><h2>Known Implementations</h2>
+<p>
+UDisksManager is implemented by
+ <a class="link" href="UDisksLinuxManager.html" title="UDisksLinuxManager">UDisksLinuxManager</a>,  <a class="link" href="UDisksManager.html#UDisksManagerProxy">UDisksManagerProxy</a> and  <a class="link" href="UDisksManager.html#UDisksManagerSkeleton">UDisksManagerSkeleton</a>.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.description"></a><h2>Description</h2>
+<p>This section contains code for working with the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-interface-org-freedesktop-UDisks2-Manager.top_of_page">org.freedesktop.UDisks2.Manager</a> D-Bus interface in C.</p>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="udisks-manager-interface-info"></a><h3>udisks_manager_interface_info ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gio/unstable/gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="returnvalue">GDBusInterfaceInfo</span></a> *
+udisks_manager_interface_info (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Gets a machine-readable description of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-interface-org-freedesktop-UDisks2-Manager.top_of_page">org.freedesktop.UDisks2.Manager</a> D-Bus interface.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.2.5"></a><h4>Returns</h4>
+<p> A <a href="http://library.gnome.org/devel/gio/unstable/gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="type">GDBusInterfaceInfo</span></a>. Do not free. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-override-properties"></a><h3>udisks_manager_override_properties ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+udisks_manager_override_properties (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> *klass</code></em>,
+                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> property_id_begin</code></em>);</pre>
+<p>Overrides all <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> properties in the <a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> interface for a concrete class.
+The properties are overridden in the order they are defined.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>klass</p></td>
+<td class="parameter_description"><p>The class structure for a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>-derived class.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>property_id_begin</p></td>
+<td class="parameter_description"><p>The property id to assign to the first overridden property.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.3.6"></a><h4>Returns</h4>
+<p> The last property id.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-get-version"></a><h3>udisks_manager_get_version ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+udisks_manager_get_version (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *object</code></em>);</pre>
+<p>Gets the value of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-property-org-freedesktop-UDisks2-Manager.Version" title='The "Version" property'>"Version"</a> D-Bus property.</p>
+<p>Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.</p>
+<div class="warning">The returned value is only valid until the property changes so on the client-side it is only safe to use this function on the thread where <em class="parameter"><code>object</code></em> was constructed. Use <a class="link" href="UDisksManager.html#udisks-manager-dup-version" title="udisks_manager_dup_version ()"><code class="function">udisks_manager_dup_version()</code></a> if on another thread.</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.4.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.4.8"></a><h4>Returns</h4>
+<p> The property value or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the property is not set. Do not free the returned value, it belongs to <em class="parameter"><code>object</code></em>
+. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-dup-version"></a><h3>udisks_manager_dup_version ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+udisks_manager_dup_version (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *object</code></em>);</pre>
+<p>Gets a copy of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-property-org-freedesktop-UDisks2-Manager.Version" title='The "Version" property'>"Version"</a> D-Bus property.</p>
+<p>Since this D-Bus property is readable, it is meaningful to use this function on both the client- and service-side.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.5.7"></a><h4>Returns</h4>
+<p> The property value or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the property is not set. The returned value should be freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-set-version"></a><h3>udisks_manager_set_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_manager_set_version (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *object</code></em>,
+                            <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>Sets the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-property-org-freedesktop-UDisks2-Manager.Version" title='The "Version" property'>"Version"</a> D-Bus property to <em class="parameter"><code>value</code></em>
+.</p>
+<p>Since this D-Bus property is not writable, it is only meaningful to use this function on the service-side.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.6.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The value to set.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-call-loop-setup"></a><h3>udisks_manager_call_loop_setup ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_manager_call_loop_setup (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *proxy</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *arg_fd</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *arg_options</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> *fd_list</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Asynchronously invokes the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-method-org-freedesktop-UDisks2-Manager.LoopSetup" title="The LoopSetup() method"><code class="function">LoopSetup()</code></a> D-Bus method on <em class="parameter"><code>proxy</code></em>
+.
+When the operation is finished, <em class="parameter"><code>callback</code></em>
+ will be invoked in the <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#g-main-context-push-thread-default">thread-default main loop</a> of the thread you are calling this method from.
+You can then call <a class="link" href="UDisksManager.html#udisks-manager-call-loop-setup-finish" title="udisks_manager_call_loop_setup_finish ()"><code class="function">udisks_manager_call_loop_setup_finish()</code></a> to get the result of the operation.</p>
+<p>See <a class="link" href="UDisksManager.html#udisks-manager-call-loop-setup-sync" title="udisks_manager_call_loop_setup_sync ()"><code class="function">udisks_manager_call_loop_setup_sync()</code></a> for the synchronous, blocking version of this method.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.7.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html#UDisksManagerProxy"><span class="type">UDisksManagerProxy</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_fd</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_options</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fd_list</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> to call when the request is satisfied or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data to pass to <em class="parameter"><code>callback</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-call-loop-setup-finish"></a><h3>udisks_manager_call_loop_setup_finish ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_manager_call_loop_setup_finish (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *proxy</code></em>,
+                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_resulting_device</code></em>,
+                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> **out_fd_list</code></em>,
+                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *res</code></em>,
+                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Finishes an operation started with <a class="link" href="UDisksManager.html#udisks-manager-call-loop-setup" title="udisks_manager_call_loop_setup ()"><code class="function">udisks_manager_call_loop_setup()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html#UDisksManagerProxy"><span class="type">UDisksManagerProxy</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_resulting_device</p></td>
+<td class="parameter_description"><p> Return location for return parameter or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_fd_list</p></td>
+<td class="parameter_description"><p> Return location for a <a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>res</p></td>
+<td class="parameter_description"><p>The <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> obtained from the <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> passed to <a class="link" href="UDisksManager.html#udisks-manager-call-loop-setup" title="udisks_manager_call_loop_setup ()"><code class="function">udisks_manager_call_loop_setup()</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.8.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the call succeded, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-call-loop-setup-sync"></a><h3>udisks_manager_call_loop_setup_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_manager_call_loop_setup_sync (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *proxy</code></em>,
+                                     <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *arg_fd</code></em>,
+                                     <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *arg_options</code></em>,
+                                     <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> *fd_list</code></em>,
+                                     <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_resulting_device</code></em>,
+                                     <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> **out_fd_list</code></em>,
+                                     <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                     <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Synchronously invokes the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-method-org-freedesktop-UDisks2-Manager.LoopSetup" title="The LoopSetup() method"><code class="function">LoopSetup()</code></a> D-Bus method on <em class="parameter"><code>proxy</code></em>
+. The calling thread is blocked until a reply is received.</p>
+<p>See <a class="link" href="UDisksManager.html#udisks-manager-call-loop-setup" title="udisks_manager_call_loop_setup ()"><code class="function">udisks_manager_call_loop_setup()</code></a> for the asynchronous version of this method.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.9.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html#UDisksManagerProxy"><span class="type">UDisksManagerProxy</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_fd</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_options</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fd_list</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_resulting_device</p></td>
+<td class="parameter_description"><p> Return location for return parameter or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_fd_list</p></td>
+<td class="parameter_description"><p> Return location for a <a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.9.7"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the call succeded, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-complete-loop-setup"></a><h3>udisks_manager_complete_loop_setup ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_manager_complete_loop_setup (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *object</code></em>,
+                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a> *invocation</code></em>,
+                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> *fd_list</code></em>,
+                                    <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *resulting_device</code></em>);</pre>
+<p>Helper function used in service implementations to finish handling invocations of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-method-org-freedesktop-UDisks2-Manager.LoopSetup" title="The LoopSetup() method"><code class="function">LoopSetup()</code></a> D-Bus method. If you instead want to finish handling an invocation by returning an error, use <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html#g-dbus-method-invocation-return-error"><code class="function">g_dbus_method_invocation_return_error()</code></a> or similar.</p>
+<p>This method will free <em class="parameter"><code>invocation</code></em>
+, you cannot use it afterwards.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.10.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>invocation</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fd_list</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>resulting_device</p></td>
+<td class="parameter_description"><p>Parameter to return.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-call-mdraid-create"></a><h3>udisks_manager_call_mdraid_create ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_manager_call_mdraid_create (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *proxy</code></em>,
+                                   <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *const *arg_blocks</code></em>,
+                                   <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *arg_level</code></em>,
+                                   <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *arg_name</code></em>,
+                                   <em class="parameter"><code><span class="type">guint64</span> arg_chunk</code></em>,
+                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *arg_options</code></em>,
+                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Asynchronously invokes the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-method-org-freedesktop-UDisks2-Manager.MDRaidCreate" title="The MDRaidCreate() method"><code class="function">MDRaidCreate()</code></a> D-Bus method on <em class="parameter"><code>proxy</code></em>
+.
+When the operation is finished, <em class="parameter"><code>callback</code></em>
+ will be invoked in the <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#g-main-context-push-thread-default">thread-default main loop</a> of the thread you are calling this method from.
+You can then call <a class="link" href="UDisksManager.html#udisks-manager-call-mdraid-create-finish" title="udisks_manager_call_mdraid_create_finish ()"><code class="function">udisks_manager_call_mdraid_create_finish()</code></a> to get the result of the operation.</p>
+<p>See <a class="link" href="UDisksManager.html#udisks-manager-call-mdraid-create-sync" title="udisks_manager_call_mdraid_create_sync ()"><code class="function">udisks_manager_call_mdraid_create_sync()</code></a> for the synchronous, blocking version of this method.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.11.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html#UDisksManagerProxy"><span class="type">UDisksManagerProxy</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_blocks</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_level</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_name</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_chunk</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_options</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> to call when the request is satisfied or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data to pass to <em class="parameter"><code>callback</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-call-mdraid-create-finish"></a><h3>udisks_manager_call_mdraid_create_finish ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_manager_call_mdraid_create_finish
+                               (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *proxy</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_resulting_array</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *res</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Finishes an operation started with <a class="link" href="UDisksManager.html#udisks-manager-call-mdraid-create" title="udisks_manager_call_mdraid_create ()"><code class="function">udisks_manager_call_mdraid_create()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html#UDisksManagerProxy"><span class="type">UDisksManagerProxy</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_resulting_array</p></td>
+<td class="parameter_description"><p> Return location for return parameter or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>res</p></td>
+<td class="parameter_description"><p>The <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> obtained from the <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> passed to <a class="link" href="UDisksManager.html#udisks-manager-call-mdraid-create" title="udisks_manager_call_mdraid_create ()"><code class="function">udisks_manager_call_mdraid_create()</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.12.6"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the call succeded, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+</div>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-call-mdraid-create-sync"></a><h3>udisks_manager_call_mdraid_create_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+udisks_manager_call_mdraid_create_sync
+                               (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *proxy</code></em>,
+                                <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *const *arg_blocks</code></em>,
+                                <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *arg_level</code></em>,
+                                <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *arg_name</code></em>,
+                                <em class="parameter"><code><span class="type">guint64</span> arg_chunk</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *arg_options</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out_resulting_array</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Synchronously invokes the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-method-org-freedesktop-UDisks2-Manager.MDRaidCreate" title="The MDRaidCreate() method"><code class="function">MDRaidCreate()</code></a> D-Bus method on <em class="parameter"><code>proxy</code></em>
+. The calling thread is blocked until a reply is received.</p>
+<p>See <a class="link" href="UDisksManager.html#udisks-manager-call-mdraid-create" title="udisks_manager_call_mdraid_create ()"><code class="function">udisks_manager_call_mdraid_create()</code></a> for the asynchronous version of this method.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.13.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html#UDisksManagerProxy"><span class="type">UDisksManagerProxy</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_blocks</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_level</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_name</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_chunk</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_options</p></td>
+<td class="parameter_description"><p>Argument to pass with the method invocation.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_resulting_array</p></td>
+<td class="parameter_description"><p> Return location for return parameter or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.13.7"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the call succeded, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>error</code></em>
+is set. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/skip"><span class="acronym">skip</span></a>]</span></p>
+</div>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-complete-mdraid-create"></a><h3>udisks_manager_complete_mdraid_create ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_manager_complete_mdraid_create (<em class="parameter"><code><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a> *object</code></em>,
+                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a> *invocation</code></em>,
+                                       <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *resulting_array</code></em>);</pre>
+<p>Helper function used in service implementations to finish handling invocations of the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-method-org-freedesktop-UDisks2-Manager.MDRaidCreate" title="The MDRaidCreate() method"><code class="function">MDRaidCreate()</code></a> D-Bus method. If you instead want to finish handling an invocation by returning an error, use <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html#g-dbus-method-invocation-return-error"><code class="function">g_dbus_method_invocation_return_error()</code></a> or similar.</p>
+<p>This method will free <em class="parameter"><code>invocation</code></em>
+, you cannot use it afterwards.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.14.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>invocation</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>resulting_array</p></td>
+<td class="parameter_description"><p>Parameter to return.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since 2.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-proxy-new"></a><h3>udisks_manager_proxy_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_manager_proxy_new (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html"><span class="type">GDBusConnection</span></a> *connection</code></em>,
+                          <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyFlags"><span class="type">GDBusProxyFlags</span></a> flags</code></em>,
+                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object_path</code></em>,
+                          <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                          <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Asynchronously creates a proxy for the D-Bus interface <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-interface-org-freedesktop-UDisks2-Manager.top_of_page">org.freedesktop.UDisks2.Manager</a>. See <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#g-dbus-proxy-new"><code class="function">g_dbus_proxy_new()</code></a> for more details.</p>
+<p>When the operation is finished, <em class="parameter"><code>callback</code></em>
+ will be invoked in the <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#g-main-context-push-thread-default">thread-default main loop</a> of the thread you are calling this method from.
+You can then call <a class="link" href="UDisksManager.html#udisks-manager-proxy-new-finish" title="udisks_manager_proxy_new_finish ()"><code class="function">udisks_manager_proxy_new_finish()</code></a> to get the result of the operation.</p>
+<p>See <a class="link" href="UDisksManager.html#udisks-manager-proxy-new-sync" title="udisks_manager_proxy_new_sync ()"><code class="function">udisks_manager_proxy_new_sync()</code></a> for the synchronous, blocking version of this constructor.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.15.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html"><span class="type">GDBusConnection</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>Flags from the <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyFlags"><span class="type">GDBusProxyFlags</span></a> enumeration.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p> A bus name (well-known or unique) or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>connection</code></em>
+is not a message bus connection. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object_path</p></td>
+<td class="parameter_description"><p>An object path.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> to call when the request is satisfied.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data to pass to <em class="parameter"><code>callback</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-proxy-new-finish"></a><h3>udisks_manager_proxy_new_finish ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+udisks_manager_proxy_new_finish (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *res</code></em>,
+                                 <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Finishes an operation started with <a class="link" href="UDisksManager.html#udisks-manager-proxy-new" title="udisks_manager_proxy_new ()"><code class="function">udisks_manager_proxy_new()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>res</p></td>
+<td class="parameter_description"><p>The <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> obtained from the <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> passed to <a class="link" href="UDisksManager.html#udisks-manager-proxy-new" title="udisks_manager_proxy_new ()"><code class="function">udisks_manager_proxy_new()</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.16.6"></a><h4>Returns</h4>
+<p> The constructed proxy object or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
+is set. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/type"><span class="acronym">type</span></a> UDisksManagerProxy]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-proxy-new-sync"></a><h3>udisks_manager_proxy_new_sync ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+udisks_manager_proxy_new_sync (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html"><span class="type">GDBusConnection</span></a> *connection</code></em>,
+                               <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyFlags"><span class="type">GDBusProxyFlags</span></a> flags</code></em>,
+                               <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                               <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object_path</code></em>,
+                               <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Synchronously creates a proxy for the D-Bus interface <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-interface-org-freedesktop-UDisks2-Manager.top_of_page">org.freedesktop.UDisks2.Manager</a>. See <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#g-dbus-proxy-new-sync"><code class="function">g_dbus_proxy_new_sync()</code></a> for more details.</p>
+<p>The calling thread is blocked until a reply is received.</p>
+<p>See <a class="link" href="UDisksManager.html#udisks-manager-proxy-new" title="udisks_manager_proxy_new ()"><code class="function">udisks_manager_proxy_new()</code></a> for the asynchronous version of this constructor.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.17.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html"><span class="type">GDBusConnection</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>Flags from the <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyFlags"><span class="type">GDBusProxyFlags</span></a> enumeration.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p> A bus name (well-known or unique) or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>connection</code></em>
+is not a message bus connection. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object_path</p></td>
+<td class="parameter_description"><p>An object path.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.17.8"></a><h4>Returns</h4>
+<p> The constructed proxy object or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
+is set. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/type"><span class="acronym">type</span></a> UDisksManagerProxy]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-proxy-new-for-bus"></a><h3>udisks_manager_proxy_new_for_bus ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+udisks_manager_proxy_new_for_bus (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html#GBusType"><span class="type">GBusType</span></a> bus_type</code></em>,
+                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyFlags"><span class="type">GDBusProxyFlags</span></a> flags</code></em>,
+                                  <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                  <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object_path</code></em>,
+                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Like <a class="link" href="UDisksManager.html#udisks-manager-proxy-new" title="udisks_manager_proxy_new ()"><code class="function">udisks_manager_proxy_new()</code></a> but takes a <a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html#GBusType"><span class="type">GBusType</span></a> instead of a <a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html"><span class="type">GDBusConnection</span></a>.</p>
+<p>When the operation is finished, <em class="parameter"><code>callback</code></em>
+ will be invoked in the <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#g-main-context-push-thread-default">thread-default main loop</a> of the thread you are calling this method from.
+You can then call <a class="link" href="UDisksManager.html#udisks-manager-proxy-new-for-bus-finish" title="udisks_manager_proxy_new_for_bus_finish ()"><code class="function">udisks_manager_proxy_new_for_bus_finish()</code></a> to get the result of the operation.</p>
+<p>See <a class="link" href="UDisksManager.html#udisks-manager-proxy-new-for-bus-sync" title="udisks_manager_proxy_new_for_bus_sync ()"><code class="function">udisks_manager_proxy_new_for_bus_sync()</code></a> for the synchronous, blocking version of this constructor.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.18.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bus_type</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html#GBusType"><span class="type">GBusType</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>Flags from the <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyFlags"><span class="type">GDBusProxyFlags</span></a> enumeration.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>A bus name (well-known or unique).</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object_path</p></td>
+<td class="parameter_description"><p>An object path.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> to call when the request is satisfied.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data to pass to <em class="parameter"><code>callback</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-proxy-new-for-bus-finish"></a><h3>udisks_manager_proxy_new_for_bus_finish ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+udisks_manager_proxy_new_for_bus_finish
+                               (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *res</code></em>,
+                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Finishes an operation started with <a class="link" href="UDisksManager.html#udisks-manager-proxy-new-for-bus" title="udisks_manager_proxy_new_for_bus ()"><code class="function">udisks_manager_proxy_new_for_bus()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.19.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>res</p></td>
+<td class="parameter_description"><p>The <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> obtained from the <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> passed to <a class="link" href="UDisksManager.html#udisks-manager-proxy-new-for-bus" title="udisks_manager_proxy_new_for_bus ()"><code class="function">udisks_manager_proxy_new_for_bus()</code></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.19.6"></a><h4>Returns</h4>
+<p> The constructed proxy object or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
+is set. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/type"><span class="acronym">type</span></a> UDisksManagerProxy]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-proxy-new-for-bus-sync"></a><h3>udisks_manager_proxy_new_for_bus_sync ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+udisks_manager_proxy_new_for_bus_sync (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html#GBusType"><span class="type">GBusType</span></a> bus_type</code></em>,
+                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyFlags"><span class="type">GDBusProxyFlags</span></a> flags</code></em>,
+                                       <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                       <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object_path</code></em>,
+                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Like <a class="link" href="UDisksManager.html#udisks-manager-proxy-new-sync" title="udisks_manager_proxy_new_sync ()"><code class="function">udisks_manager_proxy_new_sync()</code></a> but takes a <a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html#GBusType"><span class="type">GBusType</span></a> instead of a <a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html"><span class="type">GDBusConnection</span></a>.</p>
+<p>The calling thread is blocked until a reply is received.</p>
+<p>See <a class="link" href="UDisksManager.html#udisks-manager-proxy-new-for-bus" title="udisks_manager_proxy_new_for_bus ()"><code class="function">udisks_manager_proxy_new_for_bus()</code></a> for the asynchronous version of this constructor.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.20.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bus_type</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html#GBusType"><span class="type">GBusType</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>Flags from the <a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyFlags"><span class="type">GDBusProxyFlags</span></a> enumeration.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>A bus name (well-known or unique).</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object_path</p></td>
+<td class="parameter_description"><p>An object path.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Return location for error or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.20.8"></a><h4>Returns</h4>
+<p> The constructed proxy object or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em>
+is set. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/type"><span class="acronym">type</span></a> UDisksManagerProxy]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="udisks-manager-skeleton-new"></a><h3>udisks_manager_skeleton_new ()</h3>
+<pre class="programlisting"><a class="link" href="UDisksManager.html" title="UDisksManager"><span class="returnvalue">UDisksManager</span></a> *
+udisks_manager_skeleton_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a skeleton object for the D-Bus interface <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-interface-org-freedesktop-UDisks2-Manager.top_of_page">org.freedesktop.UDisks2.Manager</a>.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.14.21.5"></a><h4>Returns</h4>
+<p> The skeleton object. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>][<a href="http://foldoc.org/type"><span class="acronym">type</span></a> UDisksManagerSkeleton]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="UDisksManager-struct"></a><h3>UDisksManager</h3>
+<pre class="programlisting">typedef struct _UDisksManager UDisksManager;</pre>
+<p>Abstract interface type for the D-Bus interface <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-interface-org-freedesktop-UDisks2-Manager.top_of_page">org.freedesktop.UDisks2.Manager</a>.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksManagerIface"></a><h3>struct UDisksManagerIface</h3>
+<pre class="programlisting">struct UDisksManagerIface {
+  GTypeInterface parent_iface;
+
+
+  gboolean (*handle_loop_setup) (
+    UDisksManager *object,
+    GDBusMethodInvocation *invocation,
+    GUnixFDList *fd_list,
+    GVariant *arg_fd,
+    GVariant *arg_options);
+
+  const gchar * (*get_version) (UDisksManager *object);
+
+  gboolean (*handle_mdraid_create) (
+    UDisksManager *object,
+    GDBusMethodInvocation *invocation,
+    const gchar *const *arg_blocks,
+    const gchar *arg_level,
+    const gchar *arg_name,
+    guint64 arg_chunk,
+    GVariant *arg_options);
+};
+</pre>
+<p>Virtual table for the D-Bus interface <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-interface-org-freedesktop-UDisks2-Manager.top_of_page">org.freedesktop.UDisks2.Manager</a>.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.15.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GTypeInterface"><span class="type">GTypeInterface</span></a> <em class="structfield"><code><a name="UDisksManagerIface.parent-iface"></a>parent_iface</code></em>;</p></td>
+<td class="struct_member_description"><p>The parent interface.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="UDisksManagerIface.handle-loop-setup"></a>handle_loop_setup</code></em> ()</p></td>
+<td class="struct_member_description"><p>Handler for the <a class="link" href="UDisksManager.html#UDisksManager-handle-loop-setup" title="The “handle-loop-setup” signal"><span class="type">“handle-loop-setup”</span></a> signal.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="UDisksManagerIface.get-version"></a>get_version</code></em> ()</p></td>
+<td class="struct_member_description"><p>Getter for the <a class="link" href="UDisksManager.html#UDisksManager--version" title="The “version” property"><span class="type">“version”</span></a> property.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="UDisksManagerIface.handle-mdraid-create"></a>handle_mdraid_create</code></em> ()</p></td>
+<td class="struct_member_description"><p>Handler for the <a class="link" href="UDisksManager.html#UDisksManager-handle-mdraid-create" title="The “handle-mdraid-create” signal"><span class="type">“handle-mdraid-create”</span></a> signal.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksManagerProxy-struct"></a><h3>struct UDisksManagerProxy</h3>
+<pre class="programlisting">struct UDisksManagerProxy;</pre>
+<p>The <a class="link" href="UDisksManager.html#UDisksManagerProxy"><span class="type">UDisksManagerProxy</span></a> structure contains only private data and should only be accessed using the provided API.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksManagerProxyClass"></a><h3>struct UDisksManagerProxyClass</h3>
+<pre class="programlisting">struct UDisksManagerProxyClass {
+  GDBusProxyClass parent_class;
+};
+</pre>
+<p>Class structure for <a class="link" href="UDisksManager.html#UDisksManagerProxy"><span class="type">UDisksManagerProxy</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.15.5.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody><tr>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/gio/unstable/GDBusProxy.html#GDBusProxyClass"><span class="type">GDBusProxyClass</span></a> <em class="structfield"><code><a name="UDisksManagerProxyClass.parent-class"></a>parent_class</code></em>;</p></td>
+<td class="struct_member_description"><p>The parent class.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksManagerSkeleton-struct"></a><h3>struct UDisksManagerSkeleton</h3>
+<pre class="programlisting">struct UDisksManagerSkeleton;</pre>
+<p>The <a class="link" href="UDisksManager.html#UDisksManagerSkeleton"><span class="type">UDisksManagerSkeleton</span></a> structure contains only private data and should only be accessed using the provided API.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksManagerSkeletonClass"></a><h3>struct UDisksManagerSkeletonClass</h3>
+<pre class="programlisting">struct UDisksManagerSkeletonClass {
+  GDBusInterfaceSkeletonClass parent_class;
+};
+</pre>
+<p>Class structure for <a class="link" href="UDisksManager.html#UDisksManagerSkeleton"><span class="type">UDisksManagerSkeleton</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.15.7.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody><tr>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/gio/unstable/GDBusInterfaceSkeleton.html#GDBusInterfaceSkeletonClass"><span class="type">GDBusInterfaceSkeletonClass</span></a> <em class="structfield"><code><a name="UDisksManagerSkeletonClass.parent-class"></a>parent_class</code></em>;</p></td>
+<td class="struct_member_description"><p>The parent class.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="UDisksManager--version"></a><h3>The <code class="literal">“version”</code> property</h3>
+<pre class="programlisting">  “version”                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Represents the D-Bus property <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-property-org-freedesktop-UDisks2-Manager.Version" title='The "Version" property'>"Version"</a>.</p>
+<p>Since the D-Bus property for this <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> property is readable but not writable, it is meaningful to read from it on both the client- and service-side. It is only meaningful, however, to write to it on the service-side.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="UDisksManager.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="UDisksManager-handle-loop-setup"></a><h3>The <code class="literal">“handle-loop-setup”</code> signal</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>         *object,
+               <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a> *invocation,
+               <a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a>           *fd_list,
+               <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>              *arg_fd,
+               <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>              *arg_options,
+               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>               user_data)</pre>
+<p>Signal emitted when a remote caller is invoking the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-method-org-freedesktop-UDisks2-Manager.LoopSetup" title="The LoopSetup() method"><code class="function">LoopSetup()</code></a> D-Bus method.</p>
+<p>If a signal handler returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, it means the signal handler will handle the invocation (e.g. take a reference to <em class="parameter"><code>invocation</code></em>
+ and eventually call <a class="link" href="UDisksManager.html#udisks-manager-complete-loop-setup" title="udisks_manager_complete_loop_setup ()"><code class="function">udisks_manager_complete_loop_setup()</code></a> or e.g. <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html#g-dbus-method-invocation-return-error"><code class="function">g_dbus_method_invocation_return_error()</code></a> on it) and no order signal handlers will run. If no signal handler handles the invocation, the <code class="literal">G_DBUS_ERROR_UNKNOWN_METHOD</code> error is returned.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.17.2.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>invocation</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fd_list</p></td>
+<td class="parameter_description"><p> A <a href="http://library.gnome.org/devel/gio/unstable/GUnixFDList.html"><span class="type">GUnixFDList</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_fd</p></td>
+<td class="parameter_description"><p>Argument passed by remote caller.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_options</p></td>
+<td class="parameter_description"><p>Argument passed by remote caller.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.17.2.7"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the invocation was handled, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to let other signal handlers run.</p>
+<p></p>
+</div>
+<p>Flags: Run Last</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="UDisksManager-handle-mdraid-create"></a><h3>The <code class="literal">“handle-mdraid-create”</code> signal</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>         *object,
+               <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a> *invocation,
+               <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Boxed-Types.html#GStrv"><span class="type">GStrv</span></a>                  arg_blocks,
+               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>                 *arg_level,
+               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>                 *arg_name,
+               <span class="type">guint64</span>                arg_chunk,
+               <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>              *arg_options,
+               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>               user_data)</pre>
+<p>Signal emitted when a remote caller is invoking the <a class="link" href="gdbus-org.freedesktop.UDisks2.Manager.html#gdbus-method-org-freedesktop-UDisks2-Manager.MDRaidCreate" title="The MDRaidCreate() method"><code class="function">MDRaidCreate()</code></a> D-Bus method.</p>
+<p>If a signal handler returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, it means the signal handler will handle the invocation (e.g. take a reference to <em class="parameter"><code>invocation</code></em>
+ and eventually call <a class="link" href="UDisksManager.html#udisks-manager-complete-mdraid-create" title="udisks_manager_complete_mdraid_create ()"><code class="function">udisks_manager_complete_mdraid_create()</code></a> or e.g. <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html#g-dbus-method-invocation-return-error"><code class="function">g_dbus_method_invocation_return_error()</code></a> on it) and no order signal handlers will run. If no signal handler handles the invocation, the <code class="literal">G_DBUS_ERROR_UNKNOWN_METHOD</code> error is returned.</p>
+<div class="refsect3">
+<a name="id-1.4.5.4.17.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="UDisksManager.html" title="UDisksManager"><span class="type">UDisksManager</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>invocation</p></td>
+<td class="parameter_description"><p>A <a href="http://library.gnome.org/devel/gio/unstable/GDBusMethodInvocation.html"><span class="type">GDBusMethodInvocation</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_blocks</p></td>
+<td class="parameter_description"><p>Argument passed by remote caller.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_level</p></td>
+<td class="parameter_description"><p>Argument passed by remote caller.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_name</p></td>
+<td class="parameter_description"><p>Argument passed by remote caller.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_chunk</p></td>
+<td class="parameter_description"><p>Argument passed by remote caller.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_options</p></td>
+<td class="parameter_description"><p>Argument passed by remote caller.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.17.3.7"></a><h4>Returns</h4>
+<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the invocation was handled, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to let other signal handlers run.</p>
+<p></p>
+</div>
+<p>Flags: Run Last</p>
+<p class="since">Since 2.1</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

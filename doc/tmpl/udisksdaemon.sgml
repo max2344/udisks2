@@ -1,0 +1,266 @@
+<!-- ##### SECTION Title ##### -->
+UDisksDaemon
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT UDisksDaemon ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG UDisksDaemon:connection ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDaemon:mount-monitor ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG UDisksDaemon:object-manager ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION udisks_daemon_new ##### -->
+<para>
+
+</para>
+
+@connection: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_connection ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_object_manager ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_mount_monitor ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_fstab_monitor ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_crypttab_monitor ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_linux_provider ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_authority ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_state ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION UDisksDaemonWaitFunc ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_wait_for_object_sync ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@wait_func: 
+@user_data: 
+@user_data_free_func: 
+@timeout_seconds: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_get_objects ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_find_object ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@object_path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_find_block ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@block_device_number: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_find_block_by_device_file ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@device_file: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_find_block_by_sysfs_path ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@sysfs_path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_launch_simple_job ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@object: 
+@job_operation: 
+@job_started_by_uid: 
+@cancellable: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_launch_spawned_job ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@object: 
+@job_operation: 
+@job_started_by_uid: 
+@cancellable: 
+@run_as_uid: 
+@run_as_euid: 
+@input_string: 
+@command_line_format: 
+@...: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_launch_spawned_job_sync ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@object: 
+@job_operation: 
+@job_started_by_uid: 
+@cancellable: 
+@run_as_uid: 
+@run_as_euid: 
+@out_status: 
+@out_message: 
+@input_string: 
+@command_line_format: 
+@...: 
+@Returns: 
+
+
+<!-- ##### FUNCTION udisks_daemon_launch_threaded_job ##### -->
+<para>
+
+</para>
+
+@daemon: 
+@object: 
+@job_operation: 
+@job_started_by_uid: 
+@job_func: 
+@user_data: 
+@user_data_free_func: 
+@cancellable: 
+@Returns: 
+
+
